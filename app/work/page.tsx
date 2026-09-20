@@ -18,7 +18,7 @@ export default function WorkPage() {
     <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
       <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }])} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Work", href: "/work" }]} />
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
         Five systems, each written up as it was built.
       </h1>
       <div className="prose mt-6">

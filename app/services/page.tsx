@@ -1,5 +1,5 @@
 import { SheetHead, Cta, Breadcrumbs } from "../components/Sheet";
-import { ServiceCard } from "../components/Cards";
+import { ServiceCard, Chips } from "../components/Cards";
 import JsonLd from "../components/JsonLd";
 import { SERVICES, INTEGRATIONS, INTEGRATIONS_NOTE } from "../lib/services";
 import { meta, breadcrumbs } from "../lib/meta";
@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
       <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
         Three kinds of work. Each one has a page that says when it&rsquo;s the wrong choice.
       </h1>
       <div className="prose mt-6">
@@ -29,7 +29,7 @@ export default function ServicesPage() {
       <div className="mt-12">
         <SheetHead label="Services" meta="3" />
         <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {SERVICES.map((s) => <ServiceCard key={s.slug} s={s} />)}
+          {SERVICES.map((s, i) => <ServiceCard key={s.slug} s={s} index={i} />)}
         </div>
       </div>
       <section className="mt-16">
@@ -39,7 +39,7 @@ export default function ServicesPage() {
           {INTEGRATIONS.map((g) => (
             <div key={g.group} className="border-t rule-hair pt-3">
               <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-45">{g.group}</dt>
-              <dd className="mt-1.5 text-[15px] leading-snug text-ink">{g.items.join(" · ")}</dd>
+              <dd className="mt-2.5"><Chips items={g.items} /></dd>
             </div>
           ))}
         </dl>

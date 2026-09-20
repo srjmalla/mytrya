@@ -15,11 +15,11 @@ export default function ProcessPage() {
     <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
       <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Process", path: "/process" }])} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Process", href: "/process" }]} />
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
         How a project with Mytrya runs
       </h1>
       <div className="prose mt-6">
-        <p className="!text-ink">
+        <p className="lead !text-ink">
           A project runs in four steps: a free scoping call, a written spec with a fixed price, a build you watch
           in dry-run every week, and a handover into your own repositories with documentation and a runbook.
         </p>
@@ -34,12 +34,12 @@ export default function ProcessPage() {
         <ol className="mt-2">
           {STEPS.map((s) => (
             <li key={s.n} className="grid gap-x-10 gap-y-3 border-b rule-hair py-8 md:grid-cols-[3rem_minmax(0,1fr)_16rem]">
-              <p className="font-mono text-[12px] tnum text-ink-45">{s.n}</p>
+              <p className="card-no">{s.n.padStart(2, "0")}</p>
               <div>
-                <h2 className="font-serif text-[24px] leading-snug">{s.title}</h2>
+                <h2 className="display text-[26px] leading-[1.2]">{s.title}</h2>
                 <div className="prose mt-3">{s.body.map((p, i) => <p key={i}>{p}</p>)}</div>
               </div>
-              <div className="border-t rule-heavy pt-3 md:border-t-0 md:border-l md:pl-6 md:pt-0">
+              <div className="border-t rule-heavy bg-paper-2 p-4 md:border-t-0 md:border-l-2 md:border-mark">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-45">You get</p>
                 <p className="mt-2 text-[15px] leading-snug text-ink">{s.output}</p>
               </div>

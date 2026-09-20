@@ -21,7 +21,7 @@ export default function ContactPage() {
     <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]), contactLd]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
         Describe the process. I&rsquo;ll tell you if it&rsquo;s worth automating.
       </h1>
 

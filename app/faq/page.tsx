@@ -24,7 +24,7 @@ export default function FaqPage() {
     <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]), faqLd]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "FAQ", href: "/faq" }]} />
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
         Questions people ask before they write
       </h1>
       <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-ink-70">

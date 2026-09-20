@@ -3,10 +3,11 @@ import { NAV, PERSON, SITE } from "../lib/site";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t rule-heavy">
+    <footer className="mt-24 border-t rule-hair bg-paper-2">
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.3em]">
+          <p className="inline-flex items-center gap-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.3em]">
+            <span aria-hidden className="block h-[9px] w-[9px] bg-mark" />
             {SITE.name}
           </p>
           <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-ink-70">

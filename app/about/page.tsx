@@ -23,14 +23,14 @@ export default function AboutPage() {
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]), profile]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
 
-      <h1 className="mt-4 font-serif text-[34px] leading-[1.1] tracking-[-0.015em] sm:text-[46px]">{PERSON.name}</h1>
+      <h1 className="display mt-4 text-[38px] leading-[1.05] sm:text-[52px]">{PERSON.name}</h1>
       <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-45">
         {PERSON.jobTitle} · {SITE.locality}, Nepal · runs {SITE.name}
       </p>
 
       <div className="mt-8 grid gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <div className="prose">
-          <p className="!text-ink">
+          <p className="lead !text-ink">
             I build AI systems for small B2B teams and run them in production. {SITE.name} is the name I work under.
           </p>
           <p>

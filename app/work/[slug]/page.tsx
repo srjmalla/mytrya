@@ -49,8 +49,8 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-45">
           {w.origin} · {w.status} · {w.year}
         </p>
-        <h1 className="mt-2 font-serif text-[34px] leading-[1.08] tracking-[-0.015em] sm:text-[46px]">{w.name}</h1>
-        <p className="mt-4 max-w-[66ch] text-[19px] leading-[1.5] text-ink">{w.summary}</p>
+        <h1 className="display mt-2 text-[38px] leading-[1.05] sm:text-[52px]">{w.name}</h1>
+        <p className="lead mt-5 max-w-[66ch] text-[19px] leading-[1.5] text-ink">{w.summary}</p>
         {w.url ? (
           <a href={w.url} className="mt-4 inline-block font-mono text-[12px] text-mark underline decoration-1 hover:no-underline">
             {w.url.replace(/^https:\/\//, "")} &#8599;
@@ -62,15 +62,20 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
       </header>
 
       {w.image ? (
-        <figure className="mt-10 border rule-hair bg-paper-2">
+        <figure className="frame mt-10">
+          <div className="frame-bar">
+            <span className="frame-dots" aria-hidden><i /><i /><i /></span>
+            <span>{w.url ? w.url.replace(/^https:\/\//, "") : w.name}</span>
+            <span aria-hidden className="hidden sm:inline">Screenshot</span>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={w.image.src} alt={w.image.alt} width={w.image.width} height={w.image.height} loading="lazy" className="block h-auto w-full" />
         </figure>
       ) : null}
 
       <div className="mt-12 grid gap-y-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-x-14">
-        <aside className="lg:sticky lg:top-8 lg:self-start">
-          <p className="border-b rule-hair pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-45">Facts</p>
+        <aside className="border rule-hair bg-paper-2 p-5 lg:sticky lg:top-24 lg:self-start">
+          <p className="sheet-label border-b rule-heavy pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink">Facts</p>
           <dl>
             {w.facts.map((f) => (
               <div key={f.k} className="border-b rule-hair py-2.5">
@@ -126,7 +131,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
             ))}
           </section>
 
-          <section className="mt-12 border rule-hair bg-paper-2 p-5">
+          <section className="mt-12 border-l-2 border-mark bg-paper-2 p-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-45">What is and isn&rsquo;t shown</p>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-70">{w.disclosure}</p>
           </section>

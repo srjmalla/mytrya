@@ -57,13 +57,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       ]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: s.name, href: `/services/${s.slug}` }]} />
 
-      <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[44px]">{s.name}</h1>
+      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">{s.name}</h1>
       <div className="prose mt-6">
-        {s.answer.map((p, i) => <p key={i} className={i === 0 ? "!text-ink" : ""}>{p}</p>)}
+        {s.answer.map((p, i) => <p key={i} className={i === 0 ? "lead !text-ink" : ""}>{p}</p>)}
       </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/contact" className="btn btn-primary btn-lg">Start a project</Link>
+        <Link href="/contact" className="btn btn-primary btn-lg">Start a project <span className="arrow" aria-hidden>&rarr;</span></Link>
         <a href="#proof" className="btn btn-ghost">See it built</a>
       </div>
 
