@@ -1,145 +1,125 @@
-import { SYSTEMS, PRINCIPLES } from "./lib/systems";
-import { SheetHead } from "./components/Sheet";
-import SystemIndex from "./components/SystemIndex";
-import Teardown from "./components/Teardown";
+import Link from "next/link";
+import { SheetHead, Cta, FaqList } from "./components/Sheet";
+import { ServiceCard, WorkRow } from "./components/Cards";
+import { SERVICES } from "./lib/services";
+import { WORK } from "./lib/work";
+import { FAQ_HOME } from "./lib/faq";
+import { STEPS } from "./lib/process";
+import { PERSON, SITE } from "./lib/site";
+import { meta } from "./lib/meta";
 
-const EMAIL = "malla.srj@mytrya.com";
+export const metadata = meta({
+  title: `${SITE.name} · ${SITE.tagline}`,
+  ogTitle: `${SITE.name} · ${SITE.tagline}`,
+  description: SITE.description,
+  path: "/",
+});
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5 sm:px-8">
-      {/* ─────────────────────── masthead ─────────────────────── */}
-      <header className="border-b rule-heavy pt-6 pb-5">
-        <div className="flex items-baseline justify-between gap-6">
-          <a
-            href="#top"
-            className="font-mono text-[12px] font-semibold uppercase tracking-[0.3em] text-ink"
-          >
-            Mytrya
-          </a>
-          <nav className="flex gap-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-45 sm:gap-7">
-            <a href="#systems" className="hover:text-ink">
-              Systems
-            </a>
-            <a href="#approach" className="hover:text-ink">
-              Approach
-            </a>
-            <a href="#contact" className="hover:text-ink">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <section id="top" className="border-b rule-hair py-14 sm:py-20">
-        <h1 className="max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[46px] lg:text-[54px]">
-          Suraj Nepse builds AI systems that run unattended in production.
-        </h1>
-
-        <div className="mt-9 grid gap-x-14 gap-y-7 lg:grid-cols-[minmax(0,1fr)_15rem]">
-          <p className="max-w-[58ch] text-[17px] leading-[1.6] text-ink-70">
-            Five of them are below. For each: what it does, how the data actually
-            moves through it, and the one decision that mattered more than the
-            rest. Client systems are described without naming the client.
-            There are no metrics on this page I can&rsquo;t source, which is why
-            there are fewer of them than you might expect.
-          </p>
-
-          <dl className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-45">
-            <div className="flex justify-between gap-4 border-t rule-hair py-2">
-              <dt>Practice</dt>
-              <dd className="text-ink">Mytrya</dd>
-            </div>
-            <div className="flex justify-between gap-4 border-t rule-hair py-2">
-              <dt>Based</dt>
-              <dd className="text-ink">Kathmandu</dd>
-            </div>
-            <div className="flex justify-between gap-4 border-t border-b rule-hair py-2">
-              <dt>Work</dt>
-              <dd className="text-ink">Agents, pipelines, internal tools</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      {/* ─────────────────────── index ─────────────────────── */}
-      <section id="systems" className="scroll-mt-8 pt-12 pb-16">
-        <SheetHead label="Index of systems" meta={`${SYSTEMS.length} entries`} />
-        <SystemIndex systems={SYSTEMS} />
-      </section>
-
-      {/* ─────────────────────── teardowns ─────────────────────── */}
-      <section className="pb-4">
-        <div className="flex flex-col gap-20">
-          {SYSTEMS.map((s) => (
-            <Teardown key={s.slug} system={s} />
-          ))}
-        </div>
-      </section>
-
-      {/* ─────────────────────── approach ─────────────────────── */}
-      <section id="approach" className="scroll-mt-8 pt-20 pb-16">
-        <SheetHead label="Approach" meta="Positions, not a process" />
-        <p className="mt-6 max-w-[62ch] text-[17px] leading-[1.6] text-ink-70">
-          Not a four-box diagram of discovery, design, build and launch — every
-          practice has one of those and none of them predict anything. These are
-          the rules the systems above were actually built under. Each one is
-          visible in the code of at least two of them.
+      {/* ── hero ── */}
+      <section className="border-b rule-hair py-14 sm:py-20">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-45">
+          {SITE.name} · {SITE.locality}
         </p>
+        <h1 className="mt-4 max-w-3xl font-serif text-[34px] leading-[1.12] tracking-[-0.015em] sm:text-[46px] lg:text-[52px]">
+          AI agents, internal tools and automation for small B2B teams.
+        </h1>
+        <div className="mt-8 grid gap-x-14 gap-y-8 lg:grid-cols-[minmax(0,1fr)_17rem]">
+          <div className="prose">
+            <p>
+              Mytrya is a one-person engineering practice run by {PERSON.name}. It builds systems that
+              answer support tickets from your documentation, compute the numbers your team asks for every
+              morning, and move data between the tools you already run. Fixed scope, fixed price, and every
+              system on this site is one I built and can walk you through line by line.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 lg:pt-1">
+            <Link href="/contact" className="btn btn-primary btn-lg">Start a project</Link>
+            <Link href="/work" className="btn btn-ghost">See the work</Link>
+            <p className="mt-1 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-45">
+              Free 30-minute scoping call · reply within one working day
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <ol className="mt-10 grid gap-x-14 gap-y-0 sm:grid-cols-2">
-          {PRINCIPLES.map((p) => (
-            <li key={p.n} className="border-t rule-hair py-5">
-              <div className="flex items-baseline gap-3">
-                <span className="font-mono text-[10px] lowercase tracking-[0.1em] text-ink-45">
-                  {p.n}
-                </span>
-                <h3 className="font-serif text-[19px] leading-snug text-ink">
-                  {p.title}
-                </h3>
-              </div>
-              <p className="mt-2 max-w-[48ch] text-[15.5px] leading-[1.6] text-ink-70">
-                {p.body}
-              </p>
+      {/* ── services ── */}
+      <section className="pt-14" aria-labelledby="services-h">
+        <SheetHead label="What I build" meta="3 services" />
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {SERVICES.map((s) => <ServiceCard key={s.slug} s={s} />)}
+        </div>
+      </section>
+
+      {/* ── who it's for / comparison ── */}
+      <section className="pt-16" aria-labelledby="fit-h">
+        <SheetHead label="Who this is for" />
+        <div className="mt-6 grid gap-10 md:grid-cols-2">
+          <div className="prose">
+            <h3 className="font-serif text-[22px] leading-snug text-ink">A team of 5 to 200 with a stack that doesn&rsquo;t talk to itself</h3>
+            <p>
+              You run a helpdesk, a CRM, a billing system and a project tracker, and a person moves
+              information between them. Founders, heads of operations and heads of support are the usual
+              first contact. The work is designing the piece that connects them and running it until it&rsquo;s boring.
+            </p>
+          </div>
+          <div className="prose">
+            <h3 className="font-serif text-[22px] leading-snug text-ink">When to use a platform&rsquo;s own AI instead</h3>
+            <p>
+              If your help centre alone answers your tickets, switch on Intercom Fin or Freshdesk Freddy.
+              They&rsquo;re faster to deploy and I&rsquo;ll tell you so on the call. Custom work earns its cost when
+              resolving a ticket means acting in other systems, when you want to choose the model and keep the
+              data in your own accounts, or when you need every action rehearsed before it goes live.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── work ── */}
+      <section className="pt-16" aria-labelledby="work-h">
+        <SheetHead label="Work" meta={`${WORK.length} systems`} />
+        <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-ink-70">
+          Three client systems described in architectural detail with the client&rsquo;s name withheld, and two
+          products of my own that you can open. No metrics appear here that I can&rsquo;t source.
+        </p>
+        <ol className="mt-4 border-b rule-hair">
+          {WORK.map((w) => (
+            <li key={w.slug} className="border-t rule-hair">
+              <WorkRow w={w} />
             </li>
           ))}
         </ol>
       </section>
 
-      {/* ─────────────────────── contact ─────────────────────── */}
-      <section id="contact" className="scroll-mt-8 border-t rule-heavy pt-12 pb-20">
-        <div className="grid gap-x-14 gap-y-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
-          <div>
-            <h2 className="max-w-2xl font-serif text-[28px] leading-[1.15] tracking-[-0.01em] sm:text-[36px]">
-              If something in your operation runs on somebody copying data
-              between two tabs, that is the thing to talk about.
-            </h2>
-            <p className="mt-5 max-w-[58ch] text-[17px] leading-[1.6] text-ink-70">
-              Write with the actual problem in it — what the process is, who does
-              it, how often, and what goes wrong when it&rsquo;s late. I&rsquo;ll
-              tell you whether it&rsquo;s worth automating, including when it
-              isn&rsquo;t.
-            </p>
-          </div>
-          <div className="lg:pt-2">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="font-mono text-[15px] text-mark underline decoration-1 hover:no-underline sm:text-[16px]"
-            >
-              {EMAIL}
-            </a>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-45">
-              Kathmandu · NPT, UTC+5:45
-            </p>
-          </div>
-        </div>
+      {/* ── process ── */}
+      <section className="pt-16" aria-labelledby="process-h">
+        <SheetHead label="How a project runs" meta="4 steps" />
+        <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {STEPS.map((s) => (
+            <li key={s.n} className="border-t rule-heavy pt-4">
+              <p className="font-mono text-[11px] tnum text-ink-45">{s.n}</p>
+              <h3 className="mt-1 font-serif text-[19px] leading-snug">{s.title}</h3>
+              <p className="mt-2 text-[14.5px] leading-[1.55] text-ink-70">{s.output}</p>
+            </li>
+          ))}
+        </ol>
+        <Link href="/process" className="mt-6 inline-block font-mono text-[11px] uppercase tracking-[0.12em] text-mark underline decoration-1 hover:no-underline">
+          The full process, including what you get at handover &rarr;
+        </Link>
       </section>
 
-      {/* ─────────────────────── colophon ─────────────────────── */}
-      <footer className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t rule-hair py-6 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-45">
-        <p>© {new Date().getFullYear()} Mytrya — Suraj Nepse</p>
-        <p>Newsreader &amp; IBM Plex Mono · Next.js on Vercel</p>
-      </footer>
+      {/* ── faq ── */}
+      <section className="pt-16" aria-labelledby="faq-h">
+        <SheetHead label="Common questions" meta="4 of 14" />
+        <FaqList items={FAQ_HOME} />
+        <Link href="/faq" className="mt-5 inline-block font-mono text-[11px] uppercase tracking-[0.12em] text-mark underline decoration-1 hover:no-underline">
+          All questions &rarr;
+        </Link>
+      </section>
+
+      <Cta />
     </div>
   );
 }

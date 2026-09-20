@@ -1,0 +1,12 @@
+# Cloudflare Pages configuration. This file is the source of truth for the
+# project once deployed with `wrangler pages deploy`.
+name = "mytrya-ai-website"
+pages_build_output_dir = "./out"
+compatibility_date = "2026-09-01"
+
+# Secrets are NOT set here. Use:
+#   npx wrangler pages secret put RESEND_API_KEY --project-name mytrya-ai-website
+# Optional plain vars:
+# [vars]
+# CONTACT_TO = "malla.srj@mytrya.com"
+# CONTACT_FROM = "Mytrya site <contact@mytrya.com>"
