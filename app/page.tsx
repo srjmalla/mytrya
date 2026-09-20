@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SheetHead, Cta, FaqList } from "./components/Sheet";
 import { ServiceCard, WorkRow } from "./components/Cards";
-import { SERVICES } from "./lib/services";
+import { SERVICES, INTEGRATIONS } from "./lib/services";
 import { WORK } from "./lib/work";
 import { FAQ_HOME } from "./lib/faq";
 import { STEPS } from "./lib/process";
@@ -51,6 +51,11 @@ export default function Home() {
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {SERVICES.map((s) => <ServiceCard key={s.slug} s={s} />)}
         </div>
+        <p className="mt-5 max-w-[80ch] font-mono text-[10.5px] uppercase leading-[1.8] tracking-[0.1em] text-ink-45">
+          <span className="text-ink-70">Connected so far:</span>{" "}
+          {INTEGRATIONS.flatMap((g) => g.items).join(" · ")}.{" "}
+          <Link href="/services" className="text-mark underline decoration-1 hover:no-underline">Anything with an API.</Link>
+        </p>
       </section>
 
       {/* ── who it's for / comparison ── */}
@@ -68,9 +73,10 @@ export default function Home() {
           <div className="prose">
             <h3 className="font-serif text-[22px] leading-snug text-ink">When to use a platform&rsquo;s own AI instead</h3>
             <p>
-              If your help centre alone answers your tickets, switch on Intercom Fin or Freshdesk Freddy.
-              They&rsquo;re faster to deploy and I&rsquo;ll tell you so on the call. Custom work earns its cost when
-              resolving a ticket means acting in other systems, when you want to choose the model and keep the
+              If your help centre alone answers your tickets and you only need it inside the vendor&rsquo;s console,
+              switch on Intercom Fin or Freshdesk Freddy. They&rsquo;re faster to deploy and I&rsquo;ll tell you so on
+              the call. Custom work earns its cost when resolving a ticket means acting in other systems, when you
+              want the agent on your own site or inside your product, when you want to choose the model and keep the
               data in your own accounts, or when you need every action rehearsed before it goes live.
             </p>
           </div>

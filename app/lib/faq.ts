@@ -12,7 +12,11 @@ export const FAQ: Faq[] = [
   },
   {
     q: "What kinds of projects do you take?",
-    a: "Three kinds. AI support agents that work inside Freshdesk, Zendesk or Intercom and act in connected systems. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
+    a: "Three kinds. AI support agents that work inside whatever helpdesk and chat you run, or as a widget on your own site, and act in connected systems. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
+  },
+  {
+    q: "Which systems can you integrate with?",
+    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected Freshdesk, Freshchat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Neon Postgres, Upstash, Redis Cloud, Vercel Blob and Cloudflare. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
   },
   {
     q: "How do projects work commercially?",
@@ -28,7 +32,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Why build a custom AI support agent instead of using Intercom Fin or Freshdesk Freddy?",
-    a: "Use the vendor's agent if your help centre alone answers your tickets. Build custom when resolving a ticket means acting in other systems, when you want to choose the model and keep the data in your own accounts, or when you need every action traceable and rehearsable before it goes live.",
+    a: "Use the vendor's agent if your help centre alone answers your tickets and you only need it inside that vendor's console. Build custom when resolving a ticket means acting in other systems, when you want the agent on your own website or inside your product, when you want to choose the model and keep the data in your own accounts, or when you need every action traceable and rehearsable before it goes live.",
   },
   {
     q: "How do you keep an AI agent from doing something wrong?",
@@ -52,7 +56,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Can you show me client work?",
-    a: "Yes, with the client's name withheld. The Work section describes three client systems in architectural detail: what they do, how data moves through them and the decisions that mattered. Metrics that belong to the client aren't published. Two of my own products are linked and can be opened.",
+    a: "Yes, with the client's name withheld. The Work section describes three client systems in architectural detail, including a support agent platform that works three channels with a learning loop. Metrics that belong to the client aren't published. Two of my own products, an investing copilot and a rehearsal tool for actors, are linked and can be opened.",
   },
   {
     q: "How do I start?",
@@ -61,4 +65,4 @@ export const FAQ: Faq[] = [
 ];
 
 /** The four shown on the home page. */
-export const FAQ_HOME = [0, 3, 6, 7].map((i) => FAQ[i]);
+export const FAQ_HOME = [0, 3, 4, 8].map((i) => FAQ[i]);

@@ -19,37 +19,55 @@ export type Service = {
   faqs: Faq[];
 };
 
+/** Systems connected in shipped work. The list is evidence, not a boundary. */
+export const INTEGRATIONS: { group: string; items: string[] }[] = [
+  { group: "Support and chat", items: ["Freshdesk", "Freshchat", "a first-party chat widget", "Slack", "Telegram"] },
+  { group: "Billing and commerce", items: ["FastSpring", "monday.com marketplace monetisation"] },
+  { group: "Work tracking and content", items: ["monday.com boards", "WordPress REST", "Bettermode communities"] },
+  { group: "Finance and market data", items: ["MeroShare", "ShareSansar", "chukul", "merolagani", "broker web terminals"] },
+  { group: "Models and speech", items: ["Claude", "Gemini and Gemini Live", "OpenAI", "OpenRouter", "ElevenLabs", "Gemini TTS"] },
+  { group: "Infrastructure", items: ["Vercel", "Cloudflare Pages and Workers", "Neon Postgres", "Upstash Redis and Vector", "Redis Cloud", "SQLite", "Vercel Blob", "cron-job.org"] },
+];
+
+export const INTEGRATIONS_NOTE =
+  "If it has an API, a webhook, or even just a web page, it can be connected. The list above is what shipped work has touched so far, not a menu.";
+
 export const SERVICES: Service[] = [
   {
     slug: "ai-support-agents",
     name: "AI support agents",
     short: "Support agents",
-    metaTitle: "Custom AI support agents for Freshdesk, Zendesk and Intercom",
+    metaTitle: "Custom AI support agents for your helpdesk, live chat and website",
     metaDescription:
-      "Custom AI support agents that answer from your documentation, act in your billing and tracking systems, and escalate to a person when they can't ground an answer. Built and run in production by Mytrya.",
+      "Custom AI support agents that work your helpdesk, your live chat and a chat widget on your own site, answer from your documentation, act in billing and tracking systems, and learn from what your team actually sends. Built and run in production by Mytrya.",
     answer: [
-      "An AI support agent from Mytrya is a service that sits inside your existing helpdesk, reads incoming tickets, answers the ones your documentation already covers, takes actions in connected systems such as billing or your issue tracker, and hands the rest to a person with a written summary.",
-      "It is not a chat widget. It holds a named agent seat in Freshdesk, Zendesk or Intercom and owns the full ticket lifecycle: triage, reply, follow-up, close.",
-      "The agent I run in production today has 13 tools across Freshdesk, FastSpring, monday.com and Slack, runs up to 10 reasoning steps per ticket, and checks back on every ticket it answers 24 hours later.",
+      "An AI support agent from Mytrya is a service that works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It answers what your documentation already covers, checks the customer's account and your dev tracker before it speaks, takes actions in connected systems, and hands the rest to a person with a written summary.",
+      "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
+      "The platform I run in production today works three channels with 20 tools across the helpdesk, live chat, billing, the dev board and Slack. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
     ],
     fit: [
       "You run a B2B product with a helpdesk and a knowledge base that already answers most questions, and a person still has to find and relay the answer.",
       "Resolving a ticket often means touching another system: issuing a refund, extending a trial, opening a bug for the dev team, notifying a channel.",
       "You want to choose the model, keep the data in your own accounts, and see every action the agent takes before it takes it.",
+      "You want the agent on your own website or inside your product, not only inside a vendor's console, and you want your team's replies to make it better without anyone filling in a rating.",
     ],
     notFit: [
       "You only need answers from a help centre inside one product, with no actions in other systems. Intercom Fin or Freshdesk Freddy will be faster to switch on and cheaper to run. I will say so on the call.",
       "Your documentation doesn't exist yet. An agent grounded in nothing has nothing to say. Writing the first 30 articles is a different project, and sometimes a better first project.",
     ],
     builds: [
-      "Webhook intake with idempotency, so a retried event can't produce two replies",
+      "Channel adapters for your helpdesk, your live chat and, if you want it, a first-party chat widget with streaming, file uploads, signed sessions and an origin allowlist",
+      "Webhook intake with idempotency, so a retried event can't produce two replies, and a cheap deterministic filter that drops out-of-office replies, bounces and newsletters before the model runs",
       "Context assembly from the ticket, the conversation, the billing account and any linked tracker items, before the model sees anything",
-      "Retrieval over your knowledge base with a keyword fallback",
+      "Retrieval over your knowledge base with a reranker and a keyword fallback; a KB store with draft, review, published and archived states, versions, and a daily sync from your docs site",
+      "Draft mode: the reply is posted as a private note, a person sends it, and the outcome is read back from what they sent",
       "A tool layer for the systems the agent may act in, with each tool's inputs sourced from context rather than from the model",
       "Escalation to Slack or email with a private note on the ticket",
       "A scheduled follow-up that re-reads the ticket after 24 hours and closes or re-runs",
       "An admin console for replaying any ticket in dry-run and reading the full tool trace",
       "Outcome recording: resolved, escalated, reopened, and a list of questions the agent couldn't answer, which becomes your documentation backlog",
+      "A learning loop: a blind judge compares your team's reply to the draft, a distiller proposes learnings, a person approves them before they reach the prompt",
+      "A Slack interface for the team, with money-moving commands behind a second admin's confirmation, and a morning brief with emerging issues computed by arithmetic",
     ],
     safety: [
       "Product specifics come only from a retrieved article, and the reply cites it. No article, no answer; the ticket escalates.",
@@ -62,17 +80,21 @@ export const SERVICES: Service[] = [
       "Vercel AI SDK",
       "Claude, Gemini or OpenAI models, chosen per task and measured",
       "Upstash Redis and Vector, or Postgres with pgvector",
-      "Freshdesk, Zendesk, Intercom, HubSpot, FastSpring, Stripe, monday.com, Slack APIs",
+      "Your helpdesk, chat, billing, tracker and messaging APIs, whichever they are",
     ],
-    proof: ["jetta", "support-intelligence"],
+    proof: ["support-agent-platform", "support-intelligence"],
     faqs: [
       {
         q: "Why build a custom support agent instead of using Intercom Fin or Freshdesk Freddy?",
-        a: "Use the vendor's agent if your tickets are answered by your help centre alone. Build custom when resolving a ticket means acting in other systems (refunds, trials, bug reports, notifications), when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
+        a: "Use the vendor's agent if your tickets are answered by your help centre alone and you only need it inside that vendor's console. Build custom when resolving a ticket means acting in other systems (refunds, trials, bug reports, notifications), when you want the agent on your own site or inside your product, when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
       },
       {
         q: "How does the agent avoid making things up?",
         a: "It is only allowed to state product specifics that appear in an article it retrieved, and it includes the article's URL in the reply. When retrieval finds nothing relevant, the rule is to escalate, not to approximate. That rule lives in the system prompt and is enforced by what the tools will and won't do.",
+      },
+      {
+        q: "Which helpdesk and chat systems can you connect to?",
+        a: "Any with an API. The production build connects Freshdesk, Freshchat, a first-party widget, FastSpring, monday.com and Slack, but the adapters are thin and the agent loop doesn't know which vendor it's talking to. Zendesk, Intercom, HubSpot, Help Scout, Stripe, Chargebee, Linear, Jira, GitHub and Teams are the same shape of work.",
       },
       {
         q: "What happens when the agent gets a ticket wrong?",

@@ -3,16 +3,19 @@
 > Mytrya is a one-person AI engineering practice run by Suraj Malla in Kathmandu, Nepal. It builds AI support agents, internal tools and data pipelines for small B2B software and service companies, on fixed-scope, fixed-price projects. Contact: malla.srj@mytrya.com
 
 ## Services
-- [AI support agents](https://mytrya.com/services/ai-support-agents): agents that work inside Freshdesk, Zendesk or Intercom, answer from documentation, act in billing and tracking systems, escalate when they can't ground an answer.
+- [AI support agents](https://mytrya.com/services/ai-support-agents): agents that work inside any helpdesk, live chat, or a first-party chat widget on your own site; answer from documentation, act in billing and tracking systems, learn from what the team sends, escalate when they can't ground an answer.
 - [Internal tools and dashboards](https://mytrya.com/services/internal-tools): small tools that compute operational numbers in code and use a model only to name patterns.
 - [Data pipelines and workflow automation](https://mytrya.com/services/workflow-automation): measured rate limits, fallbacks, idempotent jobs; code or n8n/Make.
 
 ## Work (case studies)
-- [Jetta](https://mytrya.com/work/jetta): AI support agent, 13 tools across Freshdesk, FastSpring, monday.com, Slack. Client anonymized.
-- [NEPSE Copilot](https://mytrya.com/work/nepse-copilot): Nepal Stock Exchange research tool that grades its own evidence score at 5/10/20 days.
+- [Support agent platform](https://mytrya.com/work/support-agent-platform): one AI agent across helpdesk tickets, vendor live chat and a first-party chat widget; 20 tools; human-in-the-loop drafts; blind judge and learning loop; Slack interface. Client anonymized.
+- [NEPSE Copilot](https://mytrya.com/work/nepse-copilot): multi-account investing copilot for the Nepal Stock Exchange; four data sources, encrypted depository sync, one-tap orders on Telegram, paper strategies, 31-tool voice mode, self-grading scoreboard at 5/10/20 days.
 - [Support Intelligence](https://mytrya.com/work/support-intelligence): daily support-desk dashboard, numbers in code, Gemini for clustering.
-- [offScript](https://mytrya.com/work/offscript): AI scene partner for actors. Live at https://offscript.mytrya.com
+- [offScript](https://mytrya.com/work/offscript): AI scene partner for actors; two speech engines, pre-rendered directed delivery, a plain-language directing room, improvised mode on Gemini Live, cue engine that reads the line not the clock. Live at https://offscript.mytrya.com
 - [Community Signal](https://mytrya.com/work/community-signal): forum-mining and board-summary tools.
+
+## Integrations
+Anything with an API, webhook or web page. Shipped work has connected: Freshdesk, Freshchat, FastSpring, monday.com, Slack, Telegram, WordPress REST, Bettermode, MeroShare, ShareSansar, chukul, merolagani, Claude, Gemini, Gemini Live, OpenAI, OpenRouter, ElevenLabs, Neon Postgres, Upstash Redis and Vector, Redis Cloud, SQLite, Vercel, Vercel Blob, Cloudflare Pages and Workers.
 
 ## Other
 - [How a project runs](https://mytrya.com/process)

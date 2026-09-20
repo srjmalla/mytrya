@@ -1,7 +1,7 @@
 import { SheetHead, Cta, Breadcrumbs } from "../components/Sheet";
 import { ServiceCard } from "../components/Cards";
 import JsonLd from "../components/JsonLd";
-import { SERVICES } from "../lib/services";
+import { SERVICES, INTEGRATIONS, INTEGRATIONS_NOTE } from "../lib/services";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
@@ -32,6 +32,18 @@ export default function ServicesPage() {
           {SERVICES.map((s) => <ServiceCard key={s.slug} s={s} />)}
         </div>
       </div>
+      <section className="mt-16">
+        <SheetHead label="Systems connected in shipped work" meta="evidence, not a menu" />
+        <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-ink-70">{INTEGRATIONS_NOTE}</p>
+        <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          {INTEGRATIONS.map((g) => (
+            <div key={g.group} className="border-t rule-hair pt-3">
+              <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-45">{g.group}</dt>
+              <dd className="mt-1.5 text-[15px] leading-snug text-ink">{g.items.join(" · ")}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
       <Cta />
     </div>
   );

@@ -34,17 +34,20 @@ export default function AboutPage() {
             I build AI systems for small B2B teams and run them in production. {SITE.name} is the name I work under.
           </p>
           <p>
-            Over the last two years I&rsquo;ve built and operated an AI support agent that holds a seat in a
-            software company&rsquo;s Freshdesk and acts in their billing and dev-tracking systems, a daily
-            dashboard that reads the same desk for their leadership, and two smaller internal tools for the same
-            team. That work is described under <Link href="/work" className="text-mark underline">Work</Link>,
-            with the client unnamed.
+            Over the last two years I&rsquo;ve built and operated a support agent platform for a software
+            company: one agent across their helpdesk, their live chat and a chat widget of its own on their site
+            and inside their apps, acting in billing and the dev board, with a learning loop that reads what the
+            human team actually sends. Alongside it, a daily dashboard that reads the same desk for their
+            leadership, and two smaller internal tools. That work is described under{" "}
+            <Link href="/work" className="text-mark underline">Work</Link>, with the client unnamed.
           </p>
           <p>
             On my own time I built <a href="https://offscript.mytrya.com" className="text-mark underline">offScript</a>,
-            a rehearsal partner for actors, and NEPSE Copilot, a research tool for the Nepal Stock Exchange that my
-            family uses. Both are live. Both taught me things the client work didn&rsquo;t: how to make a voice
-            interface wait for the right reason, and how to make a scoring system grade itself.
+            a rehearsal partner for actors with two speech engines, a directing room and an improvised mode on a
+            live speech model, and NEPSE Copilot, a multi-account investing copilot for the Nepal Stock Exchange
+            with encrypted depository sync, one-tap order approval on Telegram and a voice mode. Both are live.
+            Both taught me things the client work didn&rsquo;t: how to make a voice interface wait for the right
+            reason, and how to make a scoring system grade itself.
           </p>
           <p>
             The practice is one person on purpose. You talk to the person who writes the code, runs it and
