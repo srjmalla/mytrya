@@ -11,17 +11,23 @@ npm run dev          # http://localhost:3000
 
 ## Build and deploy
 
-```bash
-npm run build        # writes ./out
-npx wrangler pages deploy out --project-name mytrya-ai-website --branch redesign-preview   # preview
-npx wrangler pages deploy out --project-name mytrya-ai-website                             # production
-```
-
-Secrets for the contact form, set once:
+The Cloudflare Pages project `mytrya` is connected to this repository. A push to
+`main` builds (`npm run build`) and deploys production; any other pushed branch
+gets a preview URL. Nothing to run by hand.
 
 ```bash
-npx wrangler pages secret put RESEND_API_KEY --project-name mytrya-ai-website
+npm run build        # writes ./out, same as the Pages build
 ```
+
+Manual deploy, if ever needed:
+
+```bash
+npx wrangler pages deploy out --project-name mytrya --branch main
+```
+
+Secrets for the contact form live in the Pages dashboard: Settings, Variables and
+Secrets, Production. `RESEND_API_KEY` is required; `CONTACT_TO` and `CONTACT_FROM`
+are optional.
 
 ## Where things live
 

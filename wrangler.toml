@@ -1,11 +1,13 @@
-# Cloudflare Pages configuration. This file is the source of truth for the
-# project once deployed with `wrangler pages deploy`.
-name = "mytrya-ai-website"
+# Cloudflare Pages configuration. The project is Git-connected: a push to
+# `main` builds and deploys production, any other branch builds a preview.
+# This file is the source of truth for build output and compatibility date.
+name = "mytrya"
 pages_build_output_dir = "./out"
 compatibility_date = "2026-09-01"
 
-# Secrets are NOT set here. Use:
-#   npx wrangler pages secret put RESEND_API_KEY --project-name mytrya-ai-website
+# Secrets are NOT set here. Add them in the dashboard: the project's Settings,
+# Variables and Secrets, Production, type Secret. (Secrets set with
+# `wrangler pages secret put` did not bind to deployments on this account.)
 # Optional plain vars:
 # [vars]
 # CONTACT_TO = "malla.srj@mytrya.com"
