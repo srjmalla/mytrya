@@ -12,11 +12,11 @@ export const FAQ: Faq[] = [
   },
   {
     q: "What kinds of projects do you take?",
-    a: "Three kinds. AI support agents that work inside whatever helpdesk and chat you run, or as a widget on your own site, and act in connected systems. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
+    a: "Three kinds. AI support employees that handle support end to end inside whatever helpdesk and chat you run, or as a widget on your own site: they triage, answer, act in connected systems, escalate, follow up and close. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
   },
   {
     q: "Which systems can you integrate with?",
-    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected Freshdesk, Freshchat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Neon Postgres, Upstash, Redis Cloud, Vercel Blob and Cloudflare. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
+    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected Freshdesk, Freshchat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Kokoro, eSewa, Clerk, Neon Postgres, Upstash, Redis Cloud, Vercel Blob, Cloudflare R2 and Cloudflare Pages. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
   },
   {
     q: "How do projects work commercially?",
@@ -56,7 +56,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Can you show me client work?",
-    a: "Yes, with the client's name withheld. The Work section describes three client systems in architectural detail, including a support agent platform that works three channels with a learning loop. Metrics that belong to the client aren't published. Two of my own products, an investing copilot and a rehearsal tool for actors, are linked and can be opened.",
+    a: "Yes, with the client's name withheld. The Work section describes three client systems in architectural detail, including an AI support employee that handles cases end to end across three channels and learns from the human team. Metrics that belong to the client aren't published. Three of my own products, an investing copilot, a rehearsal tool for actors and an app that reads your books aloud, are linked and can be opened.",
   },
   {
     q: "How do I start?",

@@ -1,6 +1,6 @@
 /**
  * A system map drawn in SVG: three channels feed one agent, which acts in four
- * systems. Labels are the real ones from the support agent platform under Work.
+ * systems. Labels are the real ones from the AI support employee under Work.
  * Motion is a slow dash along the wires, disabled under prefers-reduced-motion.
  */
 export default function HeroFigure() {

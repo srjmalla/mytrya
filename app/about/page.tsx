@@ -7,7 +7,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
   title: `About ${PERSON.name}`,
-  description: `${PERSON.name} runs Mytrya, a one-person AI engineering practice in Kathmandu. He builds and operates AI support agents, internal tools and data pipelines for small B2B teams.`,
+  description: `${PERSON.name} runs Mytrya, a one-person AI engineering practice in Kathmandu. He builds and operates AI support employees, internal tools and data pipelines for small B2B teams.`,
   path: "/about",
 });
 
@@ -34,8 +34,8 @@ export default function AboutPage() {
             I build AI systems for small B2B teams and run them in production. {SITE.name} is the name I work under.
           </p>
           <p>
-            Over the last two years I&rsquo;ve built and operated a support agent platform for a software
-            company: one agent across their helpdesk, their live chat and a chat widget of its own on their site
+            Over the last two years I&rsquo;ve built and operated an AI support employee for a software
+            company: one agent that handles a case end to end across their helpdesk, their live chat and a chat widget of its own on their site
             and inside their apps, acting in billing and the dev board, with a learning loop that reads what the
             human team actually sends. Alongside it, a daily dashboard that reads the same desk for their
             leadership, and two smaller internal tools. That work is described under{" "}
@@ -44,10 +44,13 @@ export default function AboutPage() {
           <p>
             On my own time I built <a href="https://offscript.mytrya.com" className="text-mark underline">offScript</a>,
             a rehearsal partner for actors with two speech engines, a directing room and an improvised mode on a
-            live speech model, and NEPSE Copilot, a multi-account investing copilot for the Nepal Stock Exchange
-            with encrypted depository sync, one-tap order approval on Telegram and a voice mode. Both are live.
-            Both taught me things the client work didn&rsquo;t: how to make a voice interface wait for the right
-            reason, and how to make a scoring system grade itself.
+            live speech model, NEPSE Copilot, a multi-account investing copilot for the Nepal Stock Exchange
+            with encrypted depository sync, one-tap order approval on Telegram and a voice mode, and{" "}
+            <a href="https://narrately.mytrya.com" className="text-mark underline">Narrately</a>, which reads
+            people&rsquo;s own books aloud with the text in view, narrating on demand and caching each sentence
+            once for every reader. All three are live. They taught me things the client work didn&rsquo;t: how to
+            make a voice interface wait for the right reason, how to make a scoring system grade itself, and how to
+            price a product so its heaviest user still pays for themselves.
           </p>
           <p>
             The practice is one person on purpose. You talk to the person who writes the code, runs it and

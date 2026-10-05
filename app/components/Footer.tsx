@@ -57,6 +57,11 @@ export default function Footer() {
                 offScript
               </a>
             </li>
+            <li>
+              <a href="https://narrately.mytrya.com" className="text-ink-70 hover:text-ink">
+                Narrately
+              </a>
+            </li>
           </ul>
         </div>
       </div>

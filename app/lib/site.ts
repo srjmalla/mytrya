@@ -6,7 +6,7 @@ export const SITE = {
   /** Used in <title> templates and the Organization description. */
   tagline: "AI agents, internal tools and automation for small B2B teams",
   description:
-    "Mytrya is a one-person AI engineering practice run by Suraj Malla in Kathmandu. It builds AI support agents, internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
+    "Mytrya is a one-person AI engineering practice run by Suraj Malla in Kathmandu. It builds AI support employees that handle support end to end, internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
   locality: "Kathmandu",
   country: "NP",
   timezone: "Asia/Kathmandu",
@@ -14,7 +14,7 @@ export const SITE = {
   bookingUrl: "",
   github: "https://github.com/srjmalla",
   /** Add when known; it feeds Person.sameAs for entity disambiguation. */
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/suraj-malla-960456381/",
 } as const;
 
 export const PERSON = {

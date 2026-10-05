@@ -7,7 +7,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 export const metadata = meta({
   title: "Services",
   description:
-    "Three things Mytrya builds for small B2B teams: AI support agents that act in your systems, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, fixed price.",
+    "Three things Mytrya builds for small B2B teams: AI support employees that handle cases end to end, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, fixed price.",
   path: "/services",
 });
 
@@ -21,7 +21,7 @@ export default function ServicesPage() {
       </h1>
       <div className="prose mt-6">
         <p>
-          Mytrya builds AI support agents, internal tools and data pipelines. Every engagement is fixed
+          Mytrya builds AI support employees, internal tools and data pipelines. Every engagement is fixed
           scope and fixed price, agreed in writing before work starts, and delivered into your own
           repositories and cloud accounts.
         </p>

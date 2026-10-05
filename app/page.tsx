@@ -33,8 +33,8 @@ export default function Home() {
             </h1>
             <div className="prose rise rise-3 mt-7">
               <p>
-                Mytrya is a one-person engineering practice run by {PERSON.name}. It builds systems that
-                answer support tickets from your documentation, compute the numbers your team asks for every
+                Mytrya is a one-person engineering practice run by {PERSON.name}. It builds AI support
+                employees that handle a support case from first message to closed, compute the numbers your team asks for every
                 morning, and move data between the tools you already run. Fixed scope, fixed price, and every
                 system on this site is one I built and can walk you through line by line.
               </p>
@@ -113,7 +113,7 @@ export default function Home() {
       <section className="pt-20" aria-labelledby="work-h">
         <SheetHead label="Work" meta={`${WORK.length} systems`} />
         <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-ink-70">
-          Three client systems described in architectural detail with the client&rsquo;s name withheld, and two
+          Three client systems described in architectural detail with the client&rsquo;s name withheld, and three
           products of my own that you can open. No metrics appear here that I can&rsquo;t source.
         </p>
         <ol className="mt-6 border-b rule-hair">

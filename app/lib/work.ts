@@ -30,16 +30,17 @@ export type Work = {
 export const WORK: Work[] = [
   {
     slug: "support-agent-platform",
-    name: "Support agent platform",
-    line: "An AI support agent across tickets, live chat and a first-party chat widget, with a learning loop",
+    name: "AI support employee",
+    line: "An AI member of the support team that takes a case from first message to closed, across tickets, live chat and its own widget",
     summary:
-      "A support agent platform for a B2B software vendor with two product brands. One agent works three channels: helpdesk tickets, where it drafts and a person sends; the vendor's live chat; and a chat widget of its own, embedded on the marketing site and inside the client's apps, where it answers visitors directly. It reads the customer's billing account and the dev board before answering, acts through 20 tools, and learns from what the human agents actually send.",
+      "An AI support employee for a B2B software vendor with two product brands. It does the whole job a front-line support hire does, not only the reply: it triages what comes in, checks the customer's billing account and the dev board, answers from the documentation, extends trials and applies discounts through an approval step, files bugs for engineering, escalates to the right person in Slack, follows up when the customer goes quiet, and closes the case. It works three channels: helpdesk tickets, where it drafts and a person sends; the vendor's live chat; and a chat widget of its own, on the marketing site and inside the client's apps, where it answers visitors directly. Each morning it briefs the team on emerging issues, it drafts the knowledge-base articles that are missing, and it learns from what its human colleagues actually send.",
     origin: "Client work",
     status: "In production",
     year: "2026",
     stack: "Next.js 16 · AI SDK v6 · Upstash Redis + Vector · Claude, Gemini, OpenRouter",
     facts: [
       { k: "Client", v: "A B2B software vendor, two brands, one support team. Not named." },
+      { k: "Job", v: "Triage, answer, account and billing actions, bug reports, escalation, follow-up, closing, missing-article drafts, a morning brief" },
       { k: "Channels", v: "Helpdesk tickets (Freshdesk), vendor live chat (Freshchat), and a first-party chat widget" },
       { k: "Systems", v: "Freshdesk, Freshchat, FastSpring billing, monday.com dev board, Slack, two WordPress sites" },
       { k: "Tools", v: "20, several channel-specific" },
@@ -51,7 +52,7 @@ export const WORK: Work[] = [
     problem: [
       "A support team for two products, a helpdesk, a billing provider and a dev board. Most tickets were answerable from documentation that existed, but a person had to read the ticket, find the article, check the account, check whether engineering already knew, write the reply, and remember to follow up.",
       "Live chat had become a ticket-intake form: almost no one answered chats directly, and unanswered chats turned into tickets anyway. The vendor's own chat AI, the weakest responder, sat in front of the strongest one.",
-      "The brief grew from a ticket assistant into the whole front line, with the team's own judgement kept in the loop where it mattered.",
+      "The brief grew from a ticket assistant into a member of the front line that owns a case from start to finish, with the team's own judgement kept in the loop where money or a customer's account is involved.",
     ],
     diagram: {
       alt: "Three channels feed an intake filter and context assembly, then an agent loop with twenty tools; ticket replies go to a human as drafts, chat replies go out live; a reconcile, judge and distil loop turns human decisions into approved learnings, and unanswered themes become draft knowledge-base articles.",
@@ -119,7 +120,7 @@ export const WORK: Work[] = [
     disclosure:
       "The client and its products aren't named. The 242-drafts figure is an adoption fact from the code, not a performance claim. Ticket volumes, deflection rates and the agent-versus-human benchmark results belong to the client and aren't published.",
     metaDescription:
-      "Case study: an AI support agent platform working helpdesk tickets, vendor live chat and its own embeddable chat widget, with 20 tools, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya.",
+      "Case study: an AI support employee that handles support end to end, from triage to follow-up and closing, across helpdesk tickets, vendor live chat and its own embeddable chat widget, with 20 tools, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya.",
   },
 
   {
@@ -240,7 +241,7 @@ export const WORK: Work[] = [
     year: "2025",
     stack: "Next.js · Gemini 2.5 Flash · Redis",
     facts: [
-      { k: "Client", v: "The same vendor as the support agent platform" },
+      { k: "Client", v: "The same vendor as the AI support employee" },
       { k: "Source", v: "Freshdesk REST API v2" },
       { k: "Model", v: "Gemini 2.5 Flash" },
       { k: "Cache", v: "Redis Cloud, one TTL per window" },
@@ -292,7 +293,7 @@ export const WORK: Work[] = [
         ],
       },
     ],
-    disclosure: "Same client as the support agent platform, not named. The dashboard is internal and isn't linked.",
+    disclosure: "Same client as the AI support employee, not named. The dashboard is internal and isn't linked.",
     metaDescription:
       "Case study: a daily support-desk dashboard where the numbers are computed in code and Gemini only names the recurring issues, with per-window caps and request coalescing. Built by Mytrya.",
   },
@@ -416,17 +417,115 @@ export const WORK: Work[] = [
   },
 
   {
+    slug: "narrately",
+    name: "Narrately",
+    line: "Your own books read aloud, with the text in view, narrated on demand and kept for offline listening",
+    summary:
+      "Narrately turns a reader's own EPUB, PDF or TXT into an audiobook they listen to with the text on screen. It rebuilds chapters from the file, leaves out the contents pages, copyright and previews of other books, detects the language from the text itself, and narrates a segment at a time just ahead of the listener, so playback starts in about a second and nothing is paid for until someone listens. Audio is cached by the text it speaks, so identical text in the same voice is narrated once for every reader. The spoken sentence is highlighted, books download for offline listening, and readers pay for monthly narration hours with eSewa.",
+    origin: "Own product",
+    status: "Live · invite-only",
+    year: "2026",
+    stack: "Next.js 16 · Clerk · Upstash Redis · Cloudflare R2 · Kokoro + Gemini TTS · eSewa",
+    url: "https://narrately.mytrya.com",
+    facts: [
+      { k: "Input", v: "EPUB (including EPUB 2 tables of contents), PDF, TXT; non-Latin scripts such as Devanagari" },
+      { k: "Voices", v: "Kokoro-82M for English, Gemini Flash Lite TTS for other languages; CosyVoice2, Fish Audio, OpenAI and ElevenLabs switchable by the admin" },
+      { k: "Storage", v: "Book text, covers and audio in Cloudflare R2; lists, progress, usage and settings in Upstash Redis" },
+      { k: "Reading", v: "Sentence highlight, focus mode, bold word starts, Lexend easy-read type, light, sepia and dark themes" },
+      { k: "Offline", v: "Text, cover and audio in the browser's Cache Storage; a service worker keeps Downloads working; installable" },
+      { k: "Plans", v: "Free, Plus and Pro in hours of narration a month, bought for 1, 3 or 12 months through eSewa" },
+      { k: "Admin", v: "Overview with hours narrated and cost, activity log, readers, narration settings, payments" },
+    ],
+    problem: [
+      "Most books people already own will never get an audiobook, and almost none in Nepali. Generic text-to-speech apps read a file from top to bottom, including the copyright page, the table of contents and the five-page preview of the author's next book.",
+      "Narrating a whole book up front costs money for chapters that may never be played. Narrating in one long request means waiting minutes before the first word.",
+    ],
+    diagram: {
+      alt: "An uploaded book goes straight to R2, is parsed into chapters with front and back matter skipped, its language detected and split into segments; the player asks for each segment just ahead of the listener; audio is looked up by engine, voice and a hash of the text and narrated only on a miss; readers can save books offline.",
+      art: `  EPUB · PDF · TXT ──▶ R2 (browser uploads direct, presigned)
+                             │
+                             ▼
+             parse ──▶ chapters    PDF: lines from glyph positions,
+               │                   repeated headers and footers dropped
+               ▼
+             clean ──▶ skip contents, copyright, praise, previews…
+               │       (listed for the reader, not hidden)
+               ▼
+           language ──▶ from the text: script, then common words
+               │
+               ▼
+           segments    first ≤280 chars, then ≤900, sentence-safe
+                             │
+  player ── current + next two ──▶ audio/<engine>/<voice>/<sha256>.mp3
+                                         │
+                            hit: free ◀──┴──▶ miss: narrate, 32 kbps,
+                                               count against the plan
+  download ──▶ Cache Storage + service worker ──▶ listens with no signal`,
+    },
+    built: [
+      "Importers for EPUB, PDF and TXT. EPUB chapters come from the book's own table of contents, EPUB 2 included. PDFs have no chapters or paragraphs, so lines are rebuilt from text positions, running headers, page numbers and watermarks are removed as lines that repeat across pages, paragraphs are rebuilt from indentation and gaps, and chapters come from the PDF's bookmarks or from headings on a line of their own.",
+      "One cleaning pass for every format: contents, copyright, praise, dedications, acknowledgments, newsletter pages and previews of other books are skipped, tiny title-only sections such as Part One are folded into the chapter after them, and the reader can see what was left out and why. The original file is kept so a book can be re-processed when the importer improves.",
+      "A player that narrates the current segment and prepares the next two, with a sleep timer, lock-screen and headphone controls, progress saved while playing and when the page is hidden, and the audio element claimed inside the first tap because iOS only allows playback that starts there.",
+      "Read-along: the current segment is highlighted and the sentence being spoken is estimated from how far through the segment the voice is, weighted by sentence length. The page follows the voice in calm steps, stops following when the reader scrolls away, and offers a way back.",
+      "Offline downloads in batches, with a progress ring in the header, a confirmation before a download is removed, and unfinished downloads shown as unfinished.",
+      "Invite-only access and suspension enforced by the app, a recently-deleted shelf that keeps books for 30 days, and an admin area with readers, books, hours narrated, estimated cost, daily usage, an activity log and the narration settings.",
+      "Plans paid through eSewa: the phone path opens the eSewa app through a deeplink, the desktop path posts a signed form to eSewa's payment page.",
+    ],
+    decisions: [
+      {
+        heading: "Narrate on demand, and only once",
+        body: [
+          "Audio is stored under the engine, the voice and a hash of the text it speaks. Any reader who plays identical text in the same voice gets the existing file. Replays and cache hits are free and don't count against anyone's allowance; only newly narrated characters do.",
+          "Nothing is narrated until someone presses play, so a book abandoned after chapter two costs two chapters. Playback and prefetch can ask for the same segment at the same moment, so one generation is shared between them.",
+        ],
+      },
+      {
+        heading: "The first segment is short so the voice starts in about a second",
+        body: [
+          "A chapter is cut into segments of up to about 900 characters on sentence boundaries, but the first one is at most 280. Generating 280 characters is quick, and by the time it finishes playing the next two segments are ready. One segment is one request, one file and one highlight, which also keeps the highlight close to the voice.",
+        ],
+      },
+      {
+        heading: "A book's language comes from its text, not its metadata",
+        body: [
+          "Conversion tools stamp \"en\" on books whatever their language, so the declared language is ignored. The text is checked for scripts used by one language first. Nepali, Hindi and Marathi share Devanagari, so they're told apart by their most common small words, and Latin-script languages get the same treatment.",
+          "The language decides which voices are offered and which allowance the narration counts against. Sentences end at । and ॥ as well as full stops, and bold word starts are switched off for scripts where cutting a word in two breaks its letters apart.",
+        ],
+      },
+      {
+        heading: "Plans priced against the heaviest reader",
+        body: [
+          "eSewa can't charge automatically, so paid plans are bought for 1, 3 or 12 months and fall back to Free when they run out. English narration on Kokoro costs about $0.62 per million characters; other languages on Gemini cost many times more, so Free covers English only.",
+          "Every paid plan is checked to stay profitable for a reader who uses all of it on the cheapest period, at double today's Gemini prices, and the admin's narration page shows the margins for whichever engines are selected.",
+          "Nothing eSewa sends to the browser or to the callback URL is trusted on its own. Every change in a payment's status comes from asking eSewa's status API server to server.",
+        ],
+      },
+      {
+        heading: "Small files for phones",
+        body: [
+          "Narration is stored at 32 kbps, clear for speech and half the size of 64. At that bitrate the MP3 encoder works at a lower sample rate, and its built-in resampler output silence, so the audio is resampled first with a low-pass filter so nothing aliases.",
+          "Providers return audio in parts, each with a header stating the length of that part only. Left in, players show a duration of a few seconds and seeking breaks, so only the real audio frames are kept and one header is written for the whole file.",
+        ],
+      },
+    ],
+    disclosure:
+      "My own product, live at narrately.mytrya.com. Access is by invitation, so the link lands on the sign-in page. Readers upload their own files, and each book stays private to the reader who uploaded it. Prices per character are the engines' list prices as of October 2026.",
+    metaDescription:
+      "Case study: an app that reads your own EPUB, PDF and TXT books aloud with sentence-level read-along, on-demand narration cached by content across readers, language detection for Nepali and other scripts, offline downloads, and eSewa-paid plans. Built by Mytrya.",
+  },
+
+  {
     slug: "community-signal",
     name: "Community Signal",
     line: "Two small internal tools that each replaced a weekly manual task",
     summary:
-      "Community Signal is a pair of internal tools for the same client as the support agent platform: a Python miner that finds forum posts where people describe a problem the client's products solve, and a Next.js dashboard that summarises the marketing team's monday.com board.",
+      "Community Signal is a pair of internal tools for the same client as the AI support employee: a Python miner that finds forum posts where people describe a problem the client's products solve, and a Next.js dashboard that summarises the marketing team's monday.com board.",
     origin: "Client work",
     status: "Internal",
     year: "2025",
     stack: "Python · SQLite · Claude / Next.js · monday.com GraphQL · Gemini",
     facts: [
-      { k: "Client", v: "The same vendor as the support agent platform" },
+      { k: "Client", v: "The same vendor as the AI support employee" },
       { k: "Miner", v: "Python, SQLite, the forum's Bettermode API, Claude" },
       { k: "Analyser", v: "Next.js, monday.com GraphQL, Gemini, Recharts" },
       { k: "Run as", v: "CLI: scrape, analyze, export, stats, or run for all three" },
@@ -470,7 +569,7 @@ export const WORK: Work[] = [
         ],
       },
     ],
-    disclosure: "Same client as the support agent platform, not named. Neither tool is complex. Each replaced about an hour of someone's week.",
+    disclosure: "Same client as the AI support employee, not named. Neither tool is complex. Each replaced about an hour of someone's week.",
     metaDescription:
       "Case study: a forum-mining tool with a hand-built keyword index and blunt scoring, plus a monday.com board dashboard, each replacing a weekly manual task. Built by Mytrya.",
   },

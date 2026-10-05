@@ -7,7 +7,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 export const metadata = meta({
   title: "Work",
   description:
-    "Five systems built and run by Mytrya: an AI support agent with 13 tools, a stock research tool that grades its own calls, a daily support dashboard, an AI scene partner, and two internal tools. Architecture described in full, clients unnamed.",
+    "Six systems built and run by Mytrya: an AI support employee that handles cases end to end, an investing copilot that grades its own calls, a daily support dashboard, an AI scene partner, an app that reads your books aloud, and two internal tools. Architecture described in full, clients unnamed.",
   path: "/work",
 });
 
@@ -19,13 +19,13 @@ export default function WorkPage() {
       <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }])} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Work", href: "/work" }]} />
       <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
-        Five systems, each written up as it was built.
+        Six systems, each written up as it was built.
       </h1>
       <div className="prose mt-6">
         <p>
           Each case study covers the problem, how data moves through the system, what was built, and the
           decisions that mattered. Client systems are described without naming the client, and metrics that
-          belong to a client aren&rsquo;t published. The two products of my own are linked.
+          belong to a client aren&rsquo;t published. The three products of my own are linked.
         </p>
       </div>
 

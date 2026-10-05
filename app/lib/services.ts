@@ -22,11 +22,11 @@ export type Service = {
 /** Systems connected in shipped work. The list is evidence, not a boundary. */
 export const INTEGRATIONS: { group: string; items: string[] }[] = [
   { group: "Support and chat", items: ["Freshdesk", "Freshchat", "a first-party chat widget", "Slack", "Telegram"] },
-  { group: "Billing and commerce", items: ["FastSpring", "monday.com marketplace monetisation"] },
+  { group: "Billing and commerce", items: ["FastSpring", "monday.com marketplace monetisation", "eSewa"] },
   { group: "Work tracking and content", items: ["monday.com boards", "WordPress REST", "Bettermode communities"] },
   { group: "Finance and market data", items: ["MeroShare", "ShareSansar", "chukul", "merolagani", "broker web terminals"] },
-  { group: "Models and speech", items: ["Claude", "Gemini and Gemini Live", "OpenAI", "OpenRouter", "ElevenLabs", "Gemini TTS"] },
-  { group: "Infrastructure", items: ["Vercel", "Cloudflare Pages and Workers", "Neon Postgres", "Upstash Redis and Vector", "Redis Cloud", "SQLite", "Vercel Blob", "cron-job.org"] },
+  { group: "Models and speech", items: ["Claude", "Gemini and Gemini Live", "OpenAI", "OpenRouter", "ElevenLabs", "Gemini TTS", "Kokoro"] },
+  { group: "Infrastructure", items: ["Vercel", "Cloudflare Pages and Workers", "Neon Postgres", "Upstash Redis and Vector", "Cloudflare R2", "Clerk", "Redis Cloud", "SQLite", "Vercel Blob", "cron-job.org"] },
 ];
 
 export const INTEGRATIONS_NOTE =
@@ -35,13 +35,14 @@ export const INTEGRATIONS_NOTE =
 export const SERVICES: Service[] = [
   {
     slug: "ai-support-agents",
-    name: "AI support agents",
-    short: "Support agents",
-    metaTitle: "Custom AI support agents for your helpdesk, live chat and website",
+    name: "AI support employees",
+    short: "Support employees",
+    metaTitle: "AI support employees that handle customer support end to end",
     metaDescription:
-      "Custom AI support agents that work your helpdesk, your live chat and a chat widget on your own site, answer from your documentation, act in billing and tracking systems, and learn from what your team actually sends. Built and run in production by Mytrya.",
+      "AI support employees that handle a support case end to end: they work your helpdesk, your live chat and a chat widget on your own site, answer from your documentation, act in billing and tracking systems, and learn from what your team actually sends. Built and run in production by Mytrya.",
     answer: [
-      "An AI support agent from Mytrya is a service that works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It answers what your documentation already covers, checks the customer's account and your dev tracker before it speaks, takes actions in connected systems, and hands the rest to a person with a written summary.",
+      "An AI support employee from Mytrya is a member of your support team that handles a case from the first message to closed, not a chatbot that answers and leaves the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
+      "Like a new hire, it works on its own where the stakes are low and under review where they aren't. You decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that moves money or changes an account.",
       "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
       "The platform I run in production today works three channels with 20 tools across the helpdesk, live chat, billing, the dev board and Slack. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
     ],
