@@ -84,11 +84,11 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
               </section>
             ) : null}
 
-            <section className="mt-14 max-w-[760px] border-t border-ink pt-6">
+            <section className="mt-14 max-w-[760px] border-t border-line-2 pt-6">
               <h2 className="meta">Drawn from</h2>
               <ul className="mt-2">
                 {related.map((w) => (
-                  <li key={w.slug}><Link href={`/work/${w.slug}`} className="row-link px-1"><span className="row-title h-section text-[19px]">{w.name}: <span className="font-serif font-normal text-ink-2">{w.line}</span></span></Link></li>
+                  <li key={w.slug}><Link href={`/work/${w.slug}`} className="row-link px-1"><span className="row-title h-section text-[19px]">{w.name}: <span className="font-normal text-ink-2">{w.line}</span></span></Link></li>
                 ))}
               </ul>
               <h2 className="meta mt-8">More notes</h2>

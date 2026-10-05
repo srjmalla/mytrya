@@ -25,7 +25,7 @@ export const PERSON = {
   /** One line, used in bylines and the Person description. */
   bio: "Builds and runs AI support employees, internal tools and data pipelines for small B2B teams. Based in Kathmandu.",
   /** Path under /public. Empty until a real photo exists. */
-  image: "",
+  image: "/suraj-malla.jpg",
   knowsAbout: [
     "AI agents", "AI customer support", "LLM evaluation", "retrieval-augmented generation", "tool calling",
     "Freshdesk", "Zendesk", "Intercom", "internal tools", "data pipelines", "workflow automation",

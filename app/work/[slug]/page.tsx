@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { WorkVisual } from "../../components/Visuals";
 import { Ascii, Breadcrumbs, Cta, StatusDot, workUp } from "../../components/ui";
 import JsonLd from "../../components/JsonLd";
 import { WORK, getWork } from "../../lib/work";
@@ -71,7 +72,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         />
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Work", href: "/work" }, { name: w.name, href: `/work/${w.slug}` }]} />
 
-        <header className="mt-8 grid gap-10 pb-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <header className="mt-8 grid gap-10 pb-12 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div>
             <p className="meta">
               Case file · {w.origin} · {w.year}
@@ -80,7 +81,9 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
             <p className="mt-4 max-w-[40ch] font-sans text-[21px] leading-[1.35] text-ink-2">{w.line}.</p>
             <p className="mt-8 max-w-[66ch] text-[19px] leading-[1.65]">{w.summary}</p>
           </div>
-          <dl className="self-start border-t border-ink font-mono text-[12.5px]">
+          <div className="flex flex-col gap-4 self-start">
+          <WorkVisual slug={w.slug} />
+          <dl className="panel px-4 py-1 font-mono text-[12.5px]">
             <div className="flex justify-between gap-4 border-b border-rule py-2.5">
               <dt className="text-ink-3">Status</dt>
               <dd><StatusDot up={workUp(w.status)} label={w.status} /></dd>
@@ -110,6 +113,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
               <dd className="mt-1 leading-relaxed text-ink-2">{w.stack}</dd>
             </div>
           </dl>
+          </div>
         </header>
 
         {w.image ? (
@@ -120,7 +124,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         ) : null}
 
         <section className="leaf" aria-labelledby="facts-h">
-          <div className="leaf-label"><h2 id="facts-h" className="font-medium text-ink">Facts</h2></div>
+          <div className="leaf-label"><h2 id="facts-h" className="kicker">Facts</h2></div>
           <dl className="grid gap-px border border-rule bg-rule sm:grid-cols-2">
             {w.facts.map((f) => (
               <div key={f.k} className="bg-paper p-4">
@@ -132,12 +136,12 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         </section>
 
         <section className="leaf" aria-labelledby="problem-h">
-          <div className="leaf-label"><h2 id="problem-h" className="font-medium text-ink">The problem</h2></div>
+          <div className="leaf-label"><h2 id="problem-h" className="kicker">The problem</h2></div>
           <div className="prose-note">{w.problem.map((p, n) => <p key={n}>{p}</p>)}</div>
         </section>
 
         <section className="leaf" aria-labelledby="how-h">
-          <div className="leaf-label"><h2 id="how-h" className="font-medium text-ink">How it works</h2></div>
+          <div className="leaf-label"><h2 id="how-h" className="kicker">How it works</h2></div>
           <div className="min-w-0">
             <Ascii alt={w.diagram.alt} art={w.diagram.art} caption="Data flow, as built" />
             <ul className="prose-note mt-8">{w.built.map((b) => <li key={b}>{b}</li>)}</ul>
@@ -159,7 +163,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
 
         <section className="leaf" aria-labelledby="decisions-h">
           <div className="leaf-label">
-            <h2 id="decisions-h" className="font-medium text-ink">Decisions that mattered</h2>
+            <h2 id="decisions-h" className="kicker">Decisions that mattered</h2>
             <p className="mt-1">{w.decisions.length}</p>
           </div>
           <div>
@@ -173,12 +177,12 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         </section>
 
         <section className="leaf" aria-labelledby="shown-h">
-          <div className="leaf-label"><h2 id="shown-h" className="font-medium text-ink">What isn&rsquo;t shown</h2></div>
+          <div className="leaf-label"><h2 id="shown-h" className="kicker">What isn&rsquo;t shown</h2></div>
           <p className="max-w-[66ch] text-[17px] leading-[1.6] text-ink-2">{w.disclosure}</p>
         </section>
 
         <nav className="leaf" aria-label="Related">
-          <div className="leaf-label"><p className="font-medium text-ink">Related</p></div>
+          <div className="leaf-label"><p className="kicker">Related</p></div>
           <ul className="rule-b">
             {service ? (
               <li>
@@ -199,7 +203,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
             <li>
               <Link href={`/work/${next.slug}`} className="row-link gap-x-6 px-1 sm:grid-cols-[9rem_minmax(0,1fr)]">
                 <span className="meta pt-1">Next case file</span>
-                <span className="row-title h-section text-[19px]">{next.name}: <span className="font-serif font-normal text-ink-2">{next.line}</span></span>
+                <span className="row-title h-section text-[19px]">{next.name}: <span className="font-normal text-ink-2">{next.line}</span></span>
               </Link>
             </li>
           </ul>

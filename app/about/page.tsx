@@ -62,7 +62,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <dl className="self-start border-t border-ink font-mono text-[12.5px]">
+          <dl className="self-start panel px-4 py-1 font-mono text-[12.5px]">
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Local time</dt><dd><KathmanduClock /> · UTC+5:45</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Email</dt><dd><a href={`mailto:${SITE.email}`} className="a">{SITE.email}</a></dd></div>

@@ -36,7 +36,7 @@ export default function ContactForm() {
 
   if (state.status === "sent") {
     return (
-      <div className="border border-ink p-6" role="status">
+      <div className="panel p-6" role="status">
         <p className="h-section text-[22px]">Received.</p>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
           I reply within one working day. If it&rsquo;s urgent, write to{" "}

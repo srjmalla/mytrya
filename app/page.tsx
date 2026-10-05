@@ -1,12 +1,13 @@
 import Link from "next/link";
-import Replay from "./components/Replay";
+import Console from "./components/Console";
+import { DraftDiff, KbAnswer, SlackApproval, WorkVisual } from "./components/Visuals";
 import { Ago, KathmanduClock } from "./components/Live";
-import { Cta, FaqList, Leaf, StatusDot, workUp } from "./components/ui";
-import { SERVICES } from "./lib/services";
+import { Cta, FaqList, StatusDot, workUp } from "./components/ui";
+import { INTEGRATIONS, SERVICES } from "./lib/services";
 import { WORK } from "./lib/work";
 import { NOTES } from "./lib/notes";
 import { FAQ_HOME } from "./lib/faq";
-import { ACTIVITY, fmtDate, productName } from "./lib/activity";
+import { ACTIVITY, byDay, fmtDate, productName } from "./lib/activity";
 import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "./lib/site";
 import { meta } from "./lib/meta";
 
@@ -17,229 +18,293 @@ export const metadata = meta({
   path: "/",
 });
 
+function SecHead({ kicker, title, children }: { kicker: string; title: React.ReactNode; children?: React.ReactNode }) {
+  return (
+    <div className="sec-head">
+      <div>
+        <p className="kicker">{kicker}</p>
+        <h2 className="h-display mt-4 text-[36px] sm:text-[52px]">{title}</h2>
+      </div>
+      {children ? <div className="max-w-[52ch] text-[17px] leading-[1.65] text-ink-2 md:pb-2">{children}</div> : null}
+    </div>
+  );
+}
+
 export default function Home() {
-  const latest = ACTIVITY.log[0];
-  const support = WORK.find((w) => w.slug === "support-agent-platform")!;
+  const days = byDay(ACTIVITY.log).slice(0, 4);
+  const systems = INTEGRATIONS.flatMap((g) => g.items).filter((x) => !/first-party|marketplace|web terminals/.test(x));
+  const featured = ["support-agent-platform", "narrately", "nepse-copilot", "offscript", "support-intelligence", "community-signal"]
+    .map((s) => WORK.find((w) => w.slug === s))
+    .filter((w): w is (typeof WORK)[number] => Boolean(w));
+
   return (
     <>
-    <div className="wrap">
-      {/* ── opening ── */}
-      <section className="pb-14 pt-12 sm:pb-20 sm:pt-20">
-        <p className="meta">
-          {SITE.name} · {PERSON.name} · AI engineer in {SITE.locality}
-        </p>
-        <h1 className="h-display mt-5 max-w-[17ch] text-[42px] sm:text-[60px] lg:text-[68px]">
-          AI support employees and internal tools for B2B teams of 5 to 200.
-        </h1>
-        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
-          <div className="max-w-[60ch] text-[19px] leading-[1.6] text-ink-2">
-            <p>
-              I&rsquo;m {PERSON.name}. The AI support employee I run for a software vendor takes a case from the first
-              message to closed: it checks the customer&rsquo;s billing account and the dev board, answers from the
-              documentation, files bugs, asks a person before it moves money, and follows up when the customer goes
-              quiet.
+      {/* ── hero ── */}
+      <section className="relative overflow-hidden">
+        <div aria-hidden className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[900px]" />
+        <div aria-hidden className="glow pointer-events-none absolute left-1/2 top-[420px] h-[700px] w-[1100px] -translate-x-1/2" />
+        <div className="wrap relative pb-16 pt-16 sm:pt-24">
+          <p className="kicker inline-flex items-center gap-2.5 rounded-full border border-line-2 bg-white/[0.03] px-3 py-1.5">
+            <span className="dot dot-live" aria-hidden />
+            {AVAILABILITY.line} · {PERSON.name}, AI engineer in {SITE.locality}
+          </p>
+          <h1 className="h-display mt-7 max-w-[15ch] text-[46px] sm:text-[72px] lg:text-[84px]">
+            AI support employees that close the case.
+          </h1>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <p className="max-w-[58ch] text-[18px] leading-[1.65] text-ink-2 sm:text-[19px]">
+              Not a chat bubble that answers and hands you the rest. The one I run for a software vendor triages each case,
+              checks the billing account and the dev board, answers from the docs, asks a person before it moves money,
+              files the bug, follows up, and closes it. I build that, and the internal tools around it.
             </p>
-            <p className="mt-4">
-              I build systems like that, and internal tools that compute what your team asks for every morning. Fixed
-              scope, prices on this page, and the person on the call is the person who writes the code.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="btn btn-ink">Start a project <span aria-hidden>&rarr;</span></Link>
-              <Link href="/work" className="btn btn-line">Read the case files</Link>
+              <Link href="/work/support-agent-platform" className="btn btn-line">Read the case file</Link>
             </div>
           </div>
 
-          {/* The live line: true at build time, kept true in the browser. */}
-          <dl className="self-end border-t border-ink font-mono text-[12.5px] leading-[1.5]">
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5">
-              <dt className="text-ink-3">Status</dt>
-              <dd><StatusDot up={AVAILABILITY.open} label={AVAILABILITY.line} /></dd>
-            </div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5">
-              <dt className="text-ink-3">Kathmandu</dt>
-              <dd><KathmanduClock /> · UTC+5:45</dd>
-            </div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5">
-              <dt className="text-ink-3">Overlap</dt>
-              <dd>all of Europe · US mornings</dd>
-            </div>
-            {latest ? (
-              <div className="border-b border-rule py-2.5">
-                <div className="flex justify-between gap-4">
-                  <dt className="text-ink-3">Last shipped</dt>
-                  <dd><Ago iso={latest.date} fallback={fmtDate(latest.date)} /> · {productName(latest.product)}</dd>
-                </div>
-                <dd className="mt-1 text-ink-2">&ldquo;{latest.message}&rdquo;</dd>
-              </div>
-            ) : null}
-            <div className="flex justify-between gap-4 py-2.5">
-              <dt className="text-ink-3">Shipping streak</dt>
-              <dd>{ACTIVITY.streakWeeks} weeks · <Link href="/log" className="a">log</Link></dd>
-            </div>
-          </dl>
+          <div className="mt-14 sm:mt-16">
+            <Console />
+            <p className="meta mt-3 flex flex-wrap justify-between gap-2">
+              <span>Illustrative cases. The channels, tools and approval rules are the production system&rsquo;s; the customers are invented.</span>
+              <span>20 tools · 3 channels · in production</span>
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ── the replay ── */}
-      <Leaf
-        label="Watch a case"
-        id="replay-h"
-        note={<p>Illustrative case. The steps, tools and rules are the real system&rsquo;s; the customer is invented.</p>}
-      >
-        <p className="mb-6 max-w-[62ch] text-[18px] leading-[1.6] text-ink-2">
-          A customer asks for a longer trial on the chat widget. Step through what the AI support employee does,
-          from the message arriving to the case being closed six days later.
-        </p>
-        <Replay />
-        <p className="meta mt-4">
-          The system behind it: <Link href={`/work/${support.slug}`} className="a">{support.name}, the full case file</Link> ·{" "}
-          {support.facts.find((f) => f.k === "Tools")?.v.split(",")[0]} tools · three channels · in production
-        </p>
-      </Leaf>
-
-      {/* ── case files ── */}
-      <Leaf label="Case files" id="work-h" note={<p>{WORK.length} systems, each written up as built. Client names withheld.</p>}>
-        <ol className="rule-b">
-          {WORK.map((w) => (
-            <li key={w.slug}>
-              <Link href={`/work/${w.slug}`} className="row-link gap-x-6 gap-y-1 px-1 sm:grid-cols-[3.5rem_minmax(0,1fr)_10rem]">
-                <span className="meta pt-1">{w.year}</span>
-                <span>
-                  <span className="row-title h-section text-[21px] text-ink">{w.name}</span>
-                  <span className="mt-1 block text-[16.5px] leading-snug text-ink-2">{w.line}</span>
-                </span>
-                <span className="meta sm:pt-1 sm:text-right">
-                  <StatusDot up={workUp(w.status)} label={w.status} />
-                  <span className="block">{w.origin}</span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </Leaf>
-
-      {/* ── running now ── */}
-      <Leaf
-        label="Running now"
-        id="running-h"
-        note={<p>Checked at every build, rebuilt daily. Last check {fmtDate(ACTIVITY.checkedAt)}.</p>}
-      >
-        <div className="grid gap-px border border-rule bg-rule sm:grid-cols-3">
-          {ACTIVITY.products.map((p) => (
-            <div key={p.id} className="flex flex-col bg-paper p-5">
-              <div className="flex items-baseline justify-between gap-3">
-                <Link href={`/work/${p.work}`} className="h-section text-[20px] hover:text-accent">{p.name}</Link>
-                <span className="meta"><StatusDot up={p.status.up} /></span>
-              </div>
-              <a href={p.url} className="meta mt-1 hover:text-ink">{p.url.replace("https://", "")} ↗</a>
-              <dl className="meta mt-5 space-y-1">
-                <div className="flex justify-between gap-3"><dt>Last change</dt><dd className="text-ink-2">{p.lastShipped ? <Ago iso={p.lastShipped} fallback={fmtDate(p.lastShipped)} /> : "–"}</dd></div>
-                <div className="flex justify-between gap-3"><dt>Changes, 30 days</dt><dd className="text-ink-2">{p.changes30d}</dd></div>
-                <div className="flex justify-between gap-3"><dt>Response</dt><dd className="text-ink-2">{p.status.ms} ms</dd></div>
-              </dl>
-            </div>
-          ))}
+      {/* ── connected ── */}
+      <section className="border-y border-line py-7" aria-label="Systems connected in shipped work">
+        <div className="wrap flex flex-col gap-4 md:flex-row md:items-center md:gap-10">
+          <p className="meta flex-none">Connected in shipped work</p>
+          <div className="marquee min-w-0 flex-1">
+            <ul className="marquee-track">
+              {[...systems, ...systems].map((s, i) => (
+                <li key={i} className="whitespace-nowrap text-[15px] font-medium text-ink-3" aria-hidden={i >= systems.length}>{s}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </Leaf>
+      </section>
 
-      {/* ── build log ── */}
-      <Leaf
-        label="Build log"
-        id="log-h"
-        note={<p>From the commit history of my own products. {ACTIVITY.changes30d} changes in the last 30 days.</p>}
-      >
-        <ol className="rule-b">
-          {ACTIVITY.log.slice(0, 8).map((e, n) => (
-            <li key={n} className="rule-t grid gap-x-6 gap-y-0.5 py-3 sm:grid-cols-[7.5rem_8rem_minmax(0,1fr)]">
-              <span className="meta">{fmtDate(e.date)}</span>
-              <span className="meta text-ink-2">{productName(e.product)}</span>
-              <span className="text-[16.5px] leading-snug">{e.message}</span>
-            </li>
-          ))}
-        </ol>
-        <Link href="/log" className="a meta mt-4 inline-block">The full log →</Link>
-      </Leaf>
-
-      {/* ── kinds of work ── */}
-      <Leaf label="Work I take on" id="services-h" note={<p>Anything with an API, a webhook or a web page can be connected.</p>}>
-        <div className="rule-b">
-          {SERVICES.map((s) => (
-            <div key={s.slug} className="rule-t grid gap-x-8 gap-y-2 py-6 md:grid-cols-[minmax(0,1fr)_13rem]">
-              <div>
-                <h3 className="h-section text-[23px]">
-                  <Link href={`/services/${s.slug}`} className="hover:text-accent">{s.name}</Link>
-                </h3>
-                <p className="mt-2 max-w-[62ch] text-[17px] leading-[1.6] text-ink-2">{s.answer[0].split(/(?<=\.)\s/)[0]}</p>
-                <p className="meta mt-3">
-                  Proof:{" "}
-                  {s.proof.map((slug, n) => {
-                    const w = WORK.find((x) => x.slug === slug);
-                    return w ? (
-                      <span key={slug}>
-                        {n ? ", " : ""}
-                        <Link href={`/work/${slug}`} className="a">{w.name}</Link>
-                      </span>
-                    ) : null;
-                  })}
-                </p>
+      <div className="wrap">
+        {/* ── the job ── */}
+        <section className="py-20 sm:py-28" aria-labelledby="job-h">
+          <SecHead kicker="What it does" title={<span id="job-h">The whole job a front&#8209;line support hire does</span>}>
+            Answering is the easy part. The work is checking the account, knowing what engineering already knows, getting
+            sign-off before money moves, and remembering to follow up. Each of those is a tool the agent uses, with a rule
+            about when it may.
+          </SecHead>
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">
+            {[
+              { v: <KbAnswer />, t: "Answers only from your docs", b: "Product specifics come from a retrieved article, cited in the reply. No article, no answer: it asks or escalates." },
+              { v: <SlackApproval />, t: "Asks before money moves", b: "Trial extensions, discounts and refunds are requests a person approves in Slack. Cancelling needs the customer to say so." },
+              { v: <DraftDiff />, t: "Learns from what your team sends", b: "It compares its draft with what was sent, a blind judge decides which was better, and a person approves each learning." },
+            ].map((f) => (
+              <div key={f.t} className="panel flex flex-col p-3">
+                <div className="h-[268px] overflow-hidden">{f.v}</div>
+                <div className="px-2 pb-3 pt-5">
+                  <h3 className="h-section text-[19px]">{f.t}</h3>
+                  <p className="mt-2 text-[15px] leading-[1.6] text-ink-2">{f.b}</p>
+                </div>
               </div>
-              <div className="meta md:text-right">
-                <p className="text-ink">From {usd(s.priceFrom)}</p>
-                <Link href={`/services/${s.slug}`} className="a">What&rsquo;s included →</Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Leaf>
-
-      {/* ── price and terms ── */}
-      <Leaf label="Price and terms" id="price-h" note={<p>Published so you don&rsquo;t have to ask.</p>}>
-        <dl className="grid gap-px border border-rule bg-rule sm:grid-cols-2">
-          {[
-            ["First project", `From ${usd(PRICING.firstProjectFrom)}, fixed. Scoped to ship in weeks, with a dry-run demo each week.`],
-            ["Most projects", `${usd(PRICING.typicalLow)} to ${usd(PRICING.typicalHigh)}, depending on how many systems it touches and how much documentation exists.`],
-            ["After handover", `Optional tuning retainer from ${usd(PRICING.retainerFrom)} a month. Many systems don't need one.`],
-            ["How fast", `Reply within ${PRICING.replyWithin}. ${AVAILABILITY.start}.`],
-            ["What you own", "Everything. Code in your repositories, running in your cloud accounts, with a runbook."],
-            ["If I'm unavailable", "Nothing runs on my infrastructure, and every system ships documented, so another engineer can pick it up."],
-          ].map(([k, v]) => (
-            <div key={k} className="bg-paper p-5">
-              <dt className="font-mono text-[12.5px] text-ink-3">{k}</dt>
-              <dd className="mt-1.5 text-[16.5px] leading-[1.55]">{v}</dd>
-            </div>
-          ))}
-        </dl>
-        <Link href="/process" className="a meta mt-4 inline-block">How a project runs, step by step →</Link>
-      </Leaf>
-
-      {/* ── notes ── */}
-      {NOTES.length ? (
-        <Leaf label="Notes" id="notes-h" note={<p>What building these systems taught me, written down.</p>}>
-          <ol className="rule-b">
-            {NOTES.slice(0, 4).map((n) => (
-              <li key={n.slug}>
-                <Link href={`/notes/${n.slug}`} className="row-link gap-x-6 gap-y-1 px-1 sm:grid-cols-[7.5rem_minmax(0,1fr)]">
-                  <span className="meta pt-1">{fmtDate(n.published)}</span>
-                  <span>
-                    <span className="row-title h-section text-[20px]">{n.title}</span>
-                    <span className="mt-1 block text-[16px] leading-snug text-ink-2">{n.description}</span>
-                  </span>
-                </Link>
+            ))}
+          </div>
+          <ul className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Checks before it speaks", "Billing account and dev board, every time"],
+              ["Files the bug", "Links the customer to the dev item, so the fix reaches them"],
+              ["Follows up", "Re-reads the case after quiet, then closes or re-runs"],
+              ["Briefs the team", "Emerging issues each morning, by arithmetic, not opinion"],
+            ].map(([t, b]) => (
+              <li key={t} className="bg-bg p-5">
+                <p className="text-[15px] font-medium">{t}</p>
+                <p className="mt-1 text-[14px] leading-snug text-ink-3">{b}</p>
               </li>
             ))}
-          </ol>
-        </Leaf>
-      ) : null}
+          </ul>
+        </section>
 
-      {/* ── questions ── */}
-      <Leaf label="Questions" id="faq-h">
-        <FaqList items={FAQ_HOME} />
-        <Link href="/faq" className="a meta mt-4 inline-block">All questions →</Link>
-      </Leaf>
+        {/* ── case files ── */}
+        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="work-h">
+          <SecHead kicker="Case files" title={<span id="work-h">Systems I built and still run</span>}>
+            Six write-ups covering the problem, the architecture and the decisions that mattered, including the ones that
+            didn&rsquo;t work first time. Clients are unnamed; my own products are live and linked.
+          </SecHead>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {featured.map((w, i) => (
+              <Link
+                key={w.slug}
+                href={`/work/${w.slug}`}
+                className={`panel group flex flex-col p-3 transition-colors hover:border-line-2 ${i === 0 ? "md:col-span-2 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-4" : ""}`}
+              >
+                <div className={`overflow-hidden ${i === 0 ? "h-[280px] md:order-2 md:h-full" : "h-[250px]"}`}>
+                  <WorkVisual slug={w.slug} />
+                </div>
+                <div className={`flex flex-col px-2 pb-3 pt-5 ${i === 0 ? "md:justify-center md:p-6" : ""}`}>
+                  <div className="meta flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <StatusDot up={workUp(w.status)} label={w.status} />
+                    <span>{w.origin}</span>
+                    <span>{w.year}</span>
+                  </div>
+                  <h3 className={`h-section mt-3 group-hover:text-lime ${i === 0 ? "text-[30px]" : "text-[22px]"}`}>{w.name}</h3>
+                  <p className={`mt-2 leading-[1.55] text-ink-2 ${i === 0 ? "text-[17px]" : "text-[15.5px]"}`}>{w.line}</p>
+                  <p className="meta mt-4">{w.stack}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-      <div className="h-6" />
-    </div>
-    <Cta />
+        {/* ── shipping ── */}
+        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="log-h">
+          <SecHead kicker="Build log" title={<span id="log-h">Shipping, every week</span>}>
+            Pulled from the commit history of my own products and rebuilt every morning. {ACTIVITY.changes30d} changes in
+            the last 30 days, and something shipped in each of the last {ACTIVITY.streakWeeks} weeks.
+          </SecHead>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {ACTIVITY.products.map((p) => (
+              <a key={p.id} href={p.url} className="panel group p-5 transition-colors hover:border-line-2">
+                <div className="flex items-center justify-between">
+                  <span className="h-section text-[18px] group-hover:text-lime">{p.name}</span>
+                  <span className="meta"><StatusDot up={p.status.up} label={p.status.up ? "Up" : "Down"} /></span>
+                </div>
+                <p className="meta mt-1">{p.url.replace("https://", "")} ↗</p>
+                <dl className="meta mt-5 grid grid-cols-3 gap-2">
+                  <div><dt>Last change</dt><dd className="mt-0.5 text-ink">{p.lastShipped ? <Ago iso={p.lastShipped} fallback={fmtDate(p.lastShipped)} /> : "–"}</dd></div>
+                  <div><dt>30 days</dt><dd className="mt-0.5 text-ink">{p.changes30d} changes</dd></div>
+                  <div><dt>Response</dt><dd className="mt-0.5 text-ink">{p.status.ms} ms</dd></div>
+                </dl>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-4">
+            {days.map(([day, entries]) => (
+              <div key={day} className="bg-bg p-5">
+                <p className="meta"><time dateTime={day}>{fmtDate(entries[0].date)}</time> · {entries.length} {entries.length === 1 ? "change" : "changes"}</p>
+                <ul className="mt-3 space-y-2.5">
+                  {entries.slice(0, 4).map((e, i) => (
+                    <li key={i} className="text-[14px] leading-snug">
+                      <span className="font-mono text-[11px] text-lime">{productName(e.product)}</span>
+                      <span className="mt-0.5 block text-ink-2">{e.message}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <Link href="/log" className="a meta mt-5 inline-block">The full build log →</Link>
+        </section>
+
+        {/* ── who ── */}
+        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="who-h">
+          <div className="grid gap-14 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-16">
+            <figure className="relative">
+              <div className="overflow-hidden rounded-[18px] border border-line-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={PERSON.image} alt={`${PERSON.name}, AI engineer in ${SITE.locality}`} width={720} height={720} loading="lazy" className="block aspect-square w-full object-cover grayscale-[35%]" />
+              </div>
+              <figcaption className="window absolute -bottom-5 left-5 right-5 flex items-center justify-between gap-4 px-4 py-3 font-mono text-[12px] sm:left-8 sm:right-auto">
+                <span className="text-ink">{PERSON.name}</span>
+                <span className="text-ink-3"><KathmanduClock /> in {SITE.locality}</span>
+              </figcaption>
+            </figure>
+            <div className="lg:pt-6">
+              <p className="kicker">Who you&rsquo;d work with</p>
+              <h2 id="who-h" className="h-display mt-4 text-[36px] sm:text-[52px]">One engineer, from the call to production.</h2>
+              <div className="mt-6 max-w-[58ch] space-y-4 text-[17px] leading-[1.7] text-ink-2">
+                <p>
+                  I&rsquo;m {PERSON.name}. For two years I&rsquo;ve built and run an AI support employee for a B2B software
+                  company with two product brands, and on my own time I ship products people use: a rehearsal partner for
+                  actors, an investing copilot for the Nepal Stock Exchange, and an app that reads your books aloud.
+                </p>
+                <p>
+                  The person on the scoping call is the person who writes the code, runs it and answers when it breaks.
+                  That costs capacity, so I take a few projects at a time.
+                </p>
+              </div>
+              <dl className="mt-8 grid max-w-[560px] grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-line bg-line">
+                {[
+                  ["Hours", "All of Europe · US mornings"],
+                  ["Reply", `Within ${PRICING.replyWithin}`],
+                  ["Start", AVAILABILITY.start.replace(/^Start /, "")],
+                  ["You own", "Code, accounts, runbook"],
+                ].map(([k, v]) => (
+                  <div key={k} className="bg-bg p-4">
+                    <dt className="meta">{k}</dt>
+                    <dd className="mt-1 text-[15px]">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/about" className="btn btn-line">More about me</Link>
+                {SITE.linkedin ? <a href={SITE.linkedin} rel="me noopener" className="btn btn-line">LinkedIn ↗</a> : null}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── price ── */}
+        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="price-h">
+          <SecHead kicker="Price" title={<span id="price-h">Fixed scope, published prices</span>}>
+            Agreed in writing after a free 30-minute call. The number doesn&rsquo;t move unless the spec does, and then we
+            write both down first.
+          </SecHead>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {SERVICES.map((s, i) => (
+              <Link key={s.slug} href={`/services/${s.slug}`} className={`panel group flex flex-col p-6 transition-colors hover:border-line-2 ${i === 0 ? "!border-lime/30 bg-[linear-gradient(180deg,rgba(198,242,78,0.06),transparent_60%)]" : ""}`}>
+                <p className="meta">{s.short}</p>
+                <p className="mt-4 text-[15px] text-ink-3">from</p>
+                <p className="h-display text-[44px]">{usd(s.priceFrom)}</p>
+                <h3 className="h-section mt-5 text-[19px] group-hover:text-lime">{s.name}</h3>
+                <p className="mt-2 flex-1 text-[15px] leading-[1.6] text-ink-2">{s.answer[0].split(/(?<=\.)\s/)[0]}</p>
+                <p className="meta mt-6">What&rsquo;s included →</p>
+              </Link>
+            ))}
+          </div>
+          <p className="meta mt-5">
+            Most projects {usd(PRICING.typicalLow)}–{usd(PRICING.typicalHigh)} · optional tuning from {usd(PRICING.retainerFrom)}/month ·{" "}
+            <Link href="/process" className="a">how a project runs</Link>
+          </p>
+        </section>
+
+        {/* ── notes ── */}
+        {NOTES.length ? (
+          <section className="border-t border-line py-20 sm:py-28" aria-labelledby="notes-h">
+            <SecHead kicker="Notes" title={<span id="notes-h">What building these taught me</span>} />
+            <ol className="rule-b mt-10">
+              {NOTES.slice(0, 4).map((n) => (
+                <li key={n.slug}>
+                  <Link href={`/notes/${n.slug}`} className="row-link gap-x-8 gap-y-1 px-2 md:grid-cols-[9rem_minmax(0,1fr)_auto]">
+                    <span className="meta pt-1">{fmtDate(n.published)}</span>
+                    <span>
+                      <span className="row-title h-section text-[21px]">{n.title}</span>
+                      <span className="mt-1.5 block max-w-[70ch] text-[15px] leading-snug text-ink-3">{n.description}</span>
+                    </span>
+                    <span className="meta hidden pt-1 md:block">{n.tags[0]}</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
+        {/* ── questions ── */}
+        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="faq-h">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
+            <div>
+              <p className="kicker">Questions</p>
+              <h2 id="faq-h" className="h-display mt-4 text-[36px] sm:text-[52px]">Before you write</h2>
+              <Link href="/faq" className="a meta mt-6 inline-block">All questions →</Link>
+            </div>
+            <FaqList items={FAQ_HOME} />
+          </div>
+        </section>
+      </div>
+
+      <Cta />
     </>
   );
 }

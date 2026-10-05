@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 function ago(iso: string, now: number) {
   const s = Math.max(0, (now - new Date(iso).getTime()) / 1000);
@@ -10,27 +10,48 @@ function ago(iso: string, now: number) {
   return d === 1 ? "yesterday" : `${d} days ago`;
 }
 
-function useNow(every = 30_000) {
-  const [now, setNow] = useState<number | null>(null);
-  useEffect(() => {
-    setNow(Date.now());
-    const t = setInterval(() => setNow(Date.now()), every);
-    return () => clearInterval(t);
-  }, [every]);
-  return now;
+/** One shared clock for every live element: ticks every 15 s, null during server render. */
+let now = 0;
+const listeners = new Set<() => void>();
+let timer: ReturnType<typeof setInterval> | undefined;
+
+function subscribe(cb: () => void) {
+  listeners.add(cb);
+  if (!timer) {
+    now = Date.now();
+    timer = setInterval(() => {
+      now = Date.now();
+      listeners.forEach((l) => l());
+    }, 15_000);
+  }
+  return () => {
+    listeners.delete(cb);
+    if (!listeners.size && timer) {
+      clearInterval(timer);
+      timer = undefined;
+    }
+  };
+}
+
+function useNow(): number | null {
+  return useSyncExternalStore(
+    subscribe,
+    () => (now ||= Date.now()),
+    () => null,
+  );
 }
 
 /** Relative time, recomputed in the browser so a day-old build still reads correctly. Falls back to the date. */
 export function Ago({ iso, fallback }: { iso: string; fallback: string }) {
-  const now = useNow();
-  return <time dateTime={iso} suppressHydrationWarning>{now ? ago(iso, now) : fallback}</time>;
+  const t = useNow();
+  return <time dateTime={iso} suppressHydrationWarning>{t ? ago(iso, t) : fallback}</time>;
 }
 
 /** The current time in Kathmandu. */
 export function KathmanduClock() {
-  const now = useNow(15_000);
-  const text = now
-    ? new Date(now).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kathmandu" })
+  const t = useNow();
+  const text = t
+    ? new Date(t).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kathmandu" })
     : "--:--";
   return <span suppressHydrationWarning>{text}</span>;
 }

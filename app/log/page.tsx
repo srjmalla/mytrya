@@ -6,7 +6,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
   title: "Build log: what shipped, day by day",
-  description: `Every change shipped to Mytrya's own products, from their commit history: ${ACTIVITY.changes30d} changes in the last 30 days, a ${ACTIVITY.streakWeeks}-week shipping streak. Rebuilt daily.`,
+  description: `Every change shipped to Mytrya's own products, from their commit history: ${ACTIVITY.changes30d} changes in the last 30 days, and something shipped in each of the last ${ACTIVITY.streakWeeks} weeks. Rebuilt daily.`,
   path: "/log",
 });
 
@@ -44,7 +44,7 @@ export default function LogPage() {
         <div className="mt-12">
           {days.map(([day, entries]) => (
             <section key={day} className="leaf !py-6">
-              <div className="leaf-label"><h2 className="font-medium text-ink"><time dateTime={day}>{fmtDate(entries[0].date)}</time></h2><p>{entries.length} {entries.length === 1 ? "change" : "changes"}</p></div>
+              <div className="leaf-label"><h2 className="kicker"><time dateTime={day}>{fmtDate(entries[0].date)}</time></h2><p>{entries.length} {entries.length === 1 ? "change" : "changes"}</p></div>
               <ul>
                 {entries.map((e, i) => {
                   const work = productWork(e.product);

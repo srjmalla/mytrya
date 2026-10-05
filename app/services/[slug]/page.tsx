@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <a href="#proof" className="btn btn-line">See it built</a>
             </div>
           </div>
-          <dl className="self-start border-t border-ink font-mono text-[12.5px]">
+          <dl className="self-start panel px-4 py-1 font-mono text-[12.5px]">
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">From</dt><dd>{usd(s.priceFrom)}, fixed</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Typical</dt><dd>{usd(PRICING.typicalLow)}–{usd(PRICING.typicalHigh)}</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Reply</dt><dd>within {PRICING.replyWithin}</dd></div>
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <Leaf label="Typical stack"><List items={s.stack} /></Leaf>
 
         <section id="proof" className="leaf scroll-mt-8" aria-labelledby="proof-h">
-          <div className="leaf-label"><h2 id="proof-h" className="font-medium text-ink">Built and running</h2></div>
+          <div className="leaf-label"><h2 id="proof-h" className="kicker">Built and running</h2></div>
           <ol className="rule-b">
             {proof.map((w) => (
               <li key={w.slug}>

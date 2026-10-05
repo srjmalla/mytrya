@@ -2,30 +2,30 @@ import { ImageResponse } from "next/og";
 import { PERSON, SITE } from "./lib/site";
 
 export const dynamic = "force-static";
-export const alt = `${SITE.name}: ${SITE.tagline}`;
+export const alt = `${SITE.name}: AI support employees and internal tools, by ${PERSON.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%", height: "100%", display: "flex", flexDirection: "column",
-          justifyContent: "space-between", padding: 72, background: "#f7f5f0", color: "#16181b",
-          fontFamily: "Georgia, serif",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, letterSpacing: 6, textTransform: "uppercase", fontFamily: "monospace" }}>
-          <span>{SITE.name}</span>
-          <span style={{ color: "#83888d" }}>mytrya.com</span>
+      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, background: "#08090a", color: "#eef0ec", fontFamily: "sans-serif" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: 26 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ width: 44, height: 44, borderRadius: 10, background: "#eef0ec", color: "#08090a", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700 }}>m</div>
+            <span style={{ fontWeight: 600 }}>{SITE.name}</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#c6f24e", fontFamily: "monospace", fontSize: 22 }}>
+            <div style={{ width: 12, height: 12, borderRadius: 99, background: "#c6f24e" }} />
+            Taking new projects
+          </div>
         </div>
-        <div style={{ fontSize: 62, lineHeight: 1.12, letterSpacing: -1, maxWidth: 980 }}>
-          AI agents, internal tools and automation for small B2B teams.
+        <div style={{ display: "flex", fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3, maxWidth: 960 }}>
+          AI support employees that close the case.
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, fontFamily: "monospace", color: "#4c5155" }}>
-          <span>{PERSON.name} · {SITE.locality}</span>
-          <span style={{ color: "#9c3b1e" }}>Fixed-scope projects</span>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, fontFamily: "monospace", color: "#a7aba5" }}>
+          <span>{PERSON.name} · AI engineer · {SITE.locality}</span>
+          <span>mytrya.com</span>
         </div>
       </div>
     ),

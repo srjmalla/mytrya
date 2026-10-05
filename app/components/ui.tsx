@@ -18,7 +18,7 @@ export function Leaf({
   return (
     <section className="leaf" aria-labelledby={id}>
       <div className="leaf-label">
-        <Tag id={id} className="font-mono text-[12.5px] font-medium text-ink">{label}</Tag>
+        <Tag id={id} className="kicker">{label}</Tag>
         {note ? <div className="mt-1">{note}</div> : null}
       </div>
       <div className="min-w-0">{children}</div>
@@ -74,9 +74,9 @@ export function FaqList({ items, as: Tag = "h3" }: { items: { q: string; a: stri
       {items.map((f) => (
         <div key={f.q} className="rule-t py-6">
           <dt>
-            <Tag className="h-section text-[20px] text-ink">{f.q}</Tag>
+            <Tag className="h-section text-[19px] text-ink">{f.q}</Tag>
           </dt>
-          <dd className="mt-2.5 max-w-[66ch] text-[17px] leading-[1.6] text-ink-2">{f.a}</dd>
+          <dd className="mt-2.5 max-w-[68ch] text-[16px] leading-[1.65] text-ink-2">{f.a}</dd>
         </div>
       ))}
     </dl>
@@ -86,27 +86,24 @@ export function FaqList({ items, as: Tag = "h3" }: { items: { q: string; a: stri
 /** The closing block on every page: what to send, where, and what happens next. */
 export function Cta({ title = "Tell me about the process that eats someone's week." }: { title?: string }) {
   return (
-    <section className="mt-8 border-t border-ink bg-ink text-paper" aria-labelledby="cta-h">
-      <div className="wrap grid gap-10 py-14 md:grid-cols-[minmax(0,1fr)_320px] md:py-20">
-        <div>
-          <h2 id="cta-h" className="h-display max-w-[20ch] text-[34px] sm:text-[44px]">{title}</h2>
-          <p className="mt-5 max-w-[56ch] text-[18px] leading-[1.6] opacity-80">
-            What it is, who does it, how often, and what goes wrong when it&rsquo;s late. I reply within{" "}
-            {PRICING.replyWithin} with a scoping call or an honest reason it isn&rsquo;t worth automating.
-          </p>
-        </div>
-        <div className="flex flex-col gap-3 md:pt-2">
-          <Link href="/contact" className="btn justify-between border-paper bg-paper text-ink hover:border-accent hover:bg-accent hover:text-paper">
-            Start a project <span aria-hidden>&rarr;</span>
-          </Link>
-          <a href={`mailto:${SITE.email}`} className="btn justify-between border-paper/40 text-paper hover:border-paper">
-            {SITE.email}
-          </a>
-          <p className="mt-2 font-mono text-[12.5px] leading-relaxed opacity-70">
-            {AVAILABILITY.line} · {AVAILABILITY.start}
-            <br />
-            First projects from {usd(PRICING.firstProjectFrom)}
-          </p>
+    <section className="wrap pb-20 pt-6" aria-labelledby="cta-h">
+      <div className="relative overflow-hidden rounded-[20px] border border-line-2 bg-panel px-6 py-14 sm:px-12 sm:py-20">
+        <div aria-hidden className="glow pointer-events-none absolute -right-40 -top-40 h-[520px] w-[720px]" />
+        <div aria-hidden className="grid-bg pointer-events-none absolute inset-0 opacity-60" />
+        <div className="relative grid gap-10 md:grid-cols-[minmax(0,1fr)_300px] md:items-end">
+          <div>
+            <p className="kicker inline-flex items-center gap-2"><span className="dot dot-live" aria-hidden />{AVAILABILITY.line} · {AVAILABILITY.start.toLowerCase()}</p>
+            <h2 id="cta-h" className="h-display mt-5 max-w-[18ch] text-[36px] sm:text-[52px]">{title}</h2>
+            <p className="mt-5 max-w-[56ch] text-[17px] leading-[1.65] text-ink-2">
+              What it is, who does it, how often, and what goes wrong when it&rsquo;s late. I reply within{" "}
+              {PRICING.replyWithin} with a scoping call or an honest reason it isn&rsquo;t worth automating.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Link href="/contact" className="btn btn-ink justify-between">Start a project <span aria-hidden>&rarr;</span></Link>
+            <a href={`mailto:${SITE.email}`} className="btn btn-line justify-between">{SITE.email}</a>
+            <p className="meta mt-1">First projects from {usd(PRICING.firstProjectFrom)} · fixed price</p>
+          </div>
         </div>
       </div>
     </section>

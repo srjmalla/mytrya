@@ -30,7 +30,7 @@ export default function ContactPage() {
         <ContactForm />
 
         <aside className="self-start">
-          <dl className="border-t border-ink font-mono text-[12.5px]">
+          <dl className="panel px-4 py-1 font-mono text-[12.5px]">
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Start</dt><dd>{AVAILABILITY.start.replace(/^Start /, "")}</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Reply</dt><dd>within {PRICING.replyWithin}</dd></div>

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-import { JetBrains_Mono, Schibsted_Grotesk, Source_Serif_4 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fragment_Mono, Mona_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
 import { PERSON, PRICING, SITE } from "./lib/site";
 
-const grotesk = Schibsted_Grotesk({ variable: "--font-grotesk", subsets: ["latin"] });
-const serif = Source_Serif_4({ variable: "--font-serif4", subsets: ["latin"], style: ["normal", "italic"] });
-const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["400", "500"] });
+const mona = Mona_Sans({ variable: "--font-mona", subsets: ["latin"], axes: ["wdth"] });
+const fragment = Fragment_Mono({ variable: "--font-fragment", subsets: ["latin"], weight: "400" });
+
+export const viewport: Viewport = { themeColor: "#08090a", colorScheme: "dark" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -84,8 +85,8 @@ const PERSON_LD = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${grotesk.variable} ${serif.variable} ${mono.variable} h-full`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`${mona.variable} ${fragment.variable} h-full`}>
+      <body className="flex min-h-full flex-col">
         <JsonLd data={[ORG, WEBSITE, PERSON_LD]} />
         <Header />
         <main className="flex-1">{children}</main>
