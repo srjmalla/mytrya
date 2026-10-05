@@ -11,12 +11,7 @@ export default function NavLinks({ className }: { className: string }) {
       {NAV.map((n) => {
         const active = path === n.href || path.startsWith(`${n.href}/`);
         return (
-          <Link
-            key={n.href}
-            href={n.href}
-            aria-current={active ? "page" : undefined}
-            className={`nav-link ${className}`}
-          >
+          <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined} className={className}>
             {n.label}
           </Link>
         );

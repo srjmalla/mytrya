@@ -36,11 +36,11 @@ export default function ContactForm() {
 
   if (state.status === "sent") {
     return (
-      <div className="border rule-heavy p-6" role="status">
-        <p className="font-serif text-[22px] leading-snug">Received.</p>
-        <p className="mt-2 text-[15px] leading-relaxed text-ink-70">
+      <div className="border border-ink p-6" role="status">
+        <p className="h-section text-[22px]">Received.</p>
+        <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
           I reply within one working day. If it&rsquo;s urgent, write to{" "}
-          <a href={`mailto:${SITE.email}`} className="text-mark underline">{SITE.email}</a>.
+          <a href={`mailto:${SITE.email}`} className="text-accent underline">{SITE.email}</a>.
         </p>
       </div>
     );
@@ -62,7 +62,7 @@ export default function ContactForm() {
         <Field label="Company" name="company" autoComplete="organization" hint="Optional" />
         <div>
           <label htmlFor="budget" className="field-label">
-            Budget <span className="text-ink-45">· optional</span>
+            Budget <span className="text-ink-3">· optional</span>
           </label>
           <select id="budget" name="budget" className="field" defaultValue="">
             <option value="">Choose one</option>
@@ -76,24 +76,24 @@ export default function ContactForm() {
         <label htmlFor="message" className="field-label">
           The process
         </label>
-        <p className="mb-2 text-[13.5px] leading-snug text-ink-45">
+        <p className="mb-2 text-[13.5px] leading-snug text-ink-3">
           What it is, who does it, how often, and what goes wrong when it&rsquo;s late. Which systems it touches.
         </p>
         <textarea id="message" name="message" required rows={7} className="field" />
       </div>
 
       {state.status === "error" ? (
-        <p role="alert" className="text-[14px] text-mark">
+        <p role="alert" className="text-[14px] text-accent">
           {state.error} You can also email{" "}
           <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
         </p>
       ) : null}
 
       <div className="flex flex-wrap items-center gap-4">
-        <button type="submit" className="btn btn-primary btn-lg" disabled={state.status === "sending"}>
+        <button type="submit" className="btn btn-ink" disabled={state.status === "sending"}>
           {state.status === "sending" ? "Sending…" : "Send"}
         </button>
-        <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-45">
+        <p className="meta">
           Reply within one working day
         </p>
       </div>
@@ -109,7 +109,7 @@ function Field({
   return (
     <div>
       <label htmlFor={name} className="field-label">
-        {label} {hint ? <span className="text-ink-45">· {hint}</span> : null}
+        {label} {hint ? <span className="text-ink-3">· {hint}</span> : null}
       </label>
       <input id={name} name={name} type={type} required={required} autoComplete={autoComplete} className="field" />
     </div>

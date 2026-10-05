@@ -16,6 +16,10 @@ export type Service = {
   stack: string[];
   /** Slugs from work.ts */
   proof: string[];
+  /** Lowest fixed price for a first project of this kind, USD. */
+  priceFrom: number;
+  /** ISO date the page was last materially changed. */
+  updated: string;
   faqs: Faq[];
 };
 
@@ -37,11 +41,11 @@ export const SERVICES: Service[] = [
     slug: "ai-support-agents",
     name: "AI support employees",
     short: "Support employees",
-    metaTitle: "AI support employees that handle customer support end to end",
+    metaTitle: "AI support employees: custom AI support agents that handle cases end to end",
     metaDescription:
       "AI support employees that handle a support case end to end: they work your helpdesk, your live chat and a chat widget on your own site, answer from your documentation, act in billing and tracking systems, and learn from what your team actually sends. Built and run in production by Mytrya.",
     answer: [
-      "An AI support employee from Mytrya is a member of your support team that handles a case from the first message to closed, not a chatbot that answers and leaves the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
+      "An AI support employee from Mytrya is a custom AI support agent that works as a member of your support team: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
       "Like a new hire, it works on its own where the stakes are low and under review where they aren't. You decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that moves money or changes an account.",
       "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
       "The platform I run in production today works three channels with 20 tools across the helpdesk, live chat, billing, the dev board and Slack. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
@@ -53,7 +57,7 @@ export const SERVICES: Service[] = [
       "You want the agent on your own website or inside your product, not only inside a vendor's console, and you want your team's replies to make it better without anyone filling in a rating.",
     ],
     notFit: [
-      "You only need answers from a help centre inside one product, with no actions in other systems. Intercom Fin or Freshdesk Freddy will be faster to switch on and cheaper to run. I will say so on the call.",
+      "You only need answers from a help centre, with no actions in other systems. Intercom Fin or Freshdesk Freddy will be faster to switch on and cheaper to run at low volume. I will say so on the call.",
       "Your documentation doesn't exist yet. An agent grounded in nothing has nothing to say. Writing the first 30 articles is a different project, and sometimes a better first project.",
     ],
     builds: [
@@ -84,10 +88,12 @@ export const SERVICES: Service[] = [
       "Your helpdesk, chat, billing, tracker and messaging APIs, whichever they are",
     ],
     proof: ["support-agent-platform", "support-intelligence"],
+    priceFrom: 6000,
+    updated: "2026-10-05",
     faqs: [
       {
         q: "Why build a custom support agent instead of using Intercom Fin or Freshdesk Freddy?",
-        a: "Use the vendor's agent if your tickets are answered by your help centre alone and you only need it inside that vendor's console. Build custom when resolving a ticket means acting in other systems (refunds, trials, bug reports, notifications), when you want the agent on your own site or inside your product, when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
+        a: "Use the vendor's agent if your tickets are answered by your help centre alone and the agent never needs to act in other systems. Intercom Fin now runs on other helpdesks too, priced per resolved outcome, and Freshdesk sells Freddy by the session. Build custom when resolving a ticket means acting in other systems (refunds, trials, bug reports, notifications), when you want the agent on your own site or inside your product, when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
       },
       {
         q: "How does the agent avoid making things up?",
@@ -143,6 +149,8 @@ export const SERVICES: Service[] = [
       "Recharts for the few charts that earn their place",
     ],
     proof: ["support-intelligence", "community-signal"],
+    priceFrom: 3000,
+    updated: "2026-10-05",
     faqs: [
       {
         q: "How long does an internal dashboard take to build?",
@@ -194,6 +202,8 @@ export const SERVICES: Service[] = [
       "Vercel Cron, Cloudflare Workers, GitHub Actions",
     ],
     proof: ["nepse-copilot", "community-signal"],
+    priceFrom: 3000,
+    updated: "2026-10-05",
     faqs: [
       {
         q: "Do you use n8n and Make, or write code?",

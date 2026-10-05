@@ -1,7 +1,7 @@
-# Cloudflare Pages configuration. The project is Git-connected: a push to
-# `main` builds and deploys production, any other branch builds a preview.
+# Cloudflare Pages configuration. Deploys run from .github/workflows/deploy.yml:
+# a push to `main` or the daily schedule deploys production (branch hero-image-fix).
 # This file is the source of truth for build output and compatibility date.
-name = "mytrya"
+name = "mytrya-ai-website"
 pages_build_output_dir = "./out"
 compatibility_date = "2026-09-01"
 

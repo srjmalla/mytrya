@@ -1,50 +1,62 @@
-import { SheetHead, Cta, Breadcrumbs } from "../components/Sheet";
-import { ServiceCard, Chips } from "../components/Cards";
+import Link from "next/link";
+import { Breadcrumbs, Cta, Leaf } from "../components/ui";
 import JsonLd from "../components/JsonLd";
 import { SERVICES, INTEGRATIONS, INTEGRATIONS_NOTE } from "../lib/services";
+import { WORK } from "../lib/work";
+import { PRICING, usd } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Services",
-  description:
-    "Three things Mytrya builds for small B2B teams: AI support employees that handle cases end to end, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, fixed price.",
+  title: "Services: AI support employees, internal tools, automation",
+  description: `Three things Mytrya builds for small B2B teams: AI support employees (custom AI support agents) that handle cases end to end, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, from ${usd(PRICING.firstProjectFrom)}.`,
   path: "/services",
 });
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
-      <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
-      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
-        Three kinds of work. Each one has a page that says when it&rsquo;s the wrong choice.
-      </h1>
-      <div className="prose mt-6">
-        <p>
-          Mytrya builds AI support employees, internal tools and data pipelines. Every engagement is fixed
-          scope and fixed price, agreed in writing before work starts, and delivered into your own
-          repositories and cloud accounts.
+    <>
+      <div className="wrap pb-16 pt-10">
+        <JsonLd data={breadcrumbs([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
+        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
+        <h1 className="h-display mt-8 max-w-[20ch] text-[44px] sm:text-[60px]">Three kinds of work</h1>
+        <p className="mt-6 max-w-[62ch] pb-12 text-[19px] leading-[1.6] text-ink-2">
+          Mytrya builds AI support employees, internal tools and data pipelines. Every engagement is fixed scope and fixed
+          price, agreed in writing, and delivered into your own repositories and accounts. First projects start at{" "}
+          {usd(PRICING.firstProjectFrom)}; most land between {usd(PRICING.typicalLow)} and {usd(PRICING.typicalHigh)}.
         </p>
+
+        {SERVICES.map((s) => (
+          <Leaf key={s.slug} label={s.short} note={<p>From {usd(s.priceFrom)}</p>}>
+            <h2 className="h-section text-[30px]">
+              <Link href={`/services/${s.slug}`} className="hover:text-accent">{s.name}</Link>
+            </h2>
+            <p className="mt-4 max-w-[64ch] text-[18px] leading-[1.6]">{s.answer[0]}</p>
+            <p className="meta mt-4">
+              Built and running:{" "}
+              {s.proof.map((slug, n) => {
+                const w = WORK.find((x) => x.slug === slug);
+                return w ? (
+                  <span key={slug}>{n ? ", " : ""}<Link href={`/work/${slug}`} className="a">{w.name}</Link></span>
+                ) : null;
+              })}
+            </p>
+            <Link href={`/services/${s.slug}`} className="btn btn-line mt-6">What&rsquo;s included <span aria-hidden>&rarr;</span></Link>
+          </Leaf>
+        ))}
+
+        <Leaf label="Connected so far" note={<p>Evidence, not a menu.</p>}>
+          <dl className="max-w-[70ch]">
+            {INTEGRATIONS.map((g) => (
+              <div key={g.group} className="rule-t grid gap-x-6 py-3 sm:grid-cols-[13rem_minmax(0,1fr)]">
+                <dt className="meta">{g.group}</dt>
+                <dd className="text-[16px] leading-snug text-ink-2">{g.items.join(", ")}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-4 max-w-[62ch] text-[16px] text-ink-2">{INTEGRATIONS_NOTE}</p>
+        </Leaf>
       </div>
-      <div className="mt-12">
-        <SheetHead label="Services" meta="3" />
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {SERVICES.map((s, i) => <ServiceCard key={s.slug} s={s} index={i} />)}
-        </div>
-      </div>
-      <section className="mt-16">
-        <SheetHead label="Systems connected in shipped work" meta="evidence, not a menu" />
-        <p className="mt-4 max-w-[62ch] text-[16px] leading-relaxed text-ink-70">{INTEGRATIONS_NOTE}</p>
-        <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-          {INTEGRATIONS.map((g) => (
-            <div key={g.group} className="border-t rule-hair pt-3">
-              <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-45">{g.group}</dt>
-              <dd className="mt-2.5"><Chips items={g.items} /></dd>
-            </div>
-          ))}
-        </dl>
-      </section>
       <Cta />
-    </div>
+    </>
   );
 }

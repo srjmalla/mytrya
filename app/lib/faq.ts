@@ -1,4 +1,5 @@
 import type { Faq } from "./services";
+import { PRICING, usd } from "./site";
 
 /** Site-wide FAQ. Answer-first: the first sentence should work on its own. */
 export const FAQ: Faq[] = [
@@ -24,7 +25,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "How much does a project cost?",
-    a: "It depends on how many systems the work touches and how much of your documentation already exists. I give a fixed price after a scoping call and a written spec, not before. The first call is free and takes about 30 minutes.",
+    a: `First projects start at ${usd(PRICING.firstProjectFrom)} and most projects land between ${usd(PRICING.typicalLow)} and ${usd(PRICING.typicalHigh)}, at a fixed price agreed in writing. An AI support employee starts at $6,000; internal tools and automation start at $3,000. Where a project falls depends on how many systems it touches and how much documentation already exists. The scoping call that sets the price is free and takes about 30 minutes.`,
   },
   {
     q: "Why hire one engineer instead of an agency?",
@@ -32,7 +33,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Why build a custom AI support agent instead of using Intercom Fin or Freshdesk Freddy?",
-    a: "Use the vendor's agent if your help centre alone answers your tickets and you only need it inside that vendor's console. Build custom when resolving a ticket means acting in other systems, when you want the agent on your own website or inside your product, when you want to choose the model and keep the data in your own accounts, or when you need every action traceable and rehearsable before it goes live.",
+    a: "Use the vendor's agent if your help centre alone answers your tickets and the agent doesn't need to act in other systems. Intercom Fin now also runs on other helpdesks, including Freshdesk, at a price per resolved outcome. Build custom when resolving a ticket means acting in other systems, when you want the agent on your own website or inside your product, when you want to choose the model and keep the data in your own accounts, or when you need every action traceable and rehearsable before it goes live.",
   },
   {
     q: "How do you keep an AI agent from doing something wrong?",
@@ -65,4 +66,4 @@ export const FAQ: Faq[] = [
 ];
 
 /** The four shown on the home page. */
-export const FAQ_HOME = [0, 3, 4, 8].map((i) => FAQ[i]);
+export const FAQ_HOME = [0, 5, 7, 8].map((i) => FAQ[i]);

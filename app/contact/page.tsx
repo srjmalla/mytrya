@@ -1,12 +1,13 @@
-import { Breadcrumbs, SheetHead } from "../components/Sheet";
+import { Breadcrumbs } from "../components/ui";
+import { KathmanduClock } from "../components/Live";
 import ContactForm from "../components/ContactForm";
 import JsonLd from "../components/JsonLd";
-import { PERSON, SITE } from "../lib/site";
+import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Contact",
-  description: `Describe the process you want automated and ${PERSON.name} replies within one working day with a scoping call or a reason it isn't worth automating. Email ${SITE.email}.`,
+  title: "Contact: start a project with Mytrya",
+  description: `Describe the process you want automated and ${PERSON.name} replies within ${PRICING.replyWithin} with a scoping call or a reason it isn't worth automating. First projects from ${usd(PRICING.firstProjectFrom)}. Email ${SITE.email}.`,
   path: "/contact",
 });
 
@@ -18,45 +19,35 @@ export default function ContactPage() {
     mainEntity: { "@id": `${SITE.url}/#organization` },
   };
   return (
-    <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
+    <div className="wrap pb-20 pt-10">
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]), contactLd]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <h1 className="display mt-4 max-w-3xl text-[36px] leading-[1.1] sm:text-[46px]">
+      <h1 className="h-display mt-8 max-w-[20ch] text-[40px] sm:text-[56px]">
         Describe the process. I&rsquo;ll tell you if it&rsquo;s worth automating.
       </h1>
 
-      <div className="mt-10 grid gap-x-14 gap-y-12 lg:grid-cols-[minmax(0,1fr)_17rem]">
-        <div>
-          <ContactForm />
-        </div>
+      <div className="mt-12 grid gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <ContactForm />
 
-        <aside className="lg:pt-1">
-          <SheetHead label="Or write directly" as="h2" />
-          <a href={`mailto:${SITE.email}`} className="mt-4 inline-block font-mono text-[14px] text-mark underline decoration-1 hover:no-underline">
-            {SITE.email}
-          </a>
+        <aside className="self-start">
+          <dl className="border-t border-ink font-mono text-[12.5px]">
+            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
+            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Start</dt><dd>{AVAILABILITY.start.replace(/^Start /, "")}</dd></div>
+            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Reply</dt><dd>within {PRICING.replyWithin}</dd></div>
+            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Kathmandu</dt><dd><KathmanduClock /> · UTC+5:45</dd></div>
+            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">First projects</dt><dd>from {usd(PRICING.firstProjectFrom)}</dd></div>
+          </dl>
+          <p className="meta mt-8">Or write directly</p>
+          <a href={`mailto:${SITE.email}`} className="a mt-1 inline-block text-[17px]">{SITE.email}</a>
           {SITE.bookingUrl ? (
-            <>
-              <SheetHead label="Or book the call" as="h2" />
-              <a href={SITE.bookingUrl} className="btn btn-ghost mt-4">Pick a time</a>
-            </>
+            <a href={SITE.bookingUrl} className="btn btn-line mt-6">Book the call</a>
           ) : null}
-
-          <div className="mt-10">
-            <SheetHead label="What happens next" as="h2" />
-            <ol className="mt-4 space-y-4 text-[14.5px] leading-snug text-ink-70">
-              <li className="flex gap-3"><span className="font-mono text-[10px] tnum text-ink-45">1</span>I read it and reply within one working day.</li>
-              <li className="flex gap-3"><span className="font-mono text-[10px] tnum text-ink-45">2</span>If it looks like a fit, a 30-minute call. Free.</li>
-              <li className="flex gap-3"><span className="font-mono text-[10px] tnum text-ink-45">3</span>A written spec and a fixed price, or an honest no.</li>
-            </ol>
-          </div>
-
-          <div className="mt-10">
-            <SheetHead label="Hours" as="h2" />
-            <p className="mt-3 text-[14.5px] leading-snug text-ink-70">
-              {SITE.locality}, UTC+5:45. Full overlap with European working hours; US East Coast mornings for calls.
-            </p>
-          </div>
+          <p className="meta mt-8">What happens next</p>
+          <ol className="mt-2 space-y-2 text-[16px] leading-snug text-ink-2">
+            <li>1. I read it and reply within {PRICING.replyWithin}.</li>
+            <li>2. If it looks like a fit, a 30-minute call. Free.</li>
+            <li>3. A written spec and a fixed price, or an honest no.</li>
+          </ol>
         </aside>
       </div>
     </div>

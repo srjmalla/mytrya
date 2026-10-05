@@ -1,21 +1,37 @@
 import type { Metadata } from "next";
 import { SITE } from "./site";
 
-/** Consistent per-page metadata: canonical, OG and Twitter derived from one call. */
-export function meta(opts: { title: string; description: string; path: string; ogTitle?: string }): Metadata {
+/**
+ * Per-page metadata: canonical, OG and Twitter from one call. Page-level openGraph
+ * replaces the root's rather than merging, so the image is set here every time.
+ */
+export function meta(opts: {
+  title: string;
+  description: string;
+  path: string;
+  ogTitle?: string;
+  type?: "website" | "article";
+  published?: string;
+  updated?: string;
+}): Metadata {
   const url = `${SITE.url}${opts.path}`;
+  const image = { url: "/opengraph-image", width: 1200, height: 630, alt: `${SITE.name}` };
   return {
     title: opts.title,
     description: opts.description,
     alternates: { canonical: opts.path },
     openGraph: {
-      title: opts.ogTitle ?? `${opts.title} · ${SITE.name}`,
+      title: opts.ogTitle ?? opts.title,
       description: opts.description,
       url,
       siteName: SITE.name,
-      type: "website",
+      locale: "en_US",
+      images: [image],
+      ...(opts.type === "article"
+        ? { type: "article", publishedTime: opts.published, modifiedTime: opts.updated }
+        : { type: "website" }),
     },
-    twitter: { card: "summary_large_image", title: opts.ogTitle ?? opts.title, description: opts.description },
+    twitter: { card: "summary_large_image", title: opts.ogTitle ?? opts.title, description: opts.description, images: [image.url] },
   };
 }
 

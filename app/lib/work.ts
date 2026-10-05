@@ -12,6 +12,13 @@ export type Work = {
   origin: "Client work" | "Own product";
   status: string;
   year: string;
+  /** Short title for search results and shares (under ~60 characters). */
+  seoTitle: string;
+  /** ISO dates: first published on this site, last materially changed. */
+  published: string;
+  updated: string;
+  /** The service page this case proves. */
+  service?: string;
   stack: string;
   url?: string;
   /** Path under /public, when a real screenshot exists. */
@@ -37,6 +44,10 @@ export const WORK: Work[] = [
     origin: "Client work",
     status: "In production",
     year: "2026",
+    seoTitle: "AI support employee case study: tickets, live chat, own widget",
+    published: "2026-09-20",
+    updated: "2026-10-05",
+    service: "ai-support-agents",
     stack: "Next.js 16 · AI SDK v6 · Upstash Redis + Vector · Claude, Gemini, OpenRouter",
     facts: [
       { k: "Client", v: "A B2B software vendor, two brands, one support team. Not named." },
@@ -132,6 +143,10 @@ export const WORK: Work[] = [
     origin: "Own product",
     status: "Live · sign-in",
     year: "2026",
+    seoTitle: "NEPSE Copilot: an investing copilot that grades its own calls",
+    published: "2026-09-20",
+    updated: "2026-09-20",
+    service: "workflow-automation",
     stack: "Next.js 16 · Neon Postgres · AI SDK v7 · Gemini Live · Telegram",
     url: "https://nepse.mytrya.com",
     facts: [
@@ -239,6 +254,10 @@ export const WORK: Work[] = [
     origin: "Client work",
     status: "In production",
     year: "2025",
+    seoTitle: "Support Intelligence: a daily AI read of a support desk",
+    published: "2026-09-20",
+    updated: "2026-09-20",
+    service: "internal-tools",
     stack: "Next.js · Gemini 2.5 Flash · Redis",
     facts: [
       { k: "Client", v: "The same vendor as the AI support employee" },
@@ -307,6 +326,9 @@ export const WORK: Work[] = [
     origin: "Own product",
     status: "Live",
     year: "2026",
+    seoTitle: "offScript: an AI scene partner for actors",
+    published: "2026-09-20",
+    updated: "2026-09-20",
     stack: "Next.js · Gemini TTS + ElevenLabs · Gemini Live · browser speech · IndexedDB",
     url: "https://offscript.mytrya.com",
     image: {
@@ -425,6 +447,9 @@ export const WORK: Work[] = [
     origin: "Own product",
     status: "Live · invite-only",
     year: "2026",
+    seoTitle: "Narrately: your own books read aloud, with read-along",
+    published: "2026-10-05",
+    updated: "2026-10-05",
     stack: "Next.js 16 · Clerk · Upstash Redis · Cloudflare R2 · Kokoro + Gemini TTS · eSewa",
     url: "https://narrately.mytrya.com",
     facts: [
@@ -523,6 +548,10 @@ export const WORK: Work[] = [
     origin: "Client work",
     status: "Internal",
     year: "2025",
+    seoTitle: "Community Signal: forum mining and a board dashboard",
+    published: "2026-09-20",
+    updated: "2026-09-20",
+    service: "internal-tools",
     stack: "Python · SQLite · Claude / Next.js · monday.com GraphQL · Gemini",
     facts: [
       { k: "Client", v: "The same vendor as the AI support employee" },
