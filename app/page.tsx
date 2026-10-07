@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Console from "./components/Console";
-import { DraftDiff, KbAnswer, SlackApproval, WorkVisual } from "./components/Visuals";
+import { AgentTrace, DraftDiff, KbAnswer, WorkVisual } from "./components/Visuals";
 import { Ago, KathmanduClock } from "./components/Live";
 import { Cta, FaqList, StatusDot, workUp } from "./components/ui";
 import { INTEGRATIONS, SERVICES } from "./lib/services";
@@ -53,9 +53,9 @@ export default function Home() {
           </h1>
           <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <p className="max-w-[58ch] text-[18px] leading-[1.65] text-ink-2 sm:text-[19px]">
-              Not a chat bubble that answers and hands you the rest. The one I run for a software vendor triages each case,
-              checks the billing account and the dev board, answers from the docs, asks a person before it moves money,
-              files the bug, follows up, and closes it. I build that, and the internal tools around it.
+              Not a chat bubble that answers and hands you the rest. The one I run for a software vendor reads each case,
+              works out what it needs to know, goes and gets it from the account and the dev board, acts in those systems,
+              hands off when it should, comes back to follow up, and closes it. I build that, and the internal tools around it.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="btn btn-ink">Start a project <span aria-hidden>&rarr;</span></Link>
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="mt-14 sm:mt-16">
             <Console />
             <p className="meta mt-3 flex flex-wrap justify-between gap-2">
-              <span>Illustrative cases. The channels, tools and approval rules are the production system&rsquo;s; the customers are invented.</span>
+              <span>Illustrative cases. The channels, tools and hand-off rules are the production system&rsquo;s; the customers are invented.</span>
               <span>20 tools · 3 channels · in production</span>
             </p>
           </div>
@@ -91,14 +91,14 @@ export default function Home() {
         {/* ── the job ── */}
         <section className="py-20 sm:py-28" aria-labelledby="job-h">
           <SecHead kicker="What it does" title={<span id="job-h">The whole job a front&#8209;line support hire does</span>}>
-            Answering is the easy part. The work is checking the account, knowing what engineering already knows, getting
-            sign-off before money moves, and remembering to follow up. Each of those is a tool the agent uses, with a rule
-            about when it may.
+            Answering is the easy part. The work is deciding what a case needs, looking it up, acting in the systems
+            around it, knowing when to hand off, and remembering to come back. Each of those is a tool the agent picks
+            up on its own, with a rule about when it may.
           </SecHead>
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {[
+              { v: <AgentTrace />, t: "Decides, then does", b: "One loop, 20 tools. It searches the docs and the dev board, asks the customer what it still needs, files the bug, and schedules its own follow-up. Nobody scripts the order." },
               { v: <KbAnswer />, t: "Answers only from your docs", b: "Product specifics come from a retrieved article, cited in the reply. No article, no answer: it asks or escalates." },
-              { v: <SlackApproval />, t: "Asks before money moves", b: "Trial extensions, discounts and refunds are requests a person approves in Slack. Cancelling needs the customer to say so." },
               { v: <DraftDiff />, t: "Learns from what your team sends", b: "It compares its draft with what was sent, a blind judge decides which was better, and a person approves each learning." },
             ].map((f) => (
               <div key={f.t} className="panel flex flex-col p-3">
@@ -110,12 +110,14 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <ul className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ["Checks before it speaks", "Billing account and dev board, every time"],
+              ["Checks before it speaks", "The account, the dev board and the docs, before it writes a word"],
               ["Files the bug", "Links the customer to the dev item, so the fix reaches them"],
-              ["Follows up", "Re-reads the case after quiet, then closes or re-runs"],
+              ["Hands off with a summary", "To the right person in Slack, with what it found. Anything irreversible waits for a person"],
+              ["Follows up on its own", "Re-opens the case after quiet, reads what changed, then closes or re-runs"],
               ["Briefs the team", "Emerging issues each morning, by arithmetic, not opinion"],
+              ["Writes what's missing", "Questions with no article become draft articles for review"],
             ].map(([t, b]) => (
               <li key={t} className="bg-bg p-5">
                 <p className="text-[15px] font-medium">{t}</p>

@@ -25,7 +25,7 @@ export type Service = {
 
 /** Systems connected in shipped work. The list is evidence, not a boundary. */
 export const INTEGRATIONS: { group: string; items: string[] }[] = [
-  { group: "Support and chat", items: ["Freshdesk", "Freshchat", "a first-party chat widget", "Slack", "Telegram"] },
+  { group: "Support and chat", items: ["helpdesk and live-chat APIs", "a first-party chat widget", "Slack", "Telegram"] },
   { group: "Billing and commerce", items: ["FastSpring", "monday.com marketplace monetisation", "eSewa"] },
   { group: "Work tracking and content", items: ["monday.com boards", "WordPress REST", "Bettermode communities"] },
   { group: "Finance and market data", items: ["MeroShare", "ShareSansar", "chukul", "merolagani", "broker web terminals"] },
@@ -43,16 +43,16 @@ export const SERVICES: Service[] = [
     short: "Support employees",
     metaTitle: "AI support employees: custom AI support agents that handle cases end to end",
     metaDescription:
-      "AI support employees that handle a support case end to end: they work your helpdesk, your live chat and a chat widget on your own site, answer from your documentation, act in billing and tracking systems, and learn from what your team actually sends. Built and run in production by Mytrya.",
+      "AI support employees that handle a support case end to end: they work your helpdesk, your live chat and a chat widget on your own site, decide what each case needs, answer from your documentation, act in the systems around it, follow up on their own, and learn from what your team actually sends. Built and run in production by Mytrya.",
     answer: [
       "An AI support employee from Mytrya is a custom AI support agent that works as a member of your support team: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
-      "Like a new hire, it works on its own where the stakes are low and under review where they aren't. You decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that moves money or changes an account.",
+      "Like a new hire, it decides for itself what a case needs and in what order: search the docs, check the dev board, ask the customer, file the bug, hand off. It works on its own where the stakes are low and under review where they aren't, and you decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that changes an account.",
       "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
-      "The platform I run in production today works three channels with 20 tools across the helpdesk, live chat, billing, the dev board and Slack. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
+      "The platform I run in production today works three channels with one agent loop and 20 tools across the helpdesk, live chat, the dev board, Slack and the account system. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. A scheduled follow-up brings it back to every quiet case. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
     ],
     fit: [
       "You run a B2B product with a helpdesk and a knowledge base that already answers most questions, and a person still has to find and relay the answer.",
-      "Resolving a ticket often means touching another system: issuing a refund, extending a trial, opening a bug for the dev team, notifying a channel.",
+      "Resolving a ticket often means touching another system: opening a bug for the dev team, checking an account, notifying a channel, changing a subscription.",
       "You want to choose the model, keep the data in your own accounts, and see every action the agent takes before it takes it.",
       "You want the agent on your own website or inside your product, not only inside a vendor's console, and you want your team's replies to make it better without anyone filling in a rating.",
     ],
@@ -63,16 +63,16 @@ export const SERVICES: Service[] = [
     builds: [
       "Channel adapters for your helpdesk, your live chat and, if you want it, a first-party chat widget with streaming, file uploads, signed sessions and an origin allowlist",
       "Webhook intake with idempotency, so a retried event can't produce two replies, and a cheap deterministic filter that drops out-of-office replies, bounces and newsletters before the model runs",
-      "Context assembly from the ticket, the conversation, the billing account and any linked tracker items, before the model sees anything",
+      "Context assembly from the ticket, the conversation, the customer's account and any linked tracker items, before the model sees anything",
       "Retrieval over your knowledge base with a reranker and a keyword fallback; a KB store with draft, review, published and archived states, versions, and a daily sync from your docs site",
       "Draft mode: the reply is posted as a private note, a person sends it, and the outcome is read back from what they sent",
-      "A tool layer for the systems the agent may act in, with each tool's inputs sourced from context rather than from the model",
+      "One agent loop over a tool layer for the systems the agent may act in: the model chooses the next tool, each tool's inputs are sourced from context rather than from the model, and a step budget bounds a run",
       "Escalation to Slack or email with a private note on the ticket",
       "A scheduled follow-up that re-reads the ticket after 24 hours and closes or re-runs",
       "An admin console for replaying any ticket in dry-run and reading the full tool trace",
       "Outcome recording: resolved, escalated, reopened, and a list of questions the agent couldn't answer, which becomes your documentation backlog",
       "A learning loop: a blind judge compares your team's reply to the draft, a distiller proposes learnings, a person approves them before they reach the prompt",
-      "A Slack interface for the team, with money-moving commands behind a second admin's confirmation, and a morning brief with emerging issues computed by arithmetic",
+      "A Slack interface for the team, with irreversible account commands behind a second admin's confirmation, and a morning brief with emerging issues computed by arithmetic",
     ],
     safety: [
       "Product specifics come only from a retrieved article, and the reply cites it. No article, no answer; the ticket escalates.",
@@ -85,15 +85,15 @@ export const SERVICES: Service[] = [
       "Vercel AI SDK",
       "Claude, Gemini or OpenAI models, chosen per task and measured",
       "Upstash Redis and Vector, or Postgres with pgvector",
-      "Your helpdesk, chat, billing, tracker and messaging APIs, whichever they are",
+      "Your helpdesk, chat, tracker, messaging and account APIs, whichever they are",
     ],
     proof: ["support-agent-platform", "support-intelligence"],
     priceFrom: 6000,
-    updated: "2026-10-05",
+    updated: "2026-10-07",
     faqs: [
       {
         q: "Why build a custom support agent instead of using Intercom Fin or Freshdesk Freddy?",
-        a: "Use the vendor's agent if your tickets are answered by your help centre alone and the agent never needs to act in other systems. Intercom Fin now runs on other helpdesks too, priced per resolved outcome, and Freshdesk sells Freddy by the session. Build custom when resolving a ticket means acting in other systems (refunds, trials, bug reports, notifications), when you want the agent on your own site or inside your product, when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
+        a: "Use the vendor's agent if your tickets are answered by your help centre alone and the agent never needs to act in other systems. Intercom Fin now runs on other helpdesks too, priced per resolved outcome, and Freshdesk sells Freddy by the session. Build custom when resolving a ticket means acting in other systems (bug reports, account checks, notifications, refunds), when you want the agent on your own site or inside your product, when you need to choose or swap the model, or when you want every action traceable and rehearsable before it goes live. The custom route costs more up front and less per ticket, and you own it.",
       },
       {
         q: "How does the agent avoid making things up?",
@@ -101,7 +101,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Which helpdesk and chat systems can you connect to?",
-        a: "Any with an API. The production build connects Freshdesk, Freshchat, a first-party widget, FastSpring, monday.com and Slack, but the adapters are thin and the agent loop doesn't know which vendor it's talking to. Zendesk, Intercom, HubSpot, Help Scout, Stripe, Chargebee, Linear, Jira, GitHub and Teams are the same shape of work.",
+        a: "Any with an API. The production build connects a helpdesk, its live chat, a first-party widget, monday.com, Slack and the account system, but the adapters are thin and the agent loop doesn't know which vendor it's talking to. Zendesk, Intercom, HubSpot, Help Scout, Stripe, Chargebee, Linear, Jira, GitHub and Teams are the same shape of work.",
       },
       {
         q: "What happens when the agent gets a ticket wrong?",

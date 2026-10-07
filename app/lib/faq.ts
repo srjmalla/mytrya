@@ -17,7 +17,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "Which systems can you integrate with?",
-    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected Freshdesk, Freshchat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Kokoro, eSewa, Clerk, Neon Postgres, Upstash, Redis Cloud, Vercel Blob, Cloudflare R2 and Cloudflare Pages. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
+    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected a helpdesk and its live chat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Kokoro, eSewa, Clerk, Neon Postgres, Upstash, Redis Cloud, Vercel Blob, Cloudflare R2 and Cloudflare Pages. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
   },
   {
     q: "How do projects work commercially?",

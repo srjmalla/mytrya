@@ -37,8 +37,8 @@ export default function AboutPage() {
               <p className="text-ink-2">
                 For the last two years I&rsquo;ve built and operated an AI support employee for a software company: one
                 agent that handles a case end to end across their helpdesk, their live chat and a chat widget of its own on
-                their site and inside their apps. It acts in billing and on the dev board, asks a person before it moves
-                money, and learns from what the human team actually sends. Alongside it sit a daily dashboard that reads
+                their site and inside their apps. It works out what each case needs, acts in the dev board and the account
+                systems, hands off to a person when it should, and learns from what the human team actually sends. Alongside it sit a daily dashboard that reads
                 the same desk for their leadership, and two smaller internal tools. All of it is written up under{" "}
                 <Link href="/work" className="a">Work</Link>, with the client unnamed.
               </p>

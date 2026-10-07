@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 /**
  * The hero: the support console with cases moving through it. Illustrative: the
- * channels, tools, approval rules and console sections are the real system's; the
+ * channels, tools, hand-off rules and console sections are the real system's; the
  * customers and wording are invented. No client data.
  */
 
@@ -24,36 +24,23 @@ const CASES: Case[] = [
   {
     id: 4182,
     channel: "Chat widget",
-    subject: "Can we have another week of trial?",
-    customer: "6-seat trial, ends tomorrow",
+    subject: "Webhooks stopped firing since yesterday",
+    customer: "Pro plan, signed in",
     steps: [
       { tool: "intake", text: "not an auto-reply, not spam · brand A profile" },
-      { tool: "billing.lookup", text: "trial ends tomorrow · 6 seats · 0 extensions" },
-      { tool: "kb.search", text: "“Trials and extensions” · one extension, up to 14 days" },
-      { tool: "request_trial_extension", text: "7 days → #billing-approvals", kind: "wait" },
-      { tool: "approved", text: "support lead, in Slack · billing updated", kind: "done" },
-      { tool: "reply", text: "sent with 2 cited articles" },
+      { tool: "kb.search", text: "“Webhook retries” covers delivery, not silence" },
+      { tool: "devboard.search", text: "nothing open on webhooks" },
+      { tool: "reply", text: "asks for the endpoint and the last delivery ID", kind: "wait" },
+      { tool: "customer", text: "“Endpoint returns 500 since the deploy last night.”" },
+      { tool: "devboard.create", text: "bug filed with payload, account and timeline" },
+      { tool: "reply", text: "sent: cause, workaround, linked to the dev item" },
+      { tool: "follow_up", text: "scheduled: re-read in 24 h" },
     ],
-    outcome: "Resolved · 1 approval",
+    outcome: "Diagnosed · bug filed · following up",
     end: "done",
   },
   {
     id: 4183,
-    channel: "Ticket",
-    subject: "We were charged twice this month",
-    customer: "Annual plan, 14 seats",
-    steps: [
-      { tool: "billing.lookup", text: "2 invoices on 1 Oct, same amount" },
-      { tool: "billing.invoice", text: "second invoice is a duplicate" },
-      { tool: "request_refund", text: "duplicate charge → billing queue", kind: "wait" },
-      { tool: "approved", text: "in the billing approvals queue", kind: "done" },
-      { tool: "draft", text: "private note with the reply · a person sends it" },
-    ],
-    outcome: "Sent by a person · used as-is",
-    end: "done",
-  },
-  {
-    id: 4184,
     channel: "Ticket",
     subject: "CSV export fails on our big board",
     customer: "Pro plan, 40 seats",
@@ -65,6 +52,21 @@ const CASES: Case[] = [
       { tool: "learn", text: "human edited the draft → judged, learning proposed" },
     ],
     outcome: "Linked to dev item · learning proposed",
+    end: "done",
+  },
+  {
+    id: 4184,
+    channel: "Ticket",
+    subject: "Quiet since the workaround · follow-up",
+    customer: "Pro plan, 40 seats · day 2",
+    steps: [
+      { tool: "schedule", text: "24 h since the last reply · agent re-opens the case" },
+      { tool: "ticket.read", text: "no answer from the customer" },
+      { tool: "devboard.read", text: "linked item moved to Done · fix shipped" },
+      { tool: "draft", text: "“the fix is live, here is what changed”" },
+      { tool: "ticket.close", text: "closed with a note · reopens if they write back", kind: "done" },
+    ],
+    outcome: "Closed on its own schedule",
     end: "done",
   },
   {
@@ -95,21 +97,24 @@ const CASES: Case[] = [
   {
     id: 4187,
     channel: "Ticket",
-    subject: "Please cancel our subscription",
-    customer: "Monthly plan, 3 seats",
+    subject: "Login loop after enabling SSO",
+    customer: "Business plan, 120 seats",
     steps: [
-      { tool: "billing.lookup", text: "renews in 6 days" },
-      { tool: "reply", text: "asks them to confirm; never cancels on silence" },
-      { tool: "customer", text: "“Yes, please cancel.”" },
-      { tool: "cancel_subscription", text: "explicit confirmation on record", kind: "done" },
-      { tool: "follow_up", text: "scheduled: check the export they asked about" },
+      { tool: "intake", text: "topic: login loop after SSO · 3rd today" },
+      { tool: "kb.search", text: "no article · devboard.search: nothing open" },
+      { tool: "escalate", text: "Slack, with the 3 tickets summarised → engineering", kind: "wait" },
+      { tool: "engineer", text: "“Reproduced. Rolling back the IdP change.”" },
+      { tool: "devboard.create", text: "item opened · 3 tickets linked" },
+      { tool: "draft", text: "holding reply for all three, as private notes" },
+      { tool: "kb.draft", text: "“Login loop after SSO” proposed for review" },
+      { tool: "brief", text: "tomorrow’s morning brief: 3 tickets, 3.4× the daily average" },
     ],
-    outcome: "Cancelled on explicit request",
+    outcome: "Escalated · 3 tickets linked · article drafted",
     end: "done",
   },
 ];
 
-const SIDEBAR = ["Today", "Chats", "Drafts", "Approvals", "Knowledge base", "Evals", "Analytics"];
+const SIDEBAR = ["Today", "Chats", "Drafts", "Knowledge base", "Evals", "Analytics", "System"];
 const TICK = 1300;
 
 function StatusPill({ kind, label }: { kind: Kind; label: string }) {
@@ -164,9 +169,9 @@ export default function Console() {
   const status: { kind: Kind; label: string } = finished
     ? { kind: selected.c.end, label: selected.c.end === "human" ? "With a person" : "Resolved" }
     : waiting
-      ? { kind: "wait", label: "Waiting on approval" }
+      ? { kind: "wait", label: "Waiting on a person" }
       : { kind: "work", label: "Working" };
-  const approvals = rows.filter((r) => r.progress < r.c.steps.length && r.c.steps[r.progress - 1]?.kind === "wait").length;
+  const waitingOn = rows.filter((r) => r.progress < r.c.steps.length && r.c.steps[r.progress - 1]?.kind === "wait").length;
 
   return (
     <div className="window">
@@ -181,7 +186,7 @@ export default function Console() {
           {SIDEBAR.map((s, i) => (
             <li key={s} className={`flex items-center justify-between rounded-md px-2.5 py-1.5 ${i === 1 ? "bg-white/[0.06] text-ink" : "text-ink-3"}`}>
               {s}
-              {s === "Approvals" && approvals ? <span className="font-mono text-[11px] text-amber">{approvals}</span> : null}
+              {s === "Today" && waitingOn ? <span className="font-mono text-[11px] text-amber">{waitingOn}</span> : null}
               {s === "Chats" ? <span className="font-mono text-[11px] text-ink-3">{rows.length}</span> : null}
             </li>
           ))}
@@ -238,7 +243,7 @@ export default function Console() {
             {!finished ? (
               <li className="grid grid-cols-[1rem_minmax(0,1fr)] gap-2 border-t border-line py-2 text-ink-3">
                 <span className="dot dot-live mt-[5px] !h-[5px] !w-[5px]" />
-                <span>{waiting ? "waiting for a person to approve" : "working…"}</span>
+                <span>{waiting ? "waiting for a person to answer" : "working…"}</span>
               </li>
             ) : (
               <li className="mt-1 border-t border-line pt-3 text-[12px] text-lime">{selected.c.outcome}</li>

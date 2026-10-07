@@ -38,32 +38,32 @@ export const WORK: Work[] = [
   {
     slug: "support-agent-platform",
     name: "AI support employee",
-    line: "An AI member of the support team that takes a case from first message to closed, across tickets, live chat and its own widget",
+    line: "An AI member of the support team that owns a case from first message to closed: it decides what the case needs, acts across the systems involved, and comes back to finish",
     summary:
-      "An AI support employee for a B2B software vendor with two product brands. It does the whole job a front-line support hire does, not only the reply: it triages what comes in, checks the customer's billing account and the dev board, answers from the documentation, extends trials and applies discounts through an approval step, files bugs for engineering, escalates to the right person in Slack, follows up when the customer goes quiet, and closes the case. It works three channels: helpdesk tickets, where it drafts and a person sends; the vendor's live chat; and a chat widget of its own, on the marketing site and inside the client's apps, where it answers visitors directly. Each morning it briefs the team on emerging issues, it drafts the knowledge-base articles that are missing, and it learns from what its human colleagues actually send.",
+      "An AI support employee for a B2B software vendor with two product brands. It does the whole job a front-line support hire does, not only the reply. Given a case, it works out what it needs to know, pulls it from the customer's account, the dev board and the documentation, and then acts: it answers, asks the customer what it still needs, files bugs for engineering, links customers to the fix, escalates to the right person in Slack with a written summary, takes account actions through an approval step, follows up on its own schedule when the customer goes quiet, and closes the case. It works three channels: helpdesk tickets, where it drafts and a person sends; the vendor's live chat; and a chat widget of its own, on the marketing site and inside the client's apps, where it answers visitors directly. Each morning it briefs the team on emerging issues, it drafts the knowledge-base articles that are missing, and it learns from what its human colleagues actually send.",
     origin: "Client work",
     status: "In production",
     year: "2026",
     seoTitle: "AI support employee case study: tickets, live chat, own widget",
     published: "2026-09-20",
-    updated: "2026-10-05",
+    updated: "2026-10-07",
     service: "ai-support-agents",
     stack: "Next.js 16 · AI SDK v6 · Upstash Redis + Vector · Claude, Gemini, OpenRouter",
     facts: [
       { k: "Client", v: "A B2B software vendor, two brands, one support team. Not named." },
-      { k: "Job", v: "Triage, answer, account and billing actions, bug reports, escalation, follow-up, closing, missing-article drafts, a morning brief" },
-      { k: "Channels", v: "Helpdesk tickets (Freshdesk), vendor live chat (Freshchat), and a first-party chat widget" },
-      { k: "Systems", v: "Freshdesk, Freshchat, FastSpring billing, monday.com dev board, Slack, two WordPress sites" },
+      { k: "Job", v: "Triage, diagnosis, answer, actions in connected systems, bug reports, escalation, follow-up, closing, missing-article drafts, a morning brief" },
+      { k: "Channels", v: "Helpdesk tickets, the vendor's live chat, and a first-party chat widget" },
+      { k: "Systems", v: "The helpdesk and its live chat, monday.com dev board, Slack, the account system, two WordPress sites" },
       { k: "Tools", v: "20, several channel-specific" },
       { k: "Models", v: "Claude in production, Gemini in development, others through OpenRouter; two tiers, standard and light" },
       { k: "Retrieval", v: "Upstash Vector, LLM reranker on the light tier, keyword fallback" },
-      { k: "Console", v: "Today, Drafts, Chats, Knowledge base, Evals, Billing approvals, Analytics, System, Testing, Guide" },
+      { k: "Console", v: "Today, Drafts, Chats, Knowledge base, Evals, Approvals, Analytics, System, Testing, Guide" },
       { k: "Scheduled", v: "Follow-up, draft reconciliation, KB sync, daily overview, chat follow-up" },
     ],
     problem: [
-      "A support team for two products, a helpdesk, a billing provider and a dev board. Most tickets were answerable from documentation that existed, but a person had to read the ticket, find the article, check the account, check whether engineering already knew, write the reply, and remember to follow up.",
+      "A support team for two products, a helpdesk, a dev board and an account system. Most tickets were answerable from documentation that existed, but a person had to read the ticket, find the article, check the account, check whether engineering already knew, write the reply, and remember to follow up.",
       "Live chat had become a ticket-intake form: almost no one answered chats directly, and unanswered chats turned into tickets anyway. The vendor's own chat AI, the weakest responder, sat in front of the strongest one.",
-      "The brief grew from a ticket assistant into a member of the front line that owns a case from start to finish, with the team's own judgement kept in the loop where money or a customer's account is involved.",
+      "The brief grew from a ticket assistant into a member of the front line that owns a case from start to finish: it decides what to look up and what to do, and the team's own judgement stays in the loop where a reply goes out unreviewed or an account changes.",
     ],
     diagram: {
       alt: "Three channels feed an intake filter and context assembly, then an agent loop with twenty tools; ticket replies go to a human as drafts, chat replies go out live; a reconcile, judge and distil loop turns human decisions into approved learnings, and unanswered themes become draft knowledge-base articles.",
@@ -84,12 +84,21 @@ export const WORK: Work[] = [
     built: [
       "Three run channels sharing one agent loop, one tool layer, one retrieval path and one analytics store. The first-party widget is an iframe with an HMAC-signed session, SSE streaming, file uploads, and an origin allowlist that drives both CORS and the frame-ancestors policy. Session state lives in the parent page, because Safari partitions iframe storage and a conversation that vanished on reload was the first bug.",
       "Draft mode for tickets: the agent's reply is posted as a private note. The human copies, edits, and sends as themselves. If the customer writes again first, the draft is marked superseded and rewritten; a draft nobody acts on expires after two weeks.",
-      "20 tools: read the ticket, search the knowledge base, reply, note, close; look up the billing account, fetch an invoice, apply a discount, cancel a subscription; search the dev board, read an item's comments, create an item; request a trial extension or a marketplace discount; escalate to Slack, notify a partner manager; and on the chat channel, save visitor identity, request a human, open a ticket, add to a ticket.",
+      "One agent loop with 20 tools, and the model chooses the order. Read the ticket, search the knowledge base, reply, note, close; search the dev board, read an item's comments, create an item; escalate to Slack, notify a partner manager; look up the account, fetch an invoice, and take account actions that go through an approval step; and on the chat channel, save visitor identity, request a human, open a ticket, add to a ticket. A step budget and the write gates bound what a run can do.",
       "A knowledge base store with a lifecycle: draft, in review, published, archived. Only published articles are in the vector index. Every edit bumps a version and keeps the last 20. A daily sync mirrors two WordPress sites into it, with a guard against mass deletion when a site returns too few pages and a guard against mass creation when it returns a flood.",
-      "A Slack interface: the team mentions the agent in the escalation channel to check a ticket, list open tickets, extend a trial, apply a discount, or cancel an account, which needs a second admin to confirm. A direct-message assistant that can only read, by construction.",
-      "A console for the team: a morning brief with emerging issues, a drafts audit trail, a chat inbox with settings and an install guide, the knowledge base with review and history, an evals page for approving learnings, a billing approvals queue, analytics with cost per model and an events log, a system page that says what the agent can do right now, and a test playbook.",
+      "Scheduled re-entry: a follow-up job re-reads each quiet case after 24 hours and closes it, re-runs the agent, or leaves it, depending on what changed; a reconciliation job reads back what the team sent; a chat follow-up does the same for the widget; a daily job builds the morning brief; a sync mirrors the docs. The agent owns the case between human turns.",
+      "A Slack interface: the team mentions the agent in the escalation channel to check a ticket, list open tickets, or take account actions, the irreversible ones behind a second admin's confirmation. A direct-message assistant that can only read, by construction.",
+      "A console for the team: a morning brief with emerging issues, a drafts audit trail, a chat inbox with settings and an install guide, the knowledge base with review and history, an evals page for approving learnings, an approvals queue, analytics with cost per model and an events log, a system page that says what the agent can do right now, and a test playbook.",
     ],
     decisions: [
+      {
+        heading: "The model picks the next step; the tools decide what a step may do",
+        body: [
+          "Nothing routes a case to a script. Context is assembled first, from the ticket, the conversation, the account and any linked dev items, and then one loop runs with all 20 tools in reach. Whether a case needs a knowledge-base search, a look at the dev board, a question back to the customer, a bug filed, or a person, is the model's call on each turn, and the trace records why.",
+          "What bounds it is the tool layer, not the prompt. Each tool reads its identifiers from the assembled context, each integration has its own write gate, a run has a step budget, and anything irreversible becomes a request. That is what makes it safe to let the model choose.",
+          "Escalation is a tool like any other, with a written summary as its input, so handing a case to a person is a decision the agent makes and documents, not a failure state it falls into.",
+        ],
+      },
       {
         heading: "Feedback is read from what people actually did, not asked for",
         body: [
@@ -107,9 +116,9 @@ export const WORK: Work[] = [
         ],
       },
       {
-        heading: "Actions that cost money are requests, not actions",
+        heading: "Irreversible actions are requests, not actions",
         body: [
-          "Trial extensions and discounts send a request that a person approves, in Slack or in the billing queue, before anything runs against the billing provider. Cancelling an account from Slack requires a second admin to confirm. Cancelling a subscription in a retention flow requires the customer to say so explicitly; the agent never cancels on silence.",
+          "Most of what the agent does it does on its own: search, read, file, link, draft, escalate, schedule. The actions that change a customer's account send a request that a person approves, in Slack or in the approvals queue, before anything runs. Cancelling an account from Slack requires a second admin to confirm, and in a retention flow the customer has to say so explicitly; the agent never cancels on silence.",
           "Ticket and account identifiers come from the assembled context, never from model output. Dry-run is the default. A master stub switch returns canned data from every external system, and each integration has its own write gate, so the systems went live one at a time.",
           "The system page in the console shows, for every capability, a state, a plain sentence about what it means for a customer, and the setting that changes it. Five LIVE badges had turned out to be the wrong question: a badge can't tell reading a board from writing to it.",
         ],
@@ -131,7 +140,7 @@ export const WORK: Work[] = [
     disclosure:
       "The client and its products aren't named. The 242-drafts figure is an adoption fact from the code, not a performance claim. Ticket volumes, deflection rates and the agent-versus-human benchmark results belong to the client and aren't published.",
     metaDescription:
-      "Case study: an AI support employee that handles support end to end, from triage to follow-up and closing, across helpdesk tickets, vendor live chat and its own embeddable chat widget, with 20 tools, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya.",
+      "Case study: an AI support employee that owns a case end to end, deciding what to look up and what to do across helpdesk tickets, vendor live chat and its own embeddable chat widget, with one agent loop, 20 tools, scheduled follow-up, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya.",
   },
 
   {
@@ -261,7 +270,7 @@ export const WORK: Work[] = [
     stack: "Next.js · Gemini 2.5 Flash · Redis",
     facts: [
       { k: "Client", v: "The same vendor as the AI support employee" },
-      { k: "Source", v: "Freshdesk REST API v2" },
+      { k: "Source", v: "The helpdesk's REST API" },
       { k: "Model", v: "Gemini 2.5 Flash" },
       { k: "Cache", v: "Redis Cloud, one TTL per window" },
       { k: "Schedule", v: "Daily cron at 08:00 Kathmandu" },

@@ -15,23 +15,26 @@ function Frame({ title, children, className = "min-h-full" }: { title: string; c
   );
 }
 
-export function SlackApproval() {
+export function AgentTrace() {
+  const steps: [string, string, "done" | "wait"][] = [
+    ["kb.search", "“Webhook retries” · covers delivery, not silence", "done"],
+    ["devboard.search", "nothing open on webhooks", "done"],
+    ["reply", "asks for the endpoint and the last delivery ID", "done"],
+    ["customer", "“Endpoint returns 500 since last night’s deploy.”", "done"],
+    ["devboard.create", "bug filed · payload, account, timeline", "done"],
+    ["follow_up", "re-read in 24 h", "wait"],
+  ];
   return (
-    <Frame title="#billing-approvals">
-      <div className="flex gap-3">
-        <span className="grid h-8 w-8 flex-none place-items-center rounded-md bg-lime text-[13px] font-bold text-bg">m</span>
-        <div className="min-w-0 text-[13px]">
-          <p><span className="font-semibold">support agent</span> <span className="font-mono text-[11px] text-ink-3">14:03</span></p>
-          <p className="mt-1 text-ink-2">Trial extension requested · 7 days</p>
-          <div className="mt-2 rounded-md border border-line bg-white/[0.02] p-2.5 font-mono text-[11.5px] leading-relaxed text-ink-3">
-            account: from session<br />history: 0 extensions<br />reason: setting up board sync
-          </div>
-          <div className="mt-3 flex gap-2">
-            <span className="rounded-md bg-lime px-3 py-1 text-[12px] font-semibold text-bg">Approve</span>
-            <span className="rounded-md border border-line-2 px-3 py-1 text-[12px] text-ink-2">Decline</span>
-          </div>
-        </div>
-      </div>
+    <Frame title="agent loop · #4182">
+      <ol className="font-mono text-[11.5px] leading-[1.5]">
+        {steps.map(([tool, text, k]) => (
+          <li key={tool + text} className="grid grid-cols-[1rem_minmax(0,1fr)] gap-2 border-t border-line py-1.5 first:border-t-0">
+            <span className={k === "wait" ? "text-amber" : "text-lime"}>{k === "wait" ? "◷" : "✓"}</span>
+            <span className="min-w-0 truncate"><span className="text-ink">{tool}</span><span className="text-ink-3"> · {text}</span></span>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-2 font-mono text-[11px] text-ink-3">6 steps · 2 systems written · 1 question</p>
     </Frame>
   );
 }
@@ -43,7 +46,7 @@ export function KbAnswer() {
       <ul className="mt-2 space-y-1.5 font-mono text-[11.5px]">
         <li className="flex justify-between rounded-md border border-lime/30 bg-lime/[0.06] px-2.5 py-1.5"><span className="text-ink">Inviting your team</span><span className="text-lime">0.93</span></li>
         <li className="flex justify-between rounded-md border border-line px-2.5 py-1.5"><span className="text-ink-2">Roles and permissions</span><span className="text-ink-3">0.71</span></li>
-        <li className="flex justify-between rounded-md border border-line px-2.5 py-1.5 opacity-60"><span className="text-ink-3">Billing for seats</span><span className="text-ink-3">0.42</span></li>
+        <li className="flex justify-between rounded-md border border-line px-2.5 py-1.5 opacity-60"><span className="text-ink-3">Seat limits per plan</span><span className="text-ink-3">0.42</span></li>
       </ul>
       <p className="mt-3 text-[13px] leading-relaxed text-ink-2">Go to Settings → Team and choose Invite… <span className="text-lime underline decoration-lime/40">source</span></p>
     </Frame>
@@ -73,10 +76,10 @@ function SupportVisual() {
     <Frame title="support console · today">
       <ul className="space-y-1.5 text-[12.5px]">
         {[
-          ["#4182", "Trial extension", "Waiting on approval", "wait"],
-          ["#4183", "Charged twice", "Resolved", "done"],
-          ["#4184", "CSV export fails", "Linked to dev item", "done"],
+          ["#4182", "Webhooks stopped firing", "Bug filed · following up", "done"],
+          ["#4184", "Quiet since the workaround", "Fix shipped · closed", "done"],
           ["#4186", "SSO roadmap?", "With a person", "human"],
+          ["#4187", "Login loop after SSO", "Waiting on engineering", "wait"],
         ].map(([id, s, st, k]) => (
           <li key={id} className="flex items-center justify-between gap-3 rounded-md border border-line px-2.5 py-2">
             <span className="min-w-0 truncate"><span className="font-mono text-[11px] text-ink-3">{id}</span> <span className="text-ink-2">{s}</span></span>
