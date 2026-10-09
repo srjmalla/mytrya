@@ -13,7 +13,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "What kinds of projects do you take?",
-    a: "Three kinds. AI support employees that handle support end to end inside whatever helpdesk and chat you run, or as a widget on your own site: they triage, answer, act in connected systems, escalate, follow up and close. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
+    a: "Three kinds. AI employees that take a whole job off your team and work on their own: the one in production handles support end to end inside whatever helpdesk and chat you run, or as a widget on your own site, and the same loop qualifies leads, processes invoices and drafts outreach. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
   },
   {
     q: "Which systems can you integrate with?",
@@ -25,7 +25,7 @@ export const FAQ: Faq[] = [
   },
   {
     q: "How much does a project cost?",
-    a: `First projects start at ${usd(PRICING.firstProjectFrom)} and most projects land between ${usd(PRICING.typicalLow)} and ${usd(PRICING.typicalHigh)}, at a fixed price agreed in writing. An AI support employee starts at $6,000; internal tools and automation start at $3,000. Where a project falls depends on how many systems it touches and how much documentation already exists. The scoping call that sets the price is free and takes about 30 minutes.`,
+    a: `First projects start at ${usd(PRICING.firstProjectFrom)} and most projects land between ${usd(PRICING.typicalLow)} and ${usd(PRICING.typicalHigh)}, at a fixed price agreed in writing. An AI employee starts at $6,000; internal tools and automation start at $3,000. Where a project falls depends on how many systems it touches and how much documentation already exists. The scoping call that sets the price is free and takes about 30 minutes.`,
   },
   {
     q: "Why hire one engineer instead of an agency?",

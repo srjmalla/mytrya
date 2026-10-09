@@ -21,7 +21,7 @@ export default function Footer() {
         <div>
           <p className="font-sans text-[19px] font-bold tracking-[-0.02em]">{SITE.name}</p>
           <p className="mt-3 max-w-[36ch] leading-relaxed text-ink-2">
-            {PERSON.name}&rsquo;s practice in {SITE.locality}. AI support employees, internal tools and data pipelines for
+            {PERSON.name}&rsquo;s practice in {SITE.locality}. AI employees, internal tools and data pipelines for
             small B2B teams.
           </p>
           <a href={`mailto:${SITE.email}`} className="a mt-4 inline-block">{SITE.email}</a>

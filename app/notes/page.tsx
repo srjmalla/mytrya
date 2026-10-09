@@ -6,7 +6,7 @@ import { fmtDate } from "../lib/activity";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Notes on building AI support agents and internal tools",
+  title: "Notes on building AI employees and internal tools",
   description:
     "Technical notes from building and running AI systems in production: tool design, measuring agents without ratings, choosing between Intercom Fin, Freddy and a custom agent, and approval steps for actions that touch money.",
   path: "/notes",

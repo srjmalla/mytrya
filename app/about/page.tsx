@@ -10,7 +10,7 @@ import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
   title: `${PERSON.name}, AI engineer in Kathmandu`,
-  description: `${PERSON.name} runs Mytrya, an AI engineering practice in Kathmandu. He builds and runs AI support employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
+  description: `${PERSON.name} runs Mytrya, an AI engineering practice in Kathmandu. He builds and runs AI employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
   path: "/about",
   image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}` },
 });

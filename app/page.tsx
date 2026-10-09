@@ -12,7 +12,7 @@ import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "./lib/site";
 import { meta } from "./lib/meta";
 
 export const metadata = meta({
-  title: `${SITE.name} · AI support employees and internal tools for B2B teams`,
+  title: `${SITE.name} · AI employees that do the whole job, for B2B teams`,
   ogTitle: `${SITE.name} · ${PERSON.name}, AI engineer`,
   description: SITE.description,
   path: "/",
@@ -49,13 +49,14 @@ export default function Home() {
             {AVAILABILITY.line} · {PERSON.name}, AI engineer in {SITE.locality}
           </p>
           <h1 className="h-display mt-7 max-w-[15ch] text-[46px] sm:text-[72px] lg:text-[84px]">
-            AI support employees that close the case.
+            AI employees that do the whole job.
           </h1>
           <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <p className="max-w-[58ch] text-[18px] leading-[1.65] text-ink-2 sm:text-[19px]">
-              Not a chat bubble that answers and hands you the rest. The one I run for a software vendor reads each case,
-              works out what it needs to know, goes and gets it from the account and the dev board, acts in those systems,
-              hands off when it should, comes back to follow up, and closes it. I build that, and the internal tools around it.
+              Not a chat bubble that answers and hands you the rest. An AI employee takes a job off your team, works on
+              its own, and hands off to a person when it should, so the people around it do the work only people can. The
+              one I run for a software vendor does support: it reads each case, gets what it needs from the account and
+              the dev board, acts in those systems, follows up, and closes it. I build that, and the tools around it.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="btn btn-ink">Start a project <span aria-hidden>&rarr;</span></Link>
@@ -90,8 +91,8 @@ export default function Home() {
       <div className="wrap">
         {/* ── the job ── */}
         <section className="py-20 sm:py-28" aria-labelledby="job-h">
-          <SecHead kicker="What it does" title={<span id="job-h">The whole job a front&#8209;line support hire does</span>}>
-            Answering is the easy part. The work is deciding what a case needs, looking it up, acting in the systems
+          <SecHead kicker="In production: support" title={<span id="job-h">The whole job a front&#8209;line support hire does</span>}>
+            Support was the first job I gave an AI employee. Answering is the easy part. The work is deciding what a case needs, looking it up, acting in the systems
             around it, knowing when to hand off, and remembering to come back. Each of those is a tool the agent picks
             up on its own, with a rule about when it may.
           </SecHead>

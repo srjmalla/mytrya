@@ -4,9 +4,9 @@ export const SITE = {
   url: "https://mytrya.com",
   email: "malla.srj@mytrya.com",
   /** Used in <title> templates and the Organization description. */
-  tagline: "AI agents, internal tools and automation for small B2B teams",
+  tagline: "AI employees, internal tools and automation for small B2B teams",
   description:
-    "Mytrya is an AI engineering practice run by Suraj Malla in Kathmandu. It builds AI support employees that handle support end to end, internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
+    "Mytrya is an AI engineering practice run by Suraj Malla in Kathmandu. It builds AI employees: agents that take a whole job off a team, work on their own, and hand off to a person when they should. The one in production today handles customer support end to end. It also builds internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
   locality: "Kathmandu",
   country: "NP",
   timezone: "Asia/Kathmandu",
@@ -23,13 +23,13 @@ export const PERSON = {
   familyName: "Malla",
   jobTitle: "AI engineer",
   /** One line, used in bylines and the Person description. */
-  bio: "Builds and runs AI support employees, internal tools and data pipelines for small B2B teams. Based in Kathmandu.",
+  bio: "Builds and runs AI employees, internal tools and data pipelines for small B2B teams. Based in Kathmandu.",
   /** Path under /public. Empty until a real photo exists. */
   image: "/suraj-malla.jpg",
   imageWidth: 720,
   imageHeight: 720,
   knowsAbout: [
-    "AI agents", "AI customer support", "LLM evaluation", "retrieval-augmented generation", "tool calling",
+    "AI employees", "AI agents", "AI customer support", "LLM evaluation", "retrieval-augmented generation", "tool calling",
     "Freshdesk", "Zendesk", "Intercom", "internal tools", "data pipelines", "workflow automation",
     "text-to-speech", "Next.js", "TypeScript", "Postgres", "Redis", "Claude", "Gemini", "OpenAI",
   ],

@@ -97,18 +97,20 @@ export const SYSTEM_TYPES: SystemType[] = [
 export const SERVICES: Service[] = [
   {
     slug: "ai-support-agents",
-    name: "AI support employees",
-    short: "Support employees",
-    metaTitle: "AI support employees: custom AI support agents that handle cases end to end",
+    name: "AI employees",
+    short: "AI employees",
+    metaTitle: "AI employees: custom AI agents that do a whole job, from support to back office",
     metaDescription:
-      "AI support employees that handle a support case end to end: they work your helpdesk, your live chat and a chat widget on your own site, decide what each case needs, answer from your documentation, act in the systems around it, follow up on their own, and learn from what your team actually sends. Built and run in production by Mytrya.",
+      "AI employees from Mytrya take a whole job off your team and work on their own. The one in production handles support end to end: it works the helpdesk, live chat and a chat widget on your own site, decides what each case needs, acts in the systems around it, follows up, and learns from what your team sends. The same loop runs lead qualification, invoice processing and outreach.",
     answer: [
-      "An AI support employee from Mytrya is a custom AI support agent that works as a member of your support team: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
+      "An AI employee from Mytrya is a custom AI agent that takes a whole job off your team, works on its own, and hands off to a person only when it should. The one running in production today is a support employee: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
       "Like a new hire, it decides for itself what a case needs and in what order: search the docs, check the dev board, ask the customer, file the bug, hand off. It works on its own where the stakes are low and under review where they aren't, and you decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that changes an account.",
       "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
       "The platform I run in production today works three channels with one agent loop and 20 tools across the helpdesk, live chat, the dev board, Slack and the account system. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. A scheduled follow-up brings it back to every quiet case. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
+      "Support is the first job, not the only one. The same loop with different tools and rules qualifies an inbound lead and books the call, reads invoices out of a mailbox into the ledger, and researches a prospect and drafts the first message. Those shapes are listed on the services page, and each is scoped the same way: the job, the systems it touches, and the rule for when it must hand off.",
     ],
     fit: [
+      "A job in your company is done by a person following a known process across several systems, and you want it done the same way at 2am.",
       "You run a B2B product with a helpdesk and a knowledge base that already answers most questions, and a person still has to find and relay the answer.",
       "Resolving a ticket often means touching another system: opening a bug for the dev team, checking an account, notifying a channel, changing a subscription.",
       "You want to choose the model, keep the data in your own accounts, and see every action the agent takes before it takes it.",

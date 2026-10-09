@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { PERSON, SITE } from "./lib/site";
 
 export const dynamic = "force-static";
-export const alt = `${SITE.name}: AI support employees and internal tools, by ${PERSON.name}`;
+export const alt = `${SITE.name}: AI employees and internal tools, by ${PERSON.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,7 +21,7 @@ export default function Image() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3, maxWidth: 960 }}>
-          AI support employees that close the case.
+          AI employees that do the whole job.
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, fontFamily: "monospace", color: "#a7aba5" }}>
           <span>{PERSON.name} · AI engineer · {SITE.locality}</span>
