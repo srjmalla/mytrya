@@ -36,6 +36,64 @@ export const INTEGRATIONS: { group: string; items: string[] }[] = [
 export const INTEGRATIONS_NOTE =
   "If it has an API, a webhook, or even just a web page, it can be connected. The list above is what shipped work has touched so far, not a menu.";
 
+export type SystemType = {
+  name: string;
+  problem: string;
+  build: string;
+  fits: string;
+  stack: string;
+  /** Slug from SERVICES this falls under. */
+  service: string;
+  /** True when a version of this is already built and running. */
+  built?: boolean;
+};
+
+/** Named shapes of system Mytrya builds. Each is scoped and priced under one of the three services. */
+export const SYSTEM_TYPES: SystemType[] = [
+  {
+    name: "Inbound lead converter",
+    problem: "A lead writes in on Facebook, Instagram, WhatsApp or web chat, and the business replies hours later. Most of those leads have gone cold by then.",
+    build: "A chat agent that answers within a minute, asks the qualifying questions you set (budget, timeline, location, service), and drops a booking link into the chat the moment the answers fit. Anything that doesn't fit is handed to a person with a summary.",
+    fits: "Local service businesses: clinics, dental practices, real estate agents, roofing and home-service contractors.",
+    stack: "ManyChat or the platform APIs, Make or n8n, Claude or OpenAI, Cal.com or Calendly.",
+    service: "ai-support-agents",
+  },
+  {
+    name: "Invoice and receipt processor",
+    problem: "Finance staff retype line items from PDF invoices into the accounting system, one at a time.",
+    build: "A dedicated inbox such as invoices@yourcompany.com. The pipeline watches it, pulls each attachment, reads the supplier, dates, line items and totals with a vision model or OCR, checks that the lines add up to the total, writes the structured record into the ledger and files the original in cloud storage. Anything that fails the check goes to a person instead of the ledger.",
+    fits: "E-commerce brands, logistics and shipping firms, and accounting practices handling many clients' paperwork.",
+    stack: "n8n or Make, Google Cloud Storage or S3, Claude or OpenAI vision, Xero or QuickBooks API.",
+    service: "workflow-automation",
+    built: true,
+  },
+  {
+    name: "Outbound research and outreach engine",
+    problem: "A sales team spends its day researching prospects, cleaning spreadsheets and drafting first emails instead of talking to people.",
+    build: "A pipeline that pulls new leads matching your customer profile, reads each company's website and recent news for a specific angle, drafts a short message built on that angle, and places it into a multi-channel sequence. Every draft is reviewable before it sends, and the rules for who qualifies are written down, not buried in a prompt.",
+    fits: "B2B software companies, marketing agencies and consulting firms with a defined ideal customer.",
+    stack: "Clay, n8n, Claude, Instantly or Smartlead.",
+    service: "workflow-automation",
+  },
+  {
+    name: "Support triage and auto-responder",
+    problem: "The support queue fills with the same answerable questions, and the people who could handle the hard cases spend their day on the easy ones.",
+    build: "A front line that reads each incoming ticket, judges tone and urgency, finds the answer in your knowledge base, and either drafts a reply for a person to send or routes a complaint straight to a manager. The full version of this is the AI support employee, which also acts in your other systems and closes the case.",
+    fits: "High-volume online stores, software companies and digital agencies.",
+    stack: "Zendesk, Freshdesk, Gorgias or Intercom, n8n, a vector store such as Upstash or Qdrant, Claude.",
+    service: "ai-support-agents",
+    built: true,
+  },
+  {
+    name: "Content repurposing pipeline",
+    problem: "A company records webinars, podcasts and training videos and never has time to cut them into anything a marketing channel can use.",
+    build: "Drop a long video into a shared folder. The pipeline transcribes it, finds the handful of moments worth clipping, cuts those into short vertical clips with captions, writes the post copy, and queues them in your scheduler for a person to approve.",
+    fits: "Online education companies, creators, and marketing teams sitting on a library of recordings.",
+    stack: "Google Drive API, Whisper or Gemini for transcription, ffmpeg in a small Python service, Buffer or a similar scheduler.",
+    service: "workflow-automation",
+  },
+];
+
 export const SERVICES: Service[] = [
   {
     slug: "ai-support-agents",

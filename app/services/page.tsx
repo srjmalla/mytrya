@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs, Cta, Leaf } from "../components/ui";
 import JsonLd from "../components/JsonLd";
-import { SERVICES, INTEGRATIONS, INTEGRATIONS_NOTE } from "../lib/services";
+import { SERVICES, SYSTEM_TYPES, INTEGRATIONS, INTEGRATIONS_NOTE } from "../lib/services";
 import { WORK } from "../lib/work";
 import { PRICING, usd } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
@@ -43,6 +43,32 @@ export default function ServicesPage() {
             <Link href={`/services/${s.slug}`} className="btn btn-line mt-6">What&rsquo;s included <span aria-hidden>&rarr;</span></Link>
           </Leaf>
         ))}
+
+        <Leaf label="Systems I build" note={<p>Named shapes, each scoped under one of the three services.</p>}>
+          <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-2">
+            {SYSTEM_TYPES.map((t) => {
+              const svc = SERVICES.find((s) => s.slug === t.service);
+              return (
+                <article key={t.name} className="bg-bg p-5 sm:p-6">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="text-[20px] font-medium leading-tight">{t.name}</h3>
+                    {t.built ? <span className="meta flex-none text-accent">Built and running</span> : null}
+                  </div>
+                  <p className="mt-3 text-[15.5px] leading-[1.6] text-ink-3">{t.problem}</p>
+                  <p className="mt-3 text-[15.5px] leading-[1.6] text-ink-2">{t.build}</p>
+                  <dl className="mt-4 space-y-1.5 text-[14px] leading-snug">
+                    <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3"><dt className="meta">For</dt><dd className="text-ink-2">{t.fits}</dd></div>
+                    <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3"><dt className="meta">Usually</dt><dd className="text-ink-2">{t.stack}</dd></div>
+                    {svc ? <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3"><dt className="meta">Under</dt><dd><Link href={`/services/${svc.slug}`} className="a">{svc.name}</Link>, from {usd(svc.priceFrom)}</dd></div> : null}
+                  </dl>
+                </article>
+              );
+            })}
+          </div>
+          <p className="mt-4 max-w-[62ch] text-[16px] text-ink-2">
+            The stacks listed are what I reach for first. If your team already lives in a different tool, it gets built there.
+          </p>
+        </Leaf>
 
         <Leaf label="Connected so far" note={<p>Evidence, not a menu.</p>}>
           <dl className="max-w-[70ch]">

@@ -35,12 +35,15 @@ export default function AboutPage() {
                 I build AI systems for small B2B teams and run them in production. {SITE.name} is the name I work under.
               </p>
               <p className="text-ink-2">
-                For the last two years I&rsquo;ve built and operated an AI support employee for a software company: one
+                The largest system I run is an AI support employee for a software company: one
                 agent that handles a case end to end across their helpdesk, their live chat and a chat widget of its own on
                 their site and inside their apps. It works out what each case needs, acts in the dev board and the account
                 systems, hands off to a person when it should, and learns from what the human team actually sends. Alongside it sit a daily dashboard that reads
                 the same desk for their leadership, and two smaller internal tools. All of it is written up under{" "}
-                <Link href="/work" className="a">Work</Link>, with the client unnamed.
+                <Link href="/work" className="a">Work</Link>, with the client unnamed. Before that I built an invoice
+                automation that watches a mailbox, reads each invoice with OCR and extracts the fields a person used to
+                retype by hand. The other shapes I build, from lead-qualifying chat agents to outreach and content
+                pipelines, are listed under <Link href="/services" className="a">Services</Link>.
               </p>
               <p className="text-ink-2">
                 On my own time I build products, and they keep me honest about what it takes to ship.{" "}

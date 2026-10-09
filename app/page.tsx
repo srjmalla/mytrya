@@ -218,9 +218,11 @@ export default function Home() {
               <h2 id="who-h" className="h-display mt-4 text-[36px] sm:text-[52px]">One engineer, from the call to production.</h2>
               <div className="mt-6 max-w-[58ch] space-y-4 text-[17px] leading-[1.7] text-ink-2">
                 <p>
-                  I&rsquo;m {PERSON.name}. For two years I&rsquo;ve built and run an AI support employee for a B2B software
-                  company with two product brands, and on my own time I ship products people use: a rehearsal partner for
-                  actors, an investing copilot for the Nepal Stock Exchange, and an app that reads your books aloud.
+                  I&rsquo;m {PERSON.name}. I build and run AI systems for B2B teams: an AI support employee for a software
+                  company with two product brands, the dashboard and internal tools around it, and an invoice automation
+                  that pulls invoices out of email and reads them with OCR. On my own time I ship products people use: a
+                  rehearsal partner for actors, an investing copilot for the Nepal Stock Exchange, and an app that reads
+                  your books aloud.
                 </p>
                 <p>
                   The person on the scoping call is the person who writes the code, runs it and answers when it breaks.
