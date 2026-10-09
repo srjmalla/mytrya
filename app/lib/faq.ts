@@ -4,8 +4,8 @@ import { PRICING, usd } from "./site";
 /** Site-wide FAQ. Answer-first: the first sentence should work on its own. */
 export const FAQ: Faq[] = [
   {
-    q: "What does Mytrya do?",
-    a: "Mytrya builds AI agents, internal tools and data pipelines for small B2B software and service companies. It is run by Suraj Malla in Kathmandu, and every system described on this site was built and is run by him.",
+    q: "What does Mytrya Intelligence do?",
+    a: "Mytrya Intelligence builds AI agents, internal tools and data pipelines for small B2B software and service companies. It is run by Suraj Malla in Kathmandu, and every system described on this site was built and is run by him.",
   },
   {
     q: "Who is it for?",

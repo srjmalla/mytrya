@@ -65,7 +65,7 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
   }
 
   const to = env.CONTACT_TO ?? "malla.srj@mytrya.com";
-  const from = env.CONTACT_FROM ?? "Mytrya site <contact@mytrya.com>";
+  const from = env.CONTACT_FROM ?? "Mytrya Intelligence site <contact@mytrya.com>";
 
   const text = [
     `From:    ${name} <${email}>`,

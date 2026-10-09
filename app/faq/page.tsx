@@ -4,9 +4,9 @@ import { FAQ } from "../lib/faq";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Questions about hiring Mytrya: price, process, AI employees",
+  title: "Questions about hiring: price, process, AI employees",
   description:
-    "What Mytrya does, who it's for, what projects cost, why one engineer rather than an agency, when to use Intercom Fin or Freshdesk Freddy instead, which models are used, who owns the code, and how to start.",
+    "What Mytrya Intelligence does, who it's for, what projects cost, why one engineer rather than an agency, when to use Intercom Fin or Freshdesk Freddy instead, which models are used, who owns the code, and how to start.",
   path: "/faq",
 });
 

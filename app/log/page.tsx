@@ -6,7 +6,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
   title: "Build log: what shipped, day by day",
-  description: `Every change shipped to Mytrya's own products, from their commit history: ${ACTIVITY.changes30d} changes in the last 30 days, and something shipped in each of the last ${ACTIVITY.streakWeeks} weeks. Rebuilt daily.`,
+  description: `Every change shipped to Mytrya Intelligence's own products, from their commit history: ${ACTIVITY.changes30d} changes in the last 30 days, and something shipped in each of the last ${ACTIVITY.streakWeeks} weeks. Rebuilt daily.`,
   path: "/log",
 });
 

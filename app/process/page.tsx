@@ -15,7 +15,7 @@ export default function ProcessPage() {
   const howTo = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How a project with Mytrya runs",
+    name: "How a project with Mytrya Intelligence runs",
     step: STEPS.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.title, text: s.body.join(" ") })),
   };
   return (

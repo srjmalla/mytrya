@@ -1,6 +1,6 @@
 # mytrya.com
 
-Marketing site for Mytrya, a one-person AI engineering practice. Next.js 16, static export, served from Cloudflare Pages. The contact form is a Pages Function that relays through Resend.
+Marketing site for Mytrya Intelligence, a one-person AI engineering practice. Next.js 16, static export, served from Cloudflare Pages. The contact form is a Pages Function that relays through Resend.
 
 ## Develop
 

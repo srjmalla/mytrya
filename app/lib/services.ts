@@ -48,7 +48,7 @@ export type SystemType = {
   built?: boolean;
 };
 
-/** Named shapes of system Mytrya builds. Each is scoped and priced under one of the three services. */
+/** Named shapes of system Mytrya Intelligence builds. Each is scoped and priced under one of the three services. */
 export const SYSTEM_TYPES: SystemType[] = [
   {
     name: "Inbound lead converter",
@@ -101,9 +101,9 @@ export const SERVICES: Service[] = [
     short: "AI employees",
     metaTitle: "AI employees: custom AI agents that do a whole job, from support to back office",
     metaDescription:
-      "AI employees from Mytrya take a whole job off your team and work on their own. The one in production handles support end to end: it works the helpdesk, live chat and a chat widget on your own site, decides what each case needs, acts in the systems around it, follows up, and learns from what your team sends. The same loop runs lead qualification, invoice processing and outreach.",
+      "AI employees from Mytrya Intelligence take a whole job off your team and work on their own. The one in production handles support end to end: it works the helpdesk, live chat and a chat widget on your own site, decides what each case needs, acts in the systems around it, follows up, and learns from what your team sends. The same loop runs lead qualification, invoice processing and outreach.",
     answer: [
-      "An AI employee from Mytrya is a custom AI agent that takes a whole job off your team, works on its own, and hands off to a person only when it should. The one running in production today is a support employee: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
+      "An AI employee from Mytrya Intelligence is a custom AI agent that takes a whole job off your team, works on its own, and hands off to a person only when it should. The one running in production today is a support employee: it handles a case from the first message to closed, rather than answering and leaving the rest to you. It works wherever your customers already write to you: inside your helpdesk, in your live chat, and as a chat widget on your own website or inside your product. It triages what comes in, checks the customer's account and your dev tracker before it speaks, answers from your documentation, takes the actions the case needs in connected systems, files bugs, escalates to the right person with a written summary, follows up when the customer goes quiet, and closes the case.",
       "Like a new hire, it decides for itself what a case needs and in what order: search the docs, check the dev board, ask the customer, file the bug, hand off. It works on its own where the stakes are low and under review where they aren't, and you decide which: live answers on chat, drafts a person sends on tickets, and an approval step on anything that changes an account.",
       "It fits your stack rather than the other way round. The helpdesk can be Freshdesk, Zendesk, Intercom, HubSpot, Help Scout or anything with an API. The chat can be the vendor's or a widget I build for you, which no vendor holds and which escalates by opening a ticket where your team already works.",
       "The platform I run in production today works three channels with one agent loop and 20 tools across the helpdesk, live chat, the dev board, Slack and the account system. On tickets it drafts and a person sends; on the widget it answers live and is reviewed afterwards. A scheduled follow-up brings it back to every quiet case. It reads back what the team actually sent, judges it blind against its own draft, and turns the difference into learnings a person approves.",
@@ -175,9 +175,9 @@ export const SERVICES: Service[] = [
     short: "Internal tools",
     metaTitle: "Internal tools and AI dashboards for operations teams",
     metaDescription:
-      "Small internal tools that read your operational data every morning, compute the numbers in code, and use a model only for the part a query can't do: naming patterns. Built by Mytrya.",
+      "Small internal tools that read your operational data every morning, compute the numbers in code, and use a model only for the part a query can't do: naming patterns. Built by Mytrya Intelligence.",
     answer: [
-      "An internal tool from Mytrya is a small web application, usually one page and one API route, that pulls data from a system your team already uses, computes the numbers your team asks for, and presents them without anyone running a report.",
+      "An internal tool from Mytrya Intelligence is a small web application, usually one page and one API route, that pulls data from a system your team already uses, computes the numbers your team asks for, and presents them without anyone running a report.",
       "Where a model is involved, it does the one thing a database query can't: reading two hundred support tickets and naming the five recurring problems. It is never asked to add anything up.",
     ],
     fit: [
@@ -228,9 +228,9 @@ export const SERVICES: Service[] = [
     short: "Automation",
     metaTitle: "Data pipelines and workflow automation for small B2B teams",
     metaDescription:
-      "Pipelines that pull from undocumented sources on a measured schedule, keep a fallback, and treat surprises as outages rather than data. Code where it matters, n8n or Make where it doesn't. Built by Mytrya.",
+      "Pipelines that pull from undocumented sources on a measured schedule, keep a fallback, and treat surprises as outages rather than data. Code where it matters, n8n or Make where it doesn't. Built by Mytrya Intelligence.",
     answer: [
-      "Workflow automation from Mytrya means moving data between systems on a schedule or on an event, with the failure cases designed before the happy path. Code where the logic matters, n8n or Make where a visual workflow is genuinely simpler for your team to maintain.",
+      "Workflow automation from Mytrya Intelligence means moving data between systems on a schedule or on an event, with the failure cases designed before the happy path. Code where the logic matters, n8n or Make where a visual workflow is genuinely simpler for your team to maintain.",
       "The pipelines I run today pull market data from an undocumented API at a measured 1 request per second with a scraper fallback, mine a community forum against a keyword index and export scored leads to CSV, and re-run cheaply because every step deduplicates on write.",
     ],
     fit: [

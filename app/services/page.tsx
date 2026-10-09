@@ -8,7 +8,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
   title: "Services: AI employees, internal tools, automation",
-  description: `Three things Mytrya builds for small B2B teams: AI employees (custom AI agents) that do a whole job on their own, with a support employee running in production, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, from ${usd(PRICING.firstProjectFrom)}.`,
+  description: `Three things Mytrya Intelligence builds for small B2B teams: AI employees (custom AI agents) that do a whole job on their own, with a support employee running in production, internal tools that compute the numbers, and data pipelines that fail safely. Fixed scope, from ${usd(PRICING.firstProjectFrom)}.`,
   path: "/services",
 });
 
@@ -20,7 +20,7 @@ export default function ServicesPage() {
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
         <h1 className="h-display mt-8 max-w-[20ch] text-[44px] sm:text-[60px]">Three kinds of work</h1>
         <p className="mt-6 max-w-[62ch] pb-12 text-[19px] leading-[1.6] text-ink-2">
-          Mytrya builds AI employees, internal tools and data pipelines. Every engagement is fixed scope and fixed
+          Mytrya Intelligence builds AI employees, internal tools and data pipelines. Every engagement is fixed scope and fixed
           price, agreed in writing, and delivered into your own repositories and accounts. First projects start at{" "}
           {usd(PRICING.firstProjectFrom)}; most land between {usd(PRICING.typicalLow)} and {usd(PRICING.typicalHigh)}.
         </p>

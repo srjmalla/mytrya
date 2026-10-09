@@ -140,7 +140,7 @@ export const WORK: Work[] = [
     disclosure:
       "The client and its products aren't named. The 242-drafts figure is an adoption fact from the code, not a performance claim. Ticket volumes, deflection rates and the agent-versus-human benchmark results belong to the client and aren't published.",
     metaDescription:
-      "Case study: an AI support employee that owns a case end to end, deciding what to look up and what to do across helpdesk tickets, vendor live chat and its own embeddable chat widget, with one agent loop, 20 tools, scheduled follow-up, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya.",
+      "Case study: an AI support employee that owns a case end to end, deciding what to look up and what to do across helpdesk tickets, vendor live chat and its own embeddable chat widget, with one agent loop, 20 tools, scheduled follow-up, human-in-the-loop drafts, a blind judge and a learning loop. Built by Mytrya Intelligence.",
   },
 
   {
@@ -251,7 +251,7 @@ export const WORK: Work[] = [
     disclosure:
       "My own product. Live, with Google sign-in; access to accounts is admin-controlled, so the link lands on the sign-in page. The regime and backtest figures are from my own data.",
     metaDescription:
-      "Case study: a multi-account investing copilot for the Nepal Stock Exchange with four data sources, encrypted depository sync, one-tap order approval on Telegram, paper strategies with real fees, a 31-tool read-only voice mode, and a scoreboard that grades its own signals at 5, 10 and 20 days. Built by Mytrya.",
+      "Case study: a multi-account investing copilot for the Nepal Stock Exchange with four data sources, encrypted depository sync, one-tap order approval on Telegram, paper strategies with real fees, a 31-tool read-only voice mode, and a scoreboard that grades its own signals at 5, 10 and 20 days. Built by Mytrya Intelligence.",
   },
 
   {
@@ -323,7 +323,7 @@ export const WORK: Work[] = [
     ],
     disclosure: "Same client as the AI support employee, not named. The dashboard is internal and isn't linked.",
     metaDescription:
-      "Case study: a daily support-desk dashboard where the numbers are computed in code and Gemini only names the recurring issues, with per-window caps and request coalescing. Built by Mytrya.",
+      "Case study: a daily support-desk dashboard where the numbers are computed in code and Gemini only names the recurring issues, with per-window caps and request coalescing. Built by Mytrya Intelligence.",
   },
 
   {
@@ -444,7 +444,7 @@ export const WORK: Work[] = [
     disclosure:
       "My own product, live at offscript.mytrya.com. Works in Chrome or Edge, and needs headphones so the microphone doesn't hear the partner's lines. All measurements above are from the project notes. From those notes: it stays on book so you can get off book.",
     metaDescription:
-      "Case study: an AI scene partner with two measured speech engines, pre-rendered directed delivery, a plain-language directing room, a dramaturg's scene breakdown, improvised mode on Gemini Live, and a cue engine that reads the line instead of the clock. Built by Mytrya.",
+      "Case study: an AI scene partner with two measured speech engines, pre-rendered directed delivery, a plain-language directing room, a dramaturg's scene breakdown, improvised mode on Gemini Live, and a cue engine that reads the line instead of the clock. Built by Mytrya Intelligence.",
   },
 
   {
@@ -545,7 +545,7 @@ export const WORK: Work[] = [
     disclosure:
       "My own product, live at narrately.mytrya.com. Access is by invitation, so the link lands on the sign-in page. Readers upload their own files, and each book stays private to the reader who uploaded it. Prices per character are the engines' list prices as of October 2026.",
     metaDescription:
-      "Case study: an app that reads your own EPUB, PDF and TXT books aloud with sentence-level read-along, on-demand narration cached by content across readers, language detection for Nepali and other scripts, offline downloads, and eSewa-paid plans. Built by Mytrya.",
+      "Case study: an app that reads your own EPUB, PDF and TXT books aloud with sentence-level read-along, on-demand narration cached by content across readers, language detection for Nepali and other scripts, offline downloads, and eSewa-paid plans. Built by Mytrya Intelligence.",
   },
 
   {
@@ -609,7 +609,7 @@ export const WORK: Work[] = [
     ],
     disclosure: "Same client as the AI support employee, not named. Neither tool is complex. Each replaced about an hour of someone's week.",
     metaDescription:
-      "Case study: a forum-mining tool with a hand-built keyword index and blunt scoring, plus a monday.com board dashboard, each replacing a weekly manual task. Built by Mytrya.",
+      "Case study: a forum-mining tool with a hand-built keyword index and blunt scoring, plus a monday.com board dashboard, each replacing a weekly manual task. Built by Mytrya Intelligence.",
   },
 ];
 

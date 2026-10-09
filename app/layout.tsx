@@ -40,6 +40,7 @@ const ORG = {
   "@type": ["Organization", "ProfessionalService"],
   "@id": `${SITE.url}/#organization`,
   name: SITE.name,
+  alternateName: SITE.shortName,
   url: SITE.url,
   logo: `${SITE.url}/logo.png`,
   image: `${SITE.url}/opengraph-image`,

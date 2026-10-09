@@ -1,12 +1,14 @@
 /** Single source of truth for identity. Change here, not in pages. */
 export const SITE = {
-  name: "Mytrya",
+  name: "Mytrya Intelligence",
+  /** The short form people say. Used for the manifest short_name and as the schema alternateName. */
+  shortName: "Mytrya",
   url: "https://mytrya.com",
   email: "malla.srj@mytrya.com",
   /** Used in <title> templates and the Organization description. */
   tagline: "AI employees, internal tools and automation for small B2B teams",
   description:
-    "Mytrya is an AI engineering practice run by Suraj Malla in Kathmandu. It builds AI employees: agents that take a whole job off a team, work on their own, and hand off to a person when they should. The one in production today handles customer support end to end. It also builds internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
+    "Mytrya Intelligence is an AI engineering practice run by Suraj Malla in Kathmandu. It builds AI employees: agents that take a whole job off a team, work on their own, and hand off to a person when they should. The one in production today handles customer support end to end. It also builds internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
   locality: "Kathmandu",
   country: "NP",
   timezone: "Asia/Kathmandu",

@@ -6,9 +6,9 @@ import { SITE } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Case files: AI systems built and run by Mytrya",
+  title: "Case files: AI systems built and run in production",
   description:
-    "Six systems built and run by Mytrya: an AI support employee that handles cases end to end, an investing copilot that grades its own calls, a daily support dashboard, an AI scene partner, an app that reads your books aloud, and two internal tools.",
+    "Six systems built and run by Mytrya Intelligence: an AI support employee that handles cases end to end, an investing copilot that grades its own calls, a daily support dashboard, an AI scene partner, an app that reads your books aloud, and two internal tools.",
   path: "/work",
 });
 

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-07T01:24:04.546Z",
-  "checkedAt": "2026-10-07T01:24:04.546Z",
+  "generatedAt": "2026-10-09T06:36:44.597Z",
+  "checkedAt": "2026-10-09T06:36:44.598Z",
   "streakWeeks": 5,
-  "changes30d": 159,
+  "changes30d": 153,
   "products": [
     {
       "id": "narrately",
@@ -13,8 +13,8 @@
       "changes30d": 31,
       "status": {
         "up": true,
-        "code": 307,
-        "ms": 1096
+        "code": 308,
+        "ms": 227
       }
     },
     {
@@ -27,7 +27,7 @@
       "status": {
         "up": true,
         "code": 200,
-        "ms": 1063
+        "ms": 334
       }
     },
     {
@@ -40,7 +40,7 @@
       "status": {
         "up": true,
         "code": 307,
-        "ms": 1063
+        "ms": 224
       }
     }
   ],

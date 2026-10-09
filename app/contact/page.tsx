@@ -6,7 +6,7 @@ import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Contact: start a project with Mytrya",
+  title: "Contact: start a project",
   description: `Describe the process you want automated and ${PERSON.name} replies within ${PRICING.replyWithin} with a scoping call or a reason it isn't worth automating. First projects from ${usd(PRICING.firstProjectFrom)}. Email ${SITE.email}.`,
   path: "/contact",
 });
