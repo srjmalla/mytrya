@@ -13,9 +13,11 @@ export function meta(opts: {
   type?: "website" | "article";
   published?: string;
   updated?: string;
+  /** Overrides the default OG card, e.g. a portrait on /about. */
+  image?: { url: string; width: number; height: number; alt: string };
 }): Metadata {
   const url = `${SITE.url}${opts.path}`;
-  const image = { url: "/opengraph-image", width: 1200, height: 630, alt: `${SITE.name}` };
+  const image = opts.image ?? { url: "/opengraph-image", width: 1200, height: 630, alt: `${SITE.name}` };
   return {
     title: opts.title,
     description: opts.description,
@@ -31,7 +33,7 @@ export function meta(opts: {
         ? { type: "article", publishedTime: opts.published, modifiedTime: opts.updated }
         : { type: "website" }),
     },
-    twitter: { card: "summary_large_image", title: opts.ogTitle ?? opts.title, description: opts.description, images: [image.url] },
+    twitter: { card: opts.image ? "summary" : "summary_large_image", title: opts.ogTitle ?? opts.title, description: opts.description, images: [image.url] },
   };
 }
 

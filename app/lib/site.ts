@@ -26,6 +26,8 @@ export const PERSON = {
   bio: "Builds and runs AI support employees, internal tools and data pipelines for small B2B teams. Based in Kathmandu.",
   /** Path under /public. Empty until a real photo exists. */
   image: "/suraj-malla.jpg",
+  imageWidth: 720,
+  imageHeight: 720,
   knowsAbout: [
     "AI agents", "AI customer support", "LLM evaluation", "retrieval-augmented generation", "tool calling",
     "Freshdesk", "Zendesk", "Intercom", "internal tools", "data pipelines", "workflow automation",

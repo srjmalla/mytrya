@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
 import { PERSON, PRICING, SITE } from "./lib/site";
+import { PERSON_LD } from "./lib/schema";
 
 const mona = Mona_Sans({ variable: "--font-mona", subsets: ["latin"], axes: ["wdth"] });
 const fragment = Fragment_Mono({ variable: "--font-fragment", subsets: ["latin"], weight: "400" });
@@ -64,24 +65,6 @@ const WEBSITE = {
   inLanguage: "en",
 };
 
-const PERSON_LD = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${SITE.url}/about#person`,
-  name: PERSON.name,
-  givenName: PERSON.givenName,
-  familyName: PERSON.familyName,
-  jobTitle: PERSON.jobTitle,
-  description: PERSON.bio,
-  url: `${SITE.url}/about`,
-  email: SITE.email,
-  worksFor: { "@id": `${SITE.url}/#organization` },
-  knowsAbout: PERSON.knowsAbout,
-  hasOccupation: { "@type": "Occupation", name: "AI engineer", occupationLocation: { "@type": "City", name: SITE.locality } },
-  ...(PERSON.image ? { image: `${SITE.url}${PERSON.image}` } : {}),
-  address: { "@type": "PostalAddress", addressLocality: SITE.locality, addressCountry: SITE.country },
-  sameAs: [SITE.github, SITE.linkedin].filter(Boolean),
-};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

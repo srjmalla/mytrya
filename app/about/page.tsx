@@ -6,11 +6,13 @@ import { PRINCIPLES } from "../lib/process";
 import { AVAILABILITY, PERSON, SITE } from "../lib/site";
 import { ACTIVITY } from "../lib/activity";
 import { meta, breadcrumbs } from "../lib/meta";
+import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
-  title: `About ${PERSON.name}, AI engineer in Kathmandu`,
+  title: `${PERSON.name}, AI engineer in Kathmandu`,
   description: `${PERSON.name} runs Mytrya, a one-person AI engineering practice in Kathmandu. He builds and runs AI support employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
   path: "/about",
+  image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}` },
 });
 
 export default function AboutPage() {
@@ -18,7 +20,8 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     dateModified: ACTIVITY.generatedAt.slice(0, 10),
-    mainEntity: { "@id": `${SITE.url}/about#person` },
+    mainEntity: PERSON_LD,
+    primaryImageOfPage: { "@id": `${SITE.url}/about#photo` },
   };
   return (
     <>
@@ -65,7 +68,13 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <dl className="self-start panel px-4 py-1 font-mono text-[12.5px]">
+          <div className="self-start">
+            <figure className="overflow-hidden rounded-[14px] border border-line-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={PERSON.image} alt={`${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}`} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
+              <figcaption className="meta border-t border-line-2 px-4 py-2.5">{PERSON.name} · {SITE.locality}</figcaption>
+            </figure>
+          <dl className="panel mt-4 px-4 py-1 font-mono text-[12.5px]">
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Local time</dt><dd><KathmanduClock /> · UTC+5:45</dd></div>
             <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Email</dt><dd><a href={`mailto:${SITE.email}`} className="a">{SITE.email}</a></dd></div>
@@ -75,6 +84,7 @@ export default function AboutPage() {
             ) : null}
             <div className="py-2.5"><dt className="text-ink-3">Hours</dt><dd className="mt-1 leading-relaxed text-ink-2">Full overlap with Europe, mornings for the US East Coast.</dd></div>
           </dl>
+          </div>
         </header>
 
         <Leaf label="How I build" note={<p>Rules that appear in the code of the systems under Work. Each exists because something went wrong without it.</p>}>
