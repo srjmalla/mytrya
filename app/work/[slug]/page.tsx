@@ -7,7 +7,7 @@ import { WORK, getWork } from "../../lib/work";
 import { SERVICES } from "../../lib/services";
 import { NOTES } from "../../lib/notes";
 import { PERSON, SITE } from "../../lib/site";
-import { ACTIVITY, fmtDate } from "../../lib/activity";
+import { fmtDate } from "../../lib/dates";
 import { meta, breadcrumbs } from "../../lib/meta";
 
 export const dynamicParams = false;
@@ -39,7 +39,6 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
   const next = WORK[(i + 1) % WORK.length];
   const service = SERVICES.find((s) => s.slug === w.service);
   const notes = NOTES.filter((n) => n.related.includes(w.slug));
-  const live = ACTIVITY.products.find((p) => p.work === w.slug);
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -88,12 +87,6 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
               <dt className="text-ink-3">Status</dt>
               <dd><StatusDot up={workUp(w.status)} label={w.status} /></dd>
             </div>
-            {live ? (
-              <div className="flex justify-between gap-4 border-b border-rule py-2.5">
-                <dt className="text-ink-3">Changes, 30 days</dt>
-                <dd>{live.changes30d}</dd>
-              </div>
-            ) : null}
             {w.url ? (
               <div className="flex justify-between gap-4 border-b border-rule py-2.5">
                 <dt className="text-ink-3">Open it</dt>

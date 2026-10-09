@@ -6,7 +6,7 @@ import { SERVICES, getService } from "../../lib/services";
 import { WORK } from "../../lib/work";
 import { NOTES } from "../../lib/notes";
 import { PERSON, PRICING, SITE, usd } from "../../lib/site";
-import { fmtDate } from "../../lib/activity";
+import { fmtDate } from "../../lib/dates";
 import { meta, breadcrumbs } from "../../lib/meta";
 
 export const dynamicParams = false;

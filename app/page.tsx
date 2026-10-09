@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Console from "./components/Console";
 import { AgentTrace, DraftDiff, KbAnswer, WorkVisual } from "./components/Visuals";
-import { Ago, KathmanduClock } from "./components/Live";
+import { KathmanduClock } from "./components/Live";
 import { Cta, FaqList, StatusDot, workUp } from "./components/ui";
 import { INTEGRATIONS, SERVICES } from "./lib/services";
 import { WORK } from "./lib/work";
 import { NOTES } from "./lib/notes";
 import { FAQ_HOME } from "./lib/faq";
-import { ACTIVITY, byDay, fmtDate, productName } from "./lib/activity";
+import { fmtDate } from "./lib/dates";
 import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "./lib/site";
 import { meta } from "./lib/meta";
 
@@ -31,7 +31,6 @@ function SecHead({ kicker, title, children }: { kicker: string; title: React.Rea
 }
 
 export default function Home() {
-  const days = byDay(ACTIVITY.log).slice(0, 4);
   const systems = INTEGRATIONS.flatMap((g) => g.items).filter((x) => !/first-party|marketplace|web terminals/.test(x));
   const featured = ["support-agent-platform", "narrately", "nepse-copilot", "offscript", "support-intelligence", "community-signal"]
     .map((s) => WORK.find((w) => w.slug === s))
@@ -157,48 +156,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </section>
-
-        {/* ── shipping ── */}
-        <section className="border-t border-line py-20 sm:py-28" aria-labelledby="log-h">
-          <SecHead kicker="Build log" title={<span id="log-h">Shipping, every week</span>}>
-            Pulled from the commit history of my own products and rebuilt every morning. {ACTIVITY.changes30d} changes in
-            the last 30 days, and something shipped in each of the last {ACTIVITY.streakWeeks} weeks.
-          </SecHead>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {ACTIVITY.products.map((p) => (
-              <a key={p.id} href={p.url} className="panel group p-5 transition-colors hover:border-line-2">
-                <div className="flex items-center justify-between">
-                  <span className="h-section text-[18px] group-hover:text-lime">{p.name}</span>
-                  <span className="meta"><StatusDot up={p.status.up} label={p.status.up ? "Up" : "Down"} /></span>
-                </div>
-                <p className="meta mt-1">{p.url.replace("https://", "")} ↗</p>
-                <dl className="meta mt-5 grid grid-cols-3 gap-2">
-                  <div><dt>Last change</dt><dd className="mt-0.5 text-ink">{p.lastShipped ? <Ago iso={p.lastShipped} fallback={fmtDate(p.lastShipped)} /> : "–"}</dd></div>
-                  <div><dt>30 days</dt><dd className="mt-0.5 text-ink">{p.changes30d} changes</dd></div>
-                  <div><dt>Response</dt><dd className="mt-0.5 text-ink">{p.status.ms} ms</dd></div>
-                </dl>
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-4">
-            {days.map(([day, entries]) => (
-              <div key={day} className="bg-bg p-5">
-                <p className="meta"><time dateTime={day}>{fmtDate(entries[0].date)}</time> · {entries.length} {entries.length === 1 ? "change" : "changes"}</p>
-                <ul className="mt-3 space-y-2.5">
-                  {entries.slice(0, 4).map((e, i) => (
-                    <li key={i} className="text-[14px] leading-snug">
-                      <span className="font-mono text-[11px] text-lime">{productName(e.product)}</span>
-                      <span className="mt-0.5 block text-ink-2">{e.message}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <Link href="/log" className="a meta mt-5 inline-block">The full build log →</Link>
         </section>
 
         {/* ── who ── */}

@@ -2,7 +2,6 @@ import { SERVICES } from "./services";
 import { WORK } from "./work";
 import { NOTES } from "./notes";
 import { FAQ } from "./faq";
-import { ACTIVITY } from "./activity";
 import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "./site";
 
 /** llms.txt and llms-full.txt, generated from the same data as the pages so they can't drift. */
@@ -14,7 +13,7 @@ function header() {
     "",
     `${SITE.name} is run by ${PERSON.name}, an AI engineer in ${SITE.locality}, Nepal (UTC+5:45). ${AVAILABILITY.line}. ` +
       `First projects from ${usd(PRICING.firstProjectFrom)}; most projects ${usd(PRICING.typicalLow)} to ${usd(PRICING.typicalHigh)}, fixed price. ` +
-      `Reply within ${PRICING.replyWithin}. Last rebuilt ${ACTIVITY.generatedAt.slice(0, 10)}.`,
+      `Reply within ${PRICING.replyWithin}.`,
   ];
 }
 
@@ -33,7 +32,6 @@ export function llmsTxt() {
     "",
     "## Optional",
     `- [Full text of every page](${SITE.url}/llms-full.txt)`,
-    `- [Build log](${SITE.url}/log): changes shipped to ${PERSON.name}'s own products, rebuilt daily`,
     `- [How a project runs](${SITE.url}/process)`,
     `- [FAQ](${SITE.url}/faq)`,
     `- [About ${PERSON.name}](${SITE.url}/about)`,

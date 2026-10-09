@@ -5,7 +5,7 @@ import JsonLd from "../../components/JsonLd";
 import { NOTES, getNote } from "../../lib/notes";
 import { WORK } from "../../lib/work";
 import { PERSON, SITE } from "../../lib/site";
-import { fmtDate } from "../../lib/activity";
+import { fmtDate } from "../../lib/dates";
 import { meta, breadcrumbs } from "../../lib/meta";
 
 export const dynamicParams = false;

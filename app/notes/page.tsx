@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumbs, Cta } from "../components/ui";
 import JsonLd from "../components/JsonLd";
 import { NOTES } from "../lib/notes";
-import { fmtDate } from "../lib/activity";
+import { fmtDate } from "../lib/dates";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({

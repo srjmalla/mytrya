@@ -4,7 +4,6 @@ import { KathmanduClock } from "../components/Live";
 import JsonLd from "../components/JsonLd";
 import { PRINCIPLES } from "../lib/process";
 import { AVAILABILITY, PERSON, SITE } from "../lib/site";
-import { ACTIVITY } from "../lib/activity";
 import { meta, breadcrumbs } from "../lib/meta";
 import { PERSON_LD } from "../lib/schema";
 
@@ -19,7 +18,7 @@ export default function AboutPage() {
   const profile = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    dateModified: ACTIVITY.generatedAt.slice(0, 10),
+    dateModified: "2026-10-09",
     mainEntity: PERSON_LD,
     primaryImageOfPage: { "@id": `${SITE.url}/about#photo` },
   };
@@ -54,8 +53,7 @@ export default function AboutPage() {
                 speech engines and a cue engine that reads the line instead of the clock.{" "}
                 <Link href="/work/nepse-copilot" className="a">NEPSE Copilot</Link> is an investing copilot for the Nepal
                 Stock Exchange that grades its own calls. <Link href="/work/narrately" className="a">Narrately</Link> reads
-                people&rsquo;s own books aloud and narrates each sentence once for every reader. All three are live, and
-                you can watch them change in the <Link href="/log" className="a">build log</Link>.
+                people&rsquo;s own books aloud and narrates each sentence once for every reader. All three are live.
               </p>
               <p className="text-ink-2">
                 You work directly with the engineer who writes the code, runs it and answers when it breaks. There is no

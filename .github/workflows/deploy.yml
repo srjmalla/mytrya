@@ -1,13 +1,9 @@
 # Builds and deploys mytrya.com to Cloudflare Pages.
 # - on every push to main
-# - every morning at 06:15 Kathmandu (00:30 UTC), so the build log, product status
-#   and "last shipped" lines stay current without anyone touching the repo
 #
 # Repository secrets (Settings → Secrets and variables → Actions):
 #   CLOUDFLARE_API_TOKEN   token with "Cloudflare Pages: Edit" on the account
 #   CLOUDFLARE_ACCOUNT_ID  the account id
-#   ACTIVITY_TOKEN         fine-grained GitHub token, read-only "Contents" on the
-#                          product repos (narrately, offscript, suraj-nepse)
 #
 # The Pages project's production branch is "hero-image-fix" (a legacy name), so
 # that is the branch deployed to.
@@ -17,8 +13,6 @@ name: Deploy
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "30 0 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -36,8 +30,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          ACTIVITY_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy out --project-name=mytrya-ai-website --branch=hero-image-fix --commit-hash=${{ github.sha }}
         env:

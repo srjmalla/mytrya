@@ -11,14 +11,8 @@ npm run dev          # http://localhost:3000
 
 ## Build and deploy
 
-`npm run build` first runs `scripts/fetch-activity.mjs`, which reads the commit history of
-my own product repos and checks each product is up, and writes `app/data/activity.json`.
-That file feeds the build log, the "last shipped" line and the product status. Without a
-GitHub token the committed snapshot is used, so the build never fails for lack of one.
-
-Deploys run from `.github/workflows/deploy.yml`: on every push to `main`, and every
-morning at 06:15 Kathmandu so the site stays current on its own. The workflow needs three
-repository secrets, listed at the top of the file.
+Deploys run from `.github/workflows/deploy.yml` on every push to `main`. The workflow
+needs two repository secrets, listed at the top of the file.
 
 The Cloudflare Pages project is `mytrya-ai-website`. Its production branch is
 `hero-image-fix` (a legacy name); deploying any other branch makes a preview. Manual deploy:
