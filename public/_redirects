@@ -1,0 +1,2 @@
+# Removed pages. Pages evaluates these before serving static files.
+/log / 301
