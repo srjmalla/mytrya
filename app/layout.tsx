@@ -47,7 +47,6 @@ const ORG = {
   description: SITE.description,
   email: SITE.email,
   founder: { "@id": `${SITE.url}/about#person` },
-  numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
   address: { "@type": "PostalAddress", addressLocality: SITE.locality, addressCountry: SITE.country },
   areaServed: "Worldwide",
   knowsAbout: PERSON.knowsAbout,

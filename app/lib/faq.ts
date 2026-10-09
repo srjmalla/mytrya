@@ -5,7 +5,7 @@ import { PRICING, usd } from "./site";
 export const FAQ: Faq[] = [
   {
     q: "What does Mytrya do?",
-    a: "Mytrya builds AI agents, internal tools and data pipelines for small B2B software and service companies. It is a one-person practice run by Suraj Malla in Kathmandu. Every system described on this site was built and is run by him.",
+    a: "Mytrya builds AI agents, internal tools and data pipelines for small B2B software and service companies. It is run by Suraj Malla in Kathmandu, and every system described on this site was built and is run by him.",
   },
   {
     q: "Who is it for?",

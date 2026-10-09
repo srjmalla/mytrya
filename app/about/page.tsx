@@ -10,7 +10,7 @@ import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
   title: `${PERSON.name}, AI engineer in Kathmandu`,
-  description: `${PERSON.name} runs Mytrya, a one-person AI engineering practice in Kathmandu. He builds and runs AI support employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
+  description: `${PERSON.name} runs Mytrya, an AI engineering practice in Kathmandu. He builds and runs AI support employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
   path: "/about",
   image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}` },
 });
@@ -58,8 +58,8 @@ export default function AboutPage() {
                 you can watch them change in the <Link href="/log" className="a">build log</Link>.
               </p>
               <p className="text-ink-2">
-                The practice is one person on purpose. You talk to the person who writes the code, runs it and answers when
-                it breaks. The cost of that is capacity, so I take a small number of projects at a time and say no when a
+                You work directly with the engineer who writes the code, runs it and answers when it breaks. There is no
+                handoff. The cost of that is capacity, so I take a small number of projects at a time and say no when a
                 project isn&rsquo;t a fit.
               </p>
               <p className="text-ink-2">
