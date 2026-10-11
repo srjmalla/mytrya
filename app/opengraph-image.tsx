@@ -12,7 +12,10 @@ export default function Image() {
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, background: "#08090a", color: "#eef0ec", fontFamily: "sans-serif" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: 26 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <div style={{ width: 44, height: 44, borderRadius: 10, background: "#eef0ec", color: "#08090a", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700 }}>m</div>
+            <svg width="44" height="44" viewBox="0 0 64 64">
+              <path d="M15 47V19l17 17 17-17v18" fill="none" stroke="#eef0ec" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="49" cy="47" r="5.5" fill="#c6f24e" />
+            </svg>
             <span style={{ fontWeight: 600 }}>{SITE.name}</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#c6f24e", fontFamily: "monospace", fontSize: 22 }}>

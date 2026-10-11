@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Mark from "./Mark";
 import NavLinks from "./NavLinks";
 import { AVAILABILITY, SITE } from "../lib/site";
 
@@ -7,7 +8,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-[rgba(8,9,10,0.78)] backdrop-blur-xl">
       <div className="wrap flex h-16 items-center justify-between gap-6">
         <Link href="/" className="group flex items-center gap-2.5" aria-label={`${SITE.name}, home`}>
-          <span aria-hidden className="grid h-7 w-7 place-items-center rounded-[8px] bg-ink text-[15px] font-bold text-bg transition-colors group-hover:bg-lime">m</span>
+          <Mark className="h-7 w-7 text-ink transition-colors group-hover:text-lime" />
           <span className="text-[16px] font-semibold tracking-[-0.01em]">{SITE.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
