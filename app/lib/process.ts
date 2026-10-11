@@ -8,7 +8,7 @@ export const STEPS: Step[] = [
   },
   {
     title: "A written plan and a fixed price",
-    body: "A short document: what the AI employee will do, what it won't do, how we'll know it works, and what it costs. We change it until it's right.",
+    body: "A short document: what we'll build, what it won't do, how we'll know it works, and what it costs. We change it until it's right.",
     output: "A plan you can hold me to, and a price that doesn't move.",
   },
   {

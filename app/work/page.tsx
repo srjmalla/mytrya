@@ -6,7 +6,7 @@ import { SITE } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Work: AI employees and tools running today",
+  title: "Work: AI running in real businesses today",
   description:
     "Systems built and looked after by Mytrya Intelligence: an AI support employee, a rehearsal partner for actors, an investing assistant, an app that reads your books aloud, and internal tools.",
   path: "/work",

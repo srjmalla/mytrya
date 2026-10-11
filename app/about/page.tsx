@@ -50,19 +50,37 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px]">
             <div className="prose-note">
               <p>
-                I&rsquo;m {PERSON.name}. I build AI employees for small teams and look after
-                them once they&rsquo;re running. The largest one handles customer support for a software company, from the
-                first message to the closed case.
+                I&rsquo;m {PERSON.name}. I help businesses bring AI into their work in a way that lasts, and I build and run
+                the systems that make it happen. Right now that mostly means AI employees. {SITE.name} is the name I work
+                under.
               </p>
               <p>
-                On my own time I make products people use: <Link href="/work/offscript" className="a">offScript</Link>, a
-                rehearsal partner for actors; <Link href="/work/nepse-copilot" className="a">NEPSE Copilot</Link>, an
-                investing assistant for the Nepal Stock Exchange; and <Link href="/work/narrately" className="a">Narrately</Link>,
-                which reads your own books aloud.
+                The largest system I run is an AI support employee for a software company. It takes a case from the first
+                message to closed, hands off to a person when it should, and learns from the replies the team actually
+                sends. Around it sit a morning summary of the support desk for the company&rsquo;s leadership and two smaller
+                internal tools. All of it is under <Link href="/work" className="a">Work</Link>, with the client unnamed.
               </p>
               <p>
-                You work with me directly, from the first call to long after handover. That limits how many projects I
-                take at once.
+                Outside engineering I&rsquo;m a musician and an actor. I play guitar and sarangi, I sing, and I&rsquo;ve
+                performed in professional theatre productions. More recently I&rsquo;ve taken up golf. I&rsquo;d call myself
+                a golfer; the ball hasn&rsquo;t fully agreed yet. None of it came naturally at first; each one was learned
+                from scratch, by practising until it held.
+              </p>
+              <p>
+                That habit of learning something new, and keeping at it, is the one I lean on most with AI. The tools
+                change every few months, and the way through is the same one I&rsquo;ve used all my life. It&rsquo;s also
+                how I work with clients: I help your team learn its way into the change instead of just handing over a
+                system.
+              </p>
+              <p>
+                On my own time I build products people use. <Link href="/work/offscript" className="a">offScript</Link> is a
+                rehearsal partner for actors. <Link href="/work/nepse-copilot" className="a">NEPSE Copilot</Link> is an
+                investing assistant for the Nepal Stock Exchange that keeps score of its own ideas.{" "}
+                <Link href="/work/narrately" className="a">Narrately</Link> reads your own books aloud. All three are live.
+              </p>
+              <p>
+                You work directly with the person who builds the system, runs it and answers when it breaks. There is no
+                handoff. That costs capacity, so I take a small number of projects at a time.
               </p>
             </div>
             <figure className="self-start overflow-hidden rounded-[20px]">

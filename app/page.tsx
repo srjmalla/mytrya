@@ -6,16 +6,16 @@ import { PERSON, PHILOSOPHY, SITE } from "./lib/site";
 import { meta } from "./lib/meta";
 
 export const metadata = meta({
-  title: `${SITE.name} · AI employees for small teams`,
+  title: `${SITE.name} · Bring AI into your business, in a way that lasts`,
   ogTitle: `${SITE.name} · The world is changing. Rise with it.`,
   description: SITE.description,
   path: "/",
 });
 
 const BUILDS = [
-  { title: "AI employees", body: "Take a whole job off your team, such as support, and hand off to a person when they should." },
-  { title: "Internal tools", body: "Show the people who decide what is actually happening, every morning, without anyone digging." },
-  { title: "Automation", body: "The copying, chasing and sorting that eats someone's week, done quietly in the background." },
+  { title: "Finding where AI fits", body: "We start from your work, not from the tools: what is worth handing to AI now, what isn't yet, and what to do first." },
+  { title: "AI employees", body: "Most of our work today. They take a whole job off your team, such as support, and hand off to a person when they should." },
+  { title: "Tools and automation", body: "Morning summaries for the people who decide, and the copying, chasing and sorting that eats someone's week." },
 ];
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
             The world is changing. Rise with it<span className="text-sun">.</span>
           </h1>
           <p className="mt-6 max-w-[42ch] text-[18px] leading-[1.55] text-ink-2 sm:text-[20px]">
-            Mytrya builds AI employees that take on the new work, so your team stays calm and keeps growing.
+            Mytrya helps you bring AI into your business in a way that lasts, so your team stays calm and keeps growing.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/contact" className="btn btn-ink">Book a call</Link>
@@ -56,8 +56,8 @@ export default function Home() {
         </section>
 
         <section className="rule-t py-20 sm:py-28" aria-labelledby="build-h">
-          <p className="kicker">What we build</p>
-          <h2 id="build-h" className="h-display mt-4 max-w-[20ch] text-[34px] sm:text-[48px]">Help that works inside the tools you already use.</h2>
+          <p className="kicker">How we help</p>
+          <h2 id="build-h" className="h-display mt-4 max-w-[20ch] text-[34px] sm:text-[48px]">AI that fits the way you already work.</h2>
           <dl className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-3">
             {BUILDS.map((b) => (
               <div key={b.title} className="rule-t pt-6">
@@ -101,8 +101,12 @@ export default function Home() {
               <p className="kicker">Who you&rsquo;ll work with</p>
               <h2 id="who-h" className="h-display mt-4 text-[34px] sm:text-[48px]">{PERSON.name}</h2>
               <p className="mt-5 max-w-[50ch] text-[17px] leading-[1.65] text-ink-2">
-                I run Mytrya. The person on your first call is the person who builds your AI employee
-                and looks after it afterwards.
+                I run Mytrya. The person on your first call is the person who works with you all the way, from
+                deciding where AI fits to looking after it once it&rsquo;s running.
+              </p>
+              <p className="mt-4 max-w-[50ch] text-[17px] leading-[1.65] text-ink-2">
+                I&rsquo;m also a musician, an actor and, lately, a golfer, though the ball hasn&rsquo;t fully agreed on that
+                last one. Mostly it means I&rsquo;ve spent my life learning new things from scratch.
               </p>
               <Link href="/about" className="btn btn-line mt-7">About Mytrya</Link>
             </div>

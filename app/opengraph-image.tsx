@@ -23,7 +23,7 @@ export default function Image() {
           <span>The world is changing.</span>
           <span>Rise with it.</span>
         </div>
-        <div style={{ display: "flex", fontSize: 26, color: "#4f4b63" }}>AI employees for small teams · mytrya.com</div>
+        <div style={{ display: "flex", fontSize: 26, color: "#4f4b63" }}>AI for your business, built to last · mytrya.com</div>
       </div>
     ),
     { ...size },

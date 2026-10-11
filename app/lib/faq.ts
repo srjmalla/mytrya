@@ -6,11 +6,15 @@ export type Faq = { q: string; a: string };
 export const FAQ: Faq[] = [
   {
     q: "What does Mytrya Intelligence do?",
-    a: "Mytrya helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, along with the internal tools and automation around them. It is run by Suraj Malla.",
+    a: "Mytrya helps businesses bring AI into their work in a way that lasts. That means working out where AI fits, building it, and helping your team adapt to it. Most projects today are AI employees, along with the tools and automation around them. It is run by Suraj Malla.",
   },
   {
     q: "What is an AI employee?",
     a: "An AI employee does a whole job, not just a reply. Give it support, for example, and it reads each case, finds what it needs, answers or asks, follows up, and hands off to a person when it should. It works inside the tools your team already uses.",
+  },
+  {
+    q: "Do I need an AI employee?",
+    a: "Not always. Sometimes the right first step is smaller, like one automation or a clear look at where AI would actually help. The first call is for working that out, and the answer is sometimes not yet.",
   },
   {
     q: "Who is it for?",
@@ -39,4 +43,4 @@ export const FAQ: Faq[] = [
 ];
 
 /** The ones shown on the home page. */
-export const FAQ_HOME = [1, 3, 4, 5].map((i) => FAQ[i]);
+export const FAQ_HOME = [1, 2, 4, 5].map((i) => FAQ[i]);

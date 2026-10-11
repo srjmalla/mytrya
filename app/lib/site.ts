@@ -6,9 +6,9 @@ export const SITE = {
   url: "https://mytrya.com",
   email: "malla.srj@mytrya.com",
   /** Used in <title> templates and the Organization description. */
-  tagline: "AI employees for small teams",
+  tagline: "Bring AI into your business, in a way that lasts",
   description:
-    "Mytrya Intelligence helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, work in the tools the team already uses, and hand off to a person when they should. Run by Suraj Malla.",
+    "Mytrya Intelligence helps businesses bring AI into their work in a way that lasts: finding where it fits, building it, and helping the team adapt. Most of that work today is AI employees, which take a whole job off a team, work in the tools it already uses, and hand off to a person when they should. Run by Suraj Malla.",
   /** Optional scheduling link (Cal.com, Calendly). Empty string hides the button. */
   bookingUrl: "",
   github: "https://github.com/srjmalla",
@@ -22,12 +22,12 @@ export const PERSON = {
   familyName: "Malla",
   jobTitle: "AI engineer",
   /** One line, used in bylines and the Person description. */
-  bio: "Builds and looks after AI employees for small teams.",
+  bio: "Helps businesses bring AI into their work in a way that lasts.",
   /** Path under /public. Empty until a real photo exists. */
   image: "/suraj-malla.jpg",
   imageWidth: 720,
   imageHeight: 720,
-  knowsAbout: ["AI employees", "AI agents", "AI customer support", "workflow automation", "internal tools"],
+  knowsAbout: ["AI adoption", "AI employees", "AI agents", "AI customer support", "workflow automation", "internal tools"],
 } as const;
 
 /** Shown in the live line and on the price block. Change here when it changes. */
@@ -60,7 +60,7 @@ export const PHILOSOPHY = {
   name: "Mytrya comes from Maitreya, the Buddha who is yet to come. The name is about meeting the future with kindness instead of fear.",
   principles: [
     { title: "Calm in the change", body: "A lotus grows out of mud. Disruption is the ground you grow from, and we help you root in it." },
-    { title: "Intelligence that serves", body: "AI should take weight off people, not take away their judgement. The AI employee does the work; you keep the say." },
+    { title: "Intelligence that serves", body: "AI should take weight off people, not take away their judgement. AI does the work; you keep the say." },
     { title: "Built to renew", body: "Nothing we build is finished. It keeps learning and adapting as the world moves, so you never have to start over." },
   ],
 } as const;

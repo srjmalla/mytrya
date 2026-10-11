@@ -6,7 +6,7 @@ import { meta, breadcrumbs } from "../lib/meta";
 export const metadata = meta({
   title: "Questions",
   description:
-    "What Mytrya Intelligence does, what an AI employee is, who it's for, how mistakes are kept out, what it costs, who owns it, and how to start.",
+    "What Mytrya Intelligence does, what an AI employee is, whether you need one, who it's for, how mistakes are kept out, what it costs, who owns it, and how to start.",
   path: "/faq",
 });
 
