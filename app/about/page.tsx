@@ -8,7 +8,7 @@ import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
   title: `About Mytrya and ${PERSON.name}`,
-  description: `${SITE.name} helps small teams work through the change AI is bringing. Run by ${PERSON.name}. The name comes from Maitreya, the Buddha who is yet to come.`,
+  description: `${SITE.name} helps businesses bring AI into their work in a way that lasts. Run by ${PERSON.name}, also a musician and actor, and a lifelong learner of new things.`,
   path: "/about",
   image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: PERSON.name },
 });
@@ -30,7 +30,6 @@ export default function AboutPage() {
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
           <Mark className="mt-12 h-14 w-14 text-ink" />
           <h1 className="h-display mt-6 max-w-[18ch] text-[44px] sm:text-[60px]">{PHILOSOPHY.line}</h1>
-          <p className="mt-6 max-w-[52ch] text-[19px] leading-[1.6] text-ink-2">{PHILOSOPHY.name}</p>
         </div>
       </section>
 

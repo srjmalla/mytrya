@@ -57,7 +57,6 @@ export const NAV = [
 /** The core philosophy. Shown on the home page and the about page. */
 export const PHILOSOPHY = {
   line: "AI is changing how work gets done. Mytrya helps you come through it stronger.",
-  name: "Mytrya comes from Maitreya, the Buddha who is yet to come. The name is about meeting the future with kindness instead of fear.",
   principles: [
     { title: "Calm in the change", body: "A lotus grows out of mud. Disruption is the ground you grow from, and we help you root in it." },
     { title: "Intelligence that serves", body: "AI should take weight off people, not take away their judgement. AI does the work; you keep the say." },

@@ -10,7 +10,7 @@ function header() {
     "",
     `> ${SITE.description} Contact: ${SITE.email}.`,
     "",
-    `${PHILOSOPHY.line} ${PHILOSOPHY.name}`,
+    PHILOSOPHY.line,
     "",
     `${SITE.name} is run by ${PERSON.name}. ${AVAILABILITY.line}. ` +
       `Projects start from ${usd(PRICING.firstProjectFrom)}, fixed price. Reply within ${PRICING.replyWithin}.`,
