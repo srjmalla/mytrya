@@ -60,7 +60,7 @@ export const PHILOSOPHY = {
   principles: [
     { title: "Calm in the change", body: "A lotus grows out of mud. Disruption is the ground you grow from, and we help you root in it." },
     { title: "Intelligence that serves", body: "AI should take weight off people, not take away their judgement. AI does the work; you keep the say." },
-    { title: "Built to renew", body: "Nothing we build is finished. It keeps learning and adapting as the world moves, so you never have to start over." },
+    { title: "Grows with the change", body: "The AI world keeps shifting. Your system is built to shift with it." },
   ],
 } as const;
 
