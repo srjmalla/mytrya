@@ -1,69 +1,42 @@
-import type { Faq } from "./services";
 import { PRICING, usd } from "./site";
+
+export type Faq = { q: string; a: string };
 
 /** Site-wide FAQ. Answer-first: the first sentence should work on its own. */
 export const FAQ: Faq[] = [
   {
     q: "What does Mytrya Intelligence do?",
-    a: "Mytrya Intelligence builds AI agents, internal tools and data pipelines for small B2B software and service companies. It is run by Suraj Malla in Kathmandu, and every system described on this site was built and is run by him.",
+    a: "Mytrya helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, along with the internal tools and automation around them. It is run by Suraj Malla in Kathmandu.",
+  },
+  {
+    q: "What is an AI employee?",
+    a: "An AI employee does a whole job, not just a reply. Give it support, for example, and it reads each case, finds what it needs, answers or asks, follows up, and hands off to a person when it should. It works inside the tools your team already uses.",
   },
   {
     q: "Who is it for?",
-    a: "Teams of roughly 5 to 200 people who already run on a helpdesk, a CRM, a billing system and a project tracker, and have a person copying information between them. Founders, heads of operations and heads of support are the usual first contact.",
+    a: "Small teams, roughly 5 to 200 people, where someone spends hours every week on work that follows a pattern: answering the same questions, sorting requests, chasing follow-ups or copying information between systems.",
   },
   {
-    q: "What kinds of projects do you take?",
-    a: "Three kinds. AI employees that take a whole job off your team and work on their own: the one in production handles support end to end inside whatever helpdesk and chat you run, or as a widget on your own site, and the same loop qualifies leads, processes invoices and drafts outreach. Internal tools and dashboards that read your operational data and compute the answers. Data pipelines and workflow automation, in code or in n8n and Make. Each has its own page under Services.",
+    q: "How do you keep it from making mistakes?",
+    a: "It answers only from your own information, and hands off to a person when the answer isn't there. Anything that can't be undone waits for a person to approve it. Before it goes live you watch it work on real cases without it changing anything.",
   },
   {
-    q: "Which systems can you integrate with?",
-    a: "Anything with an API, a webhook, or a web page. Shipped work so far has connected a helpdesk and its live chat, FastSpring, monday.com, Slack, Telegram, WordPress, Bettermode, MeroShare, three Nepali market-data sites, a broker's web terminal, Claude, Gemini and Gemini Live, OpenAI, OpenRouter, ElevenLabs, Kokoro, eSewa, Clerk, Neon Postgres, Upstash, Redis Cloud, Vercel Blob, Cloudflare R2 and Cloudflare Pages. A system that isn't on that list is usually a day of adapter work, not a reason to say no.",
+    q: "How much does it cost?",
+    a: `Projects start from ${usd(PRICING.firstProjectFrom)}, at a fixed price agreed in writing before work starts. The first call, where we work out whether it's worth doing, is free and takes about 30 minutes.`,
   },
   {
-    q: "How do projects work commercially?",
-    a: "Fixed scope and fixed price, agreed in writing before work starts. A first project is scoped so that it ships in weeks, with a dry-run demo each week along the way. Ongoing tuning after handover is a separate, optional retainer.",
+    q: "Who owns what you build?",
+    a: "You do. Everything is delivered into your own accounts, with documentation and a walkthrough for whoever will look after it.",
   },
   {
-    q: "How much does a project cost?",
-    a: `First projects start at ${usd(PRICING.firstProjectFrom)} and most projects land between ${usd(PRICING.typicalLow)} and ${usd(PRICING.typicalHigh)}, at a fixed price agreed in writing. An AI employee starts at $6,000; internal tools and automation start at $3,000. Where a project falls depends on how many systems it touches and how much documentation already exists. The scoping call that sets the price is free and takes about 30 minutes.`,
-  },
-  {
-    q: "Why hire one engineer instead of an agency?",
-    a: "The person you talk to on the scoping call is the person who writes the code, runs it in production and answers when it breaks. There is no handoff, no account manager, and the price reflects one salary rather than a team's. The trade-off is capacity: I take a small number of projects at a time.",
-  },
-  {
-    q: "Why build a custom AI support agent instead of using Intercom Fin or Freshdesk Freddy?",
-    a: "Use the vendor's agent if your help centre alone answers your tickets and the agent doesn't need to act in other systems. Intercom Fin now also runs on other helpdesks, including Freshdesk, at a price per resolved outcome. Build custom when resolving a ticket means acting in other systems, when you want the agent on your own website or inside your product, when you want to choose the model and keep the data in your own accounts, or when you need every action traceable and rehearsable before it goes live.",
-  },
-  {
-    q: "How do you keep an AI agent from doing something wrong?",
-    a: "Four rules that appear in every agent I build. Dry-run is the default and writes are enabled per integration. Product specifics come only from retrieved documentation, cited in the reply. Record identifiers come from context, never from the model. Anything the agent couldn't answer is logged as a gap and becomes the documentation backlog.",
-  },
-  {
-    q: "Which AI models do you use?",
-    a: "Claude, Gemini and OpenAI models through their APIs, chosen per task. Where the choice matters I measure it: one of my systems runs a scheduled evaluation of candidate models over identical inputs and keeps the results. Model choice is a configuration, not an architecture decision, so it can change.",
-  },
-  {
-    q: "Do you use n8n, Make or Zapier?",
-    a: "Yes, when your team will maintain the workflow and can see it as a diagram. Logic that needs rate limiting, retries, deduplication or a test is written in code, and the workflow tool calls it.",
-  },
-  {
-    q: "Who owns the code?",
-    a: "You do. Every project is delivered into your own repositories and cloud accounts, with documentation and a runbook. Nothing runs on infrastructure you don't control.",
-  },
-  {
-    q: "Where are you based, and what time zones do you work with?",
-    a: "Kathmandu, Nepal, UTC+5:45. Working hours overlap the full European working day and the early part of the US East Coast morning. US clients get same-day asynchronous responses and scheduled calls in their morning.",
-  },
-  {
-    q: "Can you show me client work?",
-    a: "Yes, with the client's name withheld. The Work section describes three client systems in architectural detail, including an AI support employee that handles cases end to end across three channels and learns from the human team. Metrics that belong to the client aren't published. Three of my own products, an investing copilot, a rehearsal tool for actors and an app that reads your books aloud, are linked and can be opened.",
+    q: "Where are you based?",
+    a: "Kathmandu, Nepal (UTC+5:45). Working hours overlap the full European day and the US East Coast morning.",
   },
   {
     q: "How do I start?",
-    a: "Write to malla.srj@mytrya.com or use the contact form with a description of the process: what it is, who does it, how often, and what goes wrong when it's late. I reply within one working day with either a scoping call or a reason it isn't worth automating.",
+    a: `Use the contact form or write to malla.srj@mytrya.com. Describe the work you'd like taken off your team. You'll get a reply within ${PRICING.replyWithin}.`,
   },
 ];
 
-/** The four shown on the home page. */
-export const FAQ_HOME = [0, 5, 7, 8].map((i) => FAQ[i]);
+/** The ones shown on the home page. */
+export const FAQ_HOME = [1, 3, 4, 5].map((i) => FAQ[i]);

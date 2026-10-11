@@ -1,16 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Fragment_Mono, Mona_Sans } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
-import { PERSON, PRICING, SITE } from "./lib/site";
+import { PERSON, SITE } from "./lib/site";
 import { PERSON_LD } from "./lib/schema";
 
-const mona = Mona_Sans({ variable: "--font-mona", subsets: ["latin"], axes: ["wdth"] });
-const fragment = Fragment_Mono({ variable: "--font-fragment", subsets: ["latin"], weight: "400" });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 
-export const viewport: Viewport = { themeColor: "#08090a", colorScheme: "dark" };
+export const viewport: Viewport = { themeColor: "#ffffff", colorScheme: "light" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   authors: [{ name: PERSON.name, url: `${SITE.url}/about` }],
   creator: PERSON.name,
-  alternates: { types: { "application/rss+xml": `${SITE.url}/feed.xml` } },
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -44,7 +42,6 @@ const ORG = {
   url: SITE.url,
   logo: `${SITE.url}/logo.png`,
   image: `${SITE.url}/opengraph-image`,
-  priceRange: `$${PRICING.typicalLow.toLocaleString("en-US")}–$${PRICING.typicalHigh.toLocaleString("en-US")}`,
   description: SITE.description,
   email: SITE.email,
   founder: { "@id": `${SITE.url}/about#person` },
@@ -68,7 +65,7 @@ const WEBSITE = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${mona.variable} ${fragment.variable} h-full`}>
+    <html lang="en" className={`${manrope.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <JsonLd data={[ORG, WEBSITE, PERSON_LD]} />
         <Header />

@@ -1,13 +1,12 @@
 import { Breadcrumbs } from "../components/ui";
-import { KathmanduClock } from "../components/Live";
 import ContactForm from "../components/ContactForm";
 import JsonLd from "../components/JsonLd";
-import { AVAILABILITY, PERSON, PRICING, SITE, usd } from "../lib/site";
+import { AVAILABILITY, PERSON, PRICING, SITE } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 
 export const metadata = meta({
-  title: "Contact: start a project",
-  description: `Describe the process you want automated and ${PERSON.name} replies within ${PRICING.replyWithin} with a scoping call or a reason it isn't worth automating. First projects from ${usd(PRICING.firstProjectFrom)}. Email ${SITE.email}.`,
+  title: "Book a call",
+  description: `Tell ${PERSON.name} what you'd like taken off your team. A reply within ${PRICING.replyWithin}, and a free 30-minute call if it's a fit. Email ${SITE.email}.`,
   path: "/contact",
 });
 
@@ -22,32 +21,22 @@ export default function ContactPage() {
     <div className="wrap pb-20 pt-10">
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]), contactLd]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <h1 className="h-display mt-8 max-w-[20ch] text-[40px] sm:text-[56px]">
-        Describe the process. I&rsquo;ll tell you if it&rsquo;s worth automating.
-      </h1>
+      <h1 className="h-display mt-8 max-w-[18ch] text-[40px] sm:text-[56px]">Tell me what you&rsquo;d like off your plate.</h1>
 
-      <div className="mt-12 grid gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+      <div className="mt-12 grid gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1fr)_280px]">
         <ContactForm />
 
-        <aside className="self-start">
-          <dl className="panel px-4 py-1 font-mono text-[12.5px]">
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Start</dt><dd>{AVAILABILITY.start.replace(/^Start /, "")}</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Reply</dt><dd>within {PRICING.replyWithin}</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Kathmandu</dt><dd><KathmanduClock /> · UTC+5:45</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">First projects</dt><dd>from {usd(PRICING.firstProjectFrom)}</dd></div>
-          </dl>
-          <p className="meta mt-8">Or write directly</p>
-          <a href={`mailto:${SITE.email}`} className="a mt-1 inline-block text-[17px]">{SITE.email}</a>
-          {SITE.bookingUrl ? (
-            <a href={SITE.bookingUrl} className="btn btn-line mt-6">Book the call</a>
-          ) : null}
-          <p className="meta mt-8">What happens next</p>
-          <ol className="mt-2 space-y-2 text-[16px] leading-snug text-ink-2">
-            <li>1. I read it and reply within {PRICING.replyWithin}.</li>
-            <li>2. If it looks like a fit, a 30-minute call. Free.</li>
-            <li>3. A written spec and a fixed price, or an honest no.</li>
+        <aside className="self-start text-[16px] leading-[1.6] text-ink-2">
+          <p className="font-semibold text-ink">What happens next</p>
+          <ol className="mt-3 space-y-2">
+            <li>1. I reply within {PRICING.replyWithin}.</li>
+            <li>2. If it looks like a fit, a free 30-minute call.</li>
+            <li>3. A written plan and a fixed price, or an honest no.</li>
           </ol>
+          <p className="mt-8 font-semibold text-ink">Or write directly</p>
+          <a href={`mailto:${SITE.email}`} className="a mt-1 inline-block">{SITE.email}</a>
+          {SITE.bookingUrl ? <a href={SITE.bookingUrl} className="btn btn-line mt-6">Book the call</a> : null}
+          <p className="meta mt-8">{AVAILABILITY.line} · {AVAILABILITY.start.toLowerCase()}</p>
         </aside>
       </div>
     </div>

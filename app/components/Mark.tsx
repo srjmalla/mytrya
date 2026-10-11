@@ -1,19 +1,20 @@
 /**
- * The Mytrya mark: an M drawn as one path with rounded joints, its last leg ending in the lime live dot.
- * Same geometry as app/icon.svg; keep the two in sync.
+ * The Mytrya mark: a lotus. The centre petal carries the saffron accent; the outer petals and the
+ * waterline are drawn in the current text colour. Same geometry as app/icon.svg; keep the two in sync.
  */
 export default function Mark({ className = "h-7 w-7" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" aria-hidden className={className}>
+      <path d="M32 12c7 8 7 22 0 34-7-12-7-26 0-34z" fill="var(--sun)" />
       <path
-        d="M15 47V19l17 17 17-17v18"
+        d="M30 46C20 42 12 32 12 22c9 2 16 8 19 16M34 46c10-4 18-14 18-24-9 2-16 8-19 16"
         fill="none"
         stroke="currentColor"
-        strokeWidth="7"
+        strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="49" cy="47" r="5.5" fill="var(--lime)" />
+      <path d="M14 52h36" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
     </svg>
   );
 }

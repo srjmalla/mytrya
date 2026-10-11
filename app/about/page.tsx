@@ -1,99 +1,82 @@
 import Link from "next/link";
-import { Breadcrumbs, Cta, Leaf } from "../components/ui";
-import { KathmanduClock } from "../components/Live";
+import { Breadcrumbs, Cta, Leaf, Sun } from "../components/ui";
+import Mark from "../components/Mark";
 import JsonLd from "../components/JsonLd";
-import { PRINCIPLES } from "../lib/process";
-import { AVAILABILITY, PERSON, SITE } from "../lib/site";
+import { PERSON, PHILOSOPHY, SITE } from "../lib/site";
 import { meta, breadcrumbs } from "../lib/meta";
 import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
-  title: `${PERSON.name}, AI engineer in Kathmandu`,
-  description: `${PERSON.name} runs Mytrya Intelligence, an AI engineering practice in Kathmandu. He builds and runs AI employees, internal tools and data pipelines for small B2B teams, and ships his own products.`,
+  title: `About Mytrya and ${PERSON.name}`,
+  description: `${SITE.name} helps small teams work through the change AI is bringing. Run by ${PERSON.name} in ${SITE.locality}. The name comes from Maitreya, the Buddha who is yet to come.`,
   path: "/about",
-  image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}` },
+  image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name} in ${SITE.locality}` },
 });
 
 export default function AboutPage() {
   const profile = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    dateModified: "2026-10-09",
+    dateModified: "2026-10-11",
     mainEntity: PERSON_LD,
     primaryImageOfPage: { "@id": `${SITE.url}/about#photo` },
   };
   return (
     <>
-      <div className="wrap pb-16 pt-10">
-        <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]), profile]} />
-        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
+      <section className="relative overflow-hidden">
+        <Sun />
+        <div className="wrap relative pb-20 pt-10">
+          <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]), profile]} />
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
+          <Mark className="mt-12 h-14 w-14 text-ink" />
+          <h1 className="h-display mt-6 max-w-[18ch] text-[44px] sm:text-[60px]">{PHILOSOPHY.line}</h1>
+          <p className="mt-6 max-w-[52ch] text-[19px] leading-[1.6] text-ink-2">{PHILOSOPHY.name}</p>
+        </div>
+      </section>
 
-        <header className="mt-8 grid gap-10 pb-12 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <div>
-            <p className="meta">{PERSON.jobTitle} · {SITE.locality}, Nepal · runs {SITE.name}</p>
-            <h1 className="h-display mt-3 text-[44px] sm:text-[60px]">{PERSON.name}</h1>
-            <div className="mt-8 max-w-[64ch] space-y-5 text-[19px] leading-[1.65]">
-              <p>
-                I build AI systems for small B2B teams and run them in production. {SITE.name} is the name I work under.
-              </p>
-              <p className="text-ink-2">
-                The largest system I run is an AI support employee for a software company: one
-                agent that handles a case end to end across their helpdesk, their live chat and a chat widget of its own on
-                their site and inside their apps. It works out what each case needs, acts in the dev board and the account
-                systems, hands off to a person when it should, and learns from what the human team actually sends. Alongside it sit a daily dashboard that reads
-                the same desk for their leadership, and two smaller internal tools. All of it is written up under{" "}
-                <Link href="/work" className="a">Work</Link>, with the client unnamed. Before that I built an invoice
-                automation that watches a mailbox, reads each invoice with OCR and extracts the fields a person used to
-                retype by hand. The other shapes I build, from lead-qualifying chat agents to outreach and content
-                pipelines, are listed under <Link href="/services" className="a">Services</Link>.
-              </p>
-              <p className="text-ink-2">
-                On my own time I build products, and they keep me honest about what it takes to ship.{" "}
-                <Link href="/work/offscript" className="a">offScript</Link> is a rehearsal partner for actors with two
-                speech engines and a cue engine that reads the line instead of the clock.{" "}
-                <Link href="/work/nepse-copilot" className="a">NEPSE Copilot</Link> is an investing copilot for the Nepal
-                Stock Exchange that grades its own calls. <Link href="/work/narrately" className="a">Narrately</Link> reads
-                people&rsquo;s own books aloud and narrates each sentence once for every reader. All three are live.
-              </p>
-              <p className="text-ink-2">
-                You work directly with the engineer who writes the code, runs it and answers when it breaks. There is no
-                handoff. The cost of that is capacity, so I take a small number of projects at a time and say no when a
-                project isn&rsquo;t a fit.
-              </p>
-              <p className="text-ink-2">
-                I write most things in TypeScript on Next.js, keep data in Postgres or Redis, and use Claude, Gemini and
-                OpenAI models through their APIs, chosen per task and measured where the choice matters.
-              </p>
-            </div>
-          </div>
-          <div className="self-start">
-            <figure className="overflow-hidden rounded-[14px] border border-line-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={PERSON.image} alt={`${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}`} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
-              <figcaption className="meta border-t border-line-2 px-4 py-2.5">{PERSON.name} · {SITE.locality}</figcaption>
-            </figure>
-          <dl className="panel mt-4 px-4 py-1 font-mono text-[12.5px]">
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Status</dt><dd>{AVAILABILITY.line}</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Local time</dt><dd><KathmanduClock /> · UTC+5:45</dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">Email</dt><dd><a href={`mailto:${SITE.email}`} className="a">{SITE.email}</a></dd></div>
-            <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">GitHub</dt><dd><a href={SITE.github} rel="me noopener" className="a">srjmalla</a></dd></div>
-            {SITE.linkedin ? (
-              <div className="flex justify-between gap-4 border-b border-rule py-2.5"><dt className="text-ink-3">LinkedIn</dt><dd><a href={SITE.linkedin} rel="me noopener" className="a">Suraj Malla</a></dd></div>
-            ) : null}
-            <div className="py-2.5"><dt className="text-ink-3">Hours</dt><dd className="mt-1 leading-relaxed text-ink-2">Full overlap with Europe, mornings for the US East Coast.</dd></div>
-          </dl>
-          </div>
-        </header>
-
-        <Leaf label="How I build" note={<p>Rules that appear in the code of the systems under Work. Each exists because something went wrong without it.</p>}>
-          <ol className="grid gap-x-12 sm:grid-cols-2">
-            {PRINCIPLES.map((p) => (
-              <li key={p.title} className="rule-t py-5">
-                <h3 className="h-section text-[19px]">{p.title}</h3>
-                <p className="mt-2 max-w-[48ch] text-[16px] leading-[1.6] text-ink-2">{p.body}</p>
+      <div className="wrap pb-16">
+        <Leaf label="What we believe">
+          <ul className="grid gap-8">
+            {PHILOSOPHY.principles.map((p) => (
+              <li key={p.title}>
+                <h3 className="h-section text-[22px]">{p.title}</h3>
+                <p className="mt-2 max-w-[56ch] text-[17px] leading-[1.6] text-ink-2">{p.body}</p>
               </li>
             ))}
-          </ol>
+          </ul>
+        </Leaf>
+
+        <Leaf label="Who runs it">
+          <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px]">
+            <div className="prose-note">
+              <p>
+                I&rsquo;m {PERSON.name}, an engineer in {SITE.locality}. I build AI employees for small teams and look after
+                them once they&rsquo;re running. The largest one handles customer support for a software company, from the
+                first message to the closed case.
+              </p>
+              <p>
+                On my own time I make products people use: <Link href="/work/offscript" className="a">offScript</Link>, a
+                rehearsal partner for actors; <Link href="/work/nepse-copilot" className="a">NEPSE Copilot</Link>, an
+                investing assistant for the Nepal Stock Exchange; and <Link href="/work/narrately" className="a">Narrately</Link>,
+                which reads your own books aloud.
+              </p>
+              <p>
+                You work with me directly, from the first call to long after handover. That limits how many projects I
+                take at once.
+              </p>
+            </div>
+            <figure className="self-start overflow-hidden rounded-[20px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={PERSON.image} alt={`${PERSON.name} in ${SITE.locality}`} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
+            </figure>
+          </div>
+        </Leaf>
+
+        <Leaf label="Elsewhere">
+          <ul className="space-y-2 text-[17px]">
+            <li><a href={`mailto:${SITE.email}`} className="a">{SITE.email}</a></li>
+            {SITE.linkedin ? <li><a href={SITE.linkedin} rel="me noopener" className="a">LinkedIn</a></li> : null}
+          </ul>
         </Leaf>
       </div>
       <Cta />

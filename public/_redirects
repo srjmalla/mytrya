@@ -1,2 +1,7 @@
 # Removed pages. Pages evaluates these before serving static files.
 /log / 301
+/notes / 301
+/notes/* / 301
+/services / 301
+/services/* / 301
+/feed.xml / 301

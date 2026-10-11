@@ -1,35 +1,28 @@
 import { ImageResponse } from "next/og";
-import { PERSON, SITE } from "./lib/site";
+import { SITE } from "./lib/site";
 
 export const dynamic = "force-static";
-export const alt = `${SITE.name}: AI employees and internal tools, by ${PERSON.name}`;
+export const alt = `${SITE.name}: the world changed. Change with it.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, background: "#08090a", color: "#eef0ec", fontFamily: "sans-serif" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: 26 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <svg width="44" height="44" viewBox="0 0 64 64">
-              <path d="M15 47V19l17 17 17-17v18" fill="none" stroke="#eef0ec" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="49" cy="47" r="5.5" fill="#c6f24e" />
-            </svg>
-            <span style={{ fontWeight: 600 }}>{SITE.name}</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#c6f24e", fontFamily: "monospace", fontSize: 22 }}>
-            <div style={{ width: 12, height: 12, borderRadius: 99, background: "#c6f24e" }} />
-            Taking new projects
-          </div>
+      <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, background: "#ffffff", color: "#1c1834", fontFamily: "sans-serif", overflow: "hidden" }}>
+        <div style={{ position: "absolute", right: -80, bottom: -420, width: 820, height: 820, borderRadius: 999, backgroundImage: "radial-gradient(circle, #ffe2c4 0%, #fff1e4 45%, #ffffff 70%)", border: "1px solid #f3cfae" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 30, fontWeight: 700 }}>
+          <svg width="52" height="52" viewBox="0 0 64 64">
+            <path d="M32 12c7 8 7 22 0 34-7-12-7-26 0-34z" fill="#e0812f" />
+            <path d="M30 46C20 42 12 32 12 22c9 2 16 8 19 16M34 46c10-4 18-14 18-24-9 2-16 8-19 16" fill="none" stroke="#1c1834" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M14 52h36" stroke="#1c1834" strokeWidth="5" strokeLinecap="round" />
+          </svg>
+          {SITE.name}
         </div>
-        <div style={{ display: "flex", fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3, maxWidth: 960 }}>
-          AI employees that do the whole job.
+        <div style={{ display: "flex", fontSize: 92, fontWeight: 800, lineHeight: 1.02, letterSpacing: -4, maxWidth: 820 }}>
+          The world changed. Change with it.
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, fontFamily: "monospace", color: "#a7aba5" }}>
-          <span>{PERSON.name} · AI engineer · {SITE.locality}</span>
-          <span>mytrya.com</span>
-        </div>
+        <div style={{ display: "flex", fontSize: 26, color: "#4f4b63" }}>AI employees for small teams · mytrya.com</div>
       </div>
     ),
     { ...size },

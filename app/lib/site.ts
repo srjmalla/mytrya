@@ -6,9 +6,9 @@ export const SITE = {
   url: "https://mytrya.com",
   email: "malla.srj@mytrya.com",
   /** Used in <title> templates and the Organization description. */
-  tagline: "AI employees, internal tools and automation for small B2B teams",
+  tagline: "AI employees for small teams",
   description:
-    "Mytrya Intelligence is an AI engineering practice run by Suraj Malla in Kathmandu. It builds AI employees: agents that take a whole job off a team, work on their own, and hand off to a person when they should. The one in production today handles customer support end to end. It also builds internal tools and data pipelines for small B2B software and service companies, on fixed-scope projects.",
+    "Mytrya Intelligence helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, work in the tools the team already uses, and hand off to a person when they should. Run by Suraj Malla in Kathmandu.",
   locality: "Kathmandu",
   country: "NP",
   timezone: "Asia/Kathmandu",
@@ -25,16 +25,12 @@ export const PERSON = {
   familyName: "Malla",
   jobTitle: "AI engineer",
   /** One line, used in bylines and the Person description. */
-  bio: "Builds and runs AI employees, internal tools and data pipelines for small B2B teams. Based in Kathmandu.",
+  bio: "Builds and looks after AI employees for small teams. Based in Kathmandu.",
   /** Path under /public. Empty until a real photo exists. */
   image: "/suraj-malla.jpg",
   imageWidth: 720,
   imageHeight: 720,
-  knowsAbout: [
-    "AI employees", "AI agents", "AI customer support", "LLM evaluation", "retrieval-augmented generation", "tool calling",
-    "Freshdesk", "Zendesk", "Intercom", "internal tools", "data pipelines", "workflow automation",
-    "text-to-speech", "Next.js", "TypeScript", "Postgres", "Redis", "Claude", "Gemini", "OpenAI",
-  ],
+  knowsAbout: ["AI employees", "AI agents", "AI customer support", "workflow automation", "internal tools"],
 } as const;
 
 /** Shown in the live line and on the price block. Change here when it changes. */
@@ -47,9 +43,6 @@ export const AVAILABILITY = {
 /** Published so nobody has to ask. USD. */
 export const PRICING = {
   firstProjectFrom: 3000,
-  typicalLow: 5000,
-  typicalHigh: 20000,
-  retainerFrom: 600,
   replyWithin: "one working day",
 } as const;
 
@@ -59,10 +52,21 @@ export function usd(n: number) {
 
 export const NAV = [
   { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
-  { href: "/notes", label: "Notes" },
   { href: "/about", label: "About" },
+  { href: "/process", label: "Process" },
+  { href: "/faq", label: "FAQ" },
 ] as const;
+
+/** The core philosophy. Shown on the home page and the about page. */
+export const PHILOSOPHY = {
+  line: "AI is changing how work gets done. Mytrya helps you come through it stronger.",
+  name: "Mytrya comes from Maitreya, the Buddha who is yet to come. The name is about meeting the future with kindness instead of fear.",
+  principles: [
+    { title: "Calm in the change", body: "A lotus grows out of mud. Disruption is the ground you grow from, and we help you root in it." },
+    { title: "Intelligence that serves", body: "AI should take weight off people, not take away their judgement. The AI employee does the work; you keep the say." },
+    { title: "Built to renew", body: "Nothing we build is finished. It keeps learning and adapting as the world moves, so you never have to start over." },
+  ],
+} as const;
 
 export function absolute(path: string): string {
   return new URL(path, SITE.url).toString();

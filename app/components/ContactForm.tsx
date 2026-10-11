@@ -40,7 +40,7 @@ export default function ContactForm() {
         <p className="h-section text-[22px]">Received.</p>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
           I reply within one working day. If it&rsquo;s urgent, write to{" "}
-          <a href={`mailto:${SITE.email}`} className="text-accent underline">{SITE.email}</a>.
+          <a href={`mailto:${SITE.email}`} className="text-sun-ink underline">{SITE.email}</a>.
         </p>
       </div>
     );
@@ -74,16 +74,16 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="field-label">
-          The process
+          What would you like taken off your team?
         </label>
         <p className="mb-2 text-[13.5px] leading-snug text-ink-3">
-          What it is, who does it, how often, and what goes wrong when it&rsquo;s late. Which systems it touches.
+          What the work is, who does it now, and how often.
         </p>
         <textarea id="message" name="message" required rows={7} className="field" />
       </div>
 
       {state.status === "error" ? (
-        <p role="alert" className="text-[14px] text-accent">
+        <p role="alert" className="text-[14px] text-sun-ink">
           {state.error} You can also email{" "}
           <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
         </p>

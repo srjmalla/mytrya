@@ -8,12 +8,10 @@ export default function NotFound() {
     <div className="wrap py-24">
       <p className="meta">404</p>
       <h1 className="h-display mt-3 text-[40px]">That page isn&rsquo;t here.</h1>
-      <p className="mt-4 max-w-[58ch] text-[18px] leading-relaxed text-ink-2">
-        It may have moved when the site was rebuilt. The case files and notes are all linked from the home page.
-      </p>
+      <p className="mt-4 max-w-[52ch] text-[18px] leading-relaxed text-ink-2">It may have moved when the site was rebuilt.</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link href="/" className="btn btn-ink">Home</Link>
-        <Link href="/work" className="btn btn-line">Case files</Link>
+        <Link href="/work" className="btn btn-line">Work</Link>
       </div>
     </div>
   );
