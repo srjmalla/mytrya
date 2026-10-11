@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { SITE } from "./lib/site";
 
 export const dynamic = "force-static";
-export const alt = `${SITE.name}: the world changed. Change with it.`;
+export const alt = `${SITE.name}: the world is changing. Rise with it.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -19,8 +19,9 @@ export default function Image() {
           </svg>
           {SITE.name}
         </div>
-        <div style={{ display: "flex", fontSize: 92, fontWeight: 800, lineHeight: 1.02, letterSpacing: -4, maxWidth: 820 }}>
-          The world changed. Change with it.
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 92, fontWeight: 800, lineHeight: 1.05, letterSpacing: -4 }}>
+          <span>The world is changing.</span>
+          <span>Rise with it.</span>
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#4f4b63" }}>AI employees for small teams · mytrya.com</div>
       </div>

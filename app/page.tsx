@@ -7,7 +7,7 @@ import { meta } from "./lib/meta";
 
 export const metadata = meta({
   title: `${SITE.name} · AI employees for small teams`,
-  ogTitle: `${SITE.name} · The world changed. Change with it.`,
+  ogTitle: `${SITE.name} · The world is changing. Rise with it.`,
   description: SITE.description,
   path: "/",
 });
@@ -29,7 +29,7 @@ export default function Home() {
         <Sun className="-right-24 -bottom-[300px] h-[600px] w-[600px] sm:-right-10 sm:-bottom-[330px] sm:h-[680px] sm:w-[680px]" />
         <div className="wrap relative pb-24 pt-20 sm:pb-32 sm:pt-28">
           <h1 className="h-display max-w-[13ch] text-[48px] sm:text-[76px]">
-            The world changed. Change with it<span className="text-sun">.</span>
+            The world is changing. Rise with it<span className="text-sun">.</span>
           </h1>
           <p className="mt-6 max-w-[42ch] text-[18px] leading-[1.55] text-ink-2 sm:text-[20px]">
             Mytrya builds AI employees that take on the new work, so your team stays calm and keeps growing.
