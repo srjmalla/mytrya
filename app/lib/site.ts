@@ -8,10 +8,7 @@ export const SITE = {
   /** Used in <title> templates and the Organization description. */
   tagline: "AI employees for small teams",
   description:
-    "Mytrya Intelligence helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, work in the tools the team already uses, and hand off to a person when they should. Run by Suraj Malla in Kathmandu.",
-  locality: "Kathmandu",
-  country: "NP",
-  timezone: "Asia/Kathmandu",
+    "Mytrya Intelligence helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, work in the tools the team already uses, and hand off to a person when they should. Run by Suraj Malla.",
   /** Optional scheduling link (Cal.com, Calendly). Empty string hides the button. */
   bookingUrl: "",
   github: "https://github.com/srjmalla",
@@ -25,7 +22,7 @@ export const PERSON = {
   familyName: "Malla",
   jobTitle: "AI engineer",
   /** One line, used in bylines and the Person description. */
-  bio: "Builds and looks after AI employees for small teams. Based in Kathmandu.",
+  bio: "Builds and looks after AI employees for small teams.",
   /** Path under /public. Empty until a real photo exists. */
   image: "/suraj-malla.jpg",
   imageWidth: 720,

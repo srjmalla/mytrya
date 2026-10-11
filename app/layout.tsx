@@ -45,7 +45,6 @@ const ORG = {
   description: SITE.description,
   email: SITE.email,
   founder: { "@id": `${SITE.url}/about#person` },
-  address: { "@type": "PostalAddress", addressLocality: SITE.locality, addressCountry: SITE.country },
   areaServed: "Worldwide",
   knowsAbout: PERSON.knowsAbout,
   contactPoint: { "@type": "ContactPoint", contactType: "sales", email: SITE.email, availableLanguage: ["en"] },

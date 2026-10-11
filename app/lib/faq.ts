@@ -6,7 +6,7 @@ export type Faq = { q: string; a: string };
 export const FAQ: Faq[] = [
   {
     q: "What does Mytrya Intelligence do?",
-    a: "Mytrya helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, along with the internal tools and automation around them. It is run by Suraj Malla in Kathmandu.",
+    a: "Mytrya helps small teams work through the change AI is bringing. It builds AI employees that take a whole job off a team, along with the internal tools and automation around them. It is run by Suraj Malla.",
   },
   {
     q: "What is an AI employee?",
@@ -29,8 +29,8 @@ export const FAQ: Faq[] = [
     a: "You do. Everything is delivered into your own accounts, with documentation and a walkthrough for whoever will look after it.",
   },
   {
-    q: "Where are you based?",
-    a: "Kathmandu, Nepal (UTC+5:45). Working hours overlap the full European day and the US East Coast morning.",
+    q: "What hours do you work?",
+    a: "Working hours cover the full European day and the US East Coast morning. Calls are scheduled in your time zone.",
   },
   {
     q: "How do I start?",

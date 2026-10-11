@@ -12,7 +12,7 @@ function header() {
     "",
     `${PHILOSOPHY.line} ${PHILOSOPHY.name}`,
     "",
-    `${SITE.name} is run by ${PERSON.name} in ${SITE.locality}, Nepal (UTC+5:45). ${AVAILABILITY.line}. ` +
+    `${SITE.name} is run by ${PERSON.name}. ${AVAILABILITY.line}. ` +
       `Projects start from ${usd(PRICING.firstProjectFrom)}, fixed price. Reply within ${PRICING.replyWithin}.`,
   ];
 }

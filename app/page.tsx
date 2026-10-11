@@ -95,13 +95,13 @@ export default function Home() {
           <div className="grid items-center gap-10 md:grid-cols-[minmax(0,300px)_minmax(0,1fr)] md:gap-16">
             <div className="overflow-hidden rounded-[20px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={PERSON.image} alt={`${PERSON.name} in ${SITE.locality}`} width={720} height={720} loading="lazy" className="block aspect-square w-full object-cover" />
+              <img src={PERSON.image} alt={PERSON.name} width={720} height={720} loading="lazy" className="block aspect-square w-full object-cover" />
             </div>
             <div>
               <p className="kicker">Who you&rsquo;ll work with</p>
               <h2 id="who-h" className="h-display mt-4 text-[34px] sm:text-[48px]">{PERSON.name}</h2>
               <p className="mt-5 max-w-[50ch] text-[17px] leading-[1.65] text-ink-2">
-                I run Mytrya from {SITE.locality}. The person on your first call is the person who builds your AI employee
+                I run Mytrya. The person on your first call is the person who builds your AI employee
                 and looks after it afterwards.
               </p>
               <Link href="/about" className="btn btn-line mt-7">About Mytrya</Link>

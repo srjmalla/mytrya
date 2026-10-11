@@ -8,9 +8,9 @@ import { PERSON_LD } from "../lib/schema";
 
 export const metadata = meta({
   title: `About Mytrya and ${PERSON.name}`,
-  description: `${SITE.name} helps small teams work through the change AI is bringing. Run by ${PERSON.name} in ${SITE.locality}. The name comes from Maitreya, the Buddha who is yet to come.`,
+  description: `${SITE.name} helps small teams work through the change AI is bringing. Run by ${PERSON.name}. The name comes from Maitreya, the Buddha who is yet to come.`,
   path: "/about",
-  image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: `${PERSON.name} in ${SITE.locality}` },
+  image: { url: PERSON.image, width: PERSON.imageWidth, height: PERSON.imageHeight, alt: PERSON.name },
 });
 
 export default function AboutPage() {
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px]">
             <div className="prose-note">
               <p>
-                I&rsquo;m {PERSON.name}, an engineer in {SITE.locality}. I build AI employees for small teams and look after
+                I&rsquo;m {PERSON.name}. I build AI employees for small teams and look after
                 them once they&rsquo;re running. The largest one handles customer support for a software company, from the
                 first message to the closed case.
               </p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </div>
             <figure className="self-start overflow-hidden rounded-[20px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={PERSON.image} alt={`${PERSON.name} in ${SITE.locality}`} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
+              <img src={PERSON.image} alt={PERSON.name} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
             </figure>
           </div>
         </Leaf>

@@ -15,7 +15,7 @@ export const PERSON_LD = {
   email: SITE.email,
   worksFor: { "@id": `${SITE.url}/#organization` },
   knowsAbout: PERSON.knowsAbout,
-  hasOccupation: { "@type": "Occupation", name: "AI engineer", occupationLocation: { "@type": "City", name: SITE.locality } },
+  hasOccupation: { "@type": "Occupation", name: "AI engineer" },
   ...(PERSON.image
     ? {
         image: {
@@ -25,11 +25,10 @@ export const PERSON_LD = {
           url: `${SITE.url}${PERSON.image}`,
           width: PERSON.imageWidth,
           height: PERSON.imageHeight,
-          caption: `${PERSON.name}, ${PERSON.jobTitle} in ${SITE.locality}`,
+          caption: `${PERSON.name}, ${PERSON.jobTitle}`,
           representativeOfPage: true,
         },
       }
     : {}),
-  address: { "@type": "PostalAddress", addressLocality: SITE.locality, addressCountry: SITE.country },
   sameAs: [SITE.github, SITE.linkedin].filter(Boolean),
 };

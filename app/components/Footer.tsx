@@ -19,7 +19,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="wrap rule-t py-5 meta">
-        <p>© {new Date().getFullYear()} {SITE.name} · {PERSON.name} · {SITE.locality}, Nepal</p>
+        <p>© {new Date().getFullYear()} {SITE.name} · {PERSON.name}</p>
       </div>
     </footer>
   );
