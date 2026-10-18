@@ -4,10 +4,10 @@ import { NAV, PERSON, SITE } from "../lib/site";
 
 export default function Footer() {
   return (
-    <footer className="rule-t text-[15px]">
+    <footer className="rule-t t-label">
       <div className="wrap flex flex-col gap-8 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <p className="flex items-center gap-2.5 text-[17px] font-bold"><Mark className="h-6 w-6 text-ink" />{SITE.name}</p>
+          <p className="flex items-center gap-2.5 t-body font-bold"><Mark className="h-6 w-6 text-ink" />{SITE.name}</p>
           <p className="mt-3 max-w-[36ch] leading-relaxed text-ink-2">Helping small teams change with AI.</p>
           <a href={`mailto:${SITE.email}`} className="a mt-3 inline-block">{SITE.email}</a>
         </div>

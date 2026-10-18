@@ -63,8 +63,8 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
             <span>{w.origin}</span>
             <span>{w.year}</span>
           </p>
-          <h1 className="h-display mt-4 text-[44px] sm:text-[60px]">{w.name}</h1>
-          <p className="mt-6 max-w-[62ch] text-[19px] leading-[1.65] text-ink-2">{w.summary}</p>
+          <h1 className="h-display mt-4 t-page">{w.name}</h1>
+          <p className="mt-6 max-w-[62ch] t-lead text-ink-2">{w.summary}</p>
           {w.url ? (
             <a href={w.url} className="btn btn-ink mt-8">Open {w.name} ↗</a>
           ) : null}
@@ -90,7 +90,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         <nav className="rule-t pt-8" aria-label="Next">
           <Link href={`/work/${next.slug}`} className="group block">
             <span className="meta">Next</span>
-            <span className="h-section mt-1 block text-[22px] transition-colors group-hover:text-sun-ink">{next.name}</span>
+            <span className="h-section mt-1 block t-title transition-colors group-hover:text-sun-ink">{next.name}</span>
           </Link>
         </nav>
       </article>

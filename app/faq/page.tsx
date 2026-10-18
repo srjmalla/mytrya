@@ -21,7 +21,7 @@ export default function FaqPage() {
       <div className="wrap pb-16 pt-10">
         <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]), faqLd]} />
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "FAQ", href: "/faq" }]} />
-        <h1 className="h-display mt-8 pb-10 text-[44px] sm:text-[60px]">Questions</h1>
+        <h1 className="h-display mt-8 pb-10 t-page">Questions</h1>
         <div className="max-w-[820px]">
           <FaqList items={FAQ} as="h2" />
         </div>

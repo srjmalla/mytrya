@@ -61,12 +61,12 @@ typography:
   label:
     fontFamily: "Manrope"
     fontSize: "15px"
-    fontWeight: 700
+    fontWeight: 400
     lineHeight: 1.5
-  kicker:
+  small:
     fontFamily: "Manrope"
     fontSize: "14px"
-    fontWeight: 600
+    fontWeight: 400
     lineHeight: 1.5
   meta:
     fontFamily: "Manrope"
@@ -147,20 +147,22 @@ Less text, more air. Nothing should look like a dark console, beige paper, a ser
 
 ## Type
 
-Manrope only. Use the ten styles in the front matter and nothing between them.
+Manrope only. Use the ten styles in the front matter and nothing between them. Each one is a class
+in `app/globals.css`; never write a pixel size in a page. Headings pair a size class with
+`.h-display` (800, tight tracking) or `.h-section` (700).
 
-| Style | Desktop / mobile | Used for |
-|---|---|---|
-| display-hero | 76 / 48, 800 | Home headline |
-| display-page | 60 / 44, 800 | Page titles |
-| display-section | 48 / 34, 800 | Section headings, CTA |
-| title | 22, 700 | Card, row and principle titles |
-| lead | 20 / 18 | The paragraph under a page title |
-| body | 17, line-height 1.65 | Running text |
-| body-sm | 16, line-height 1.6 | Text inside cards and grids |
-| label | 15, 700 | Buttons, inline links |
-| kicker | 14, 600, `sun-ink` | Small label above a heading |
-| meta | 13.5, `ink-3` | Dates, captions, fine print |
+| Style | Class | Desktop / mobile | Used for |
+|---|---|---|---|
+| display-hero | `t-hero` | 76 / 48, 800 | Home headline |
+| display-page | `t-page` | 60 / 44, 800 | Page titles |
+| display-section | `t-section` | 48 / 34, 800 | Section headings, CTA |
+| title | `t-title` | 22, 700 | Card, row, step, FAQ and principle titles |
+| lead | `t-lead` | 20 / 18 | The paragraph under a page title |
+| body | `t-body` | 17, line-height 1.65 | Running text |
+| body-sm | `t-body-sm` | 16, line-height 1.6 | Text inside cards, rows and grids |
+| label | `t-label` | 15 | Buttons, inline links, footer |
+| small | `t-small` | 14 | Nav, form errors; `.kicker` is this at 600 in `sun-ink` |
+| meta | `meta` | 13.5, `ink-3` | Dates, captions, fine print |
 
 Headings use `text-wrap: balance`. Keep body text to about 50–64 characters per line.
 

@@ -19,8 +19,8 @@ function Rows({ items }: { items: Work[] }) {
         <li key={w.slug}>
           <Link href={`/work/${w.slug}`} className="row-link gap-x-8 gap-y-2 md:grid-cols-[minmax(0,1fr)_10rem]">
             <span>
-              <span className="row-title h-section block text-[22px] transition-colors">{w.name}</span>
-              <span className="mt-1.5 block max-w-[60ch] text-[16.5px] leading-snug text-ink-2">{w.line}.</span>
+              <span className="row-title h-section block t-title transition-colors">{w.name}</span>
+              <span className="mt-1.5 block max-w-[60ch] t-body-sm text-ink-2">{w.line}.</span>
             </span>
             <span className="meta md:pt-1.5 md:text-right"><StatusDot up={workUp(w.status)} label={w.status} /></span>
           </Link>
@@ -43,8 +43,8 @@ export default function WorkPage() {
       <div className="wrap pb-16 pt-10">
         <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }]), list]} />
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Work", href: "/work" }]} />
-        <h1 className="h-display mt-8 text-[44px] sm:text-[60px]">Work</h1>
-        <p className="mt-5 max-w-[52ch] pb-12 text-[19px] leading-[1.6] text-ink-2">
+        <h1 className="h-display mt-8 t-page">Work</h1>
+        <p className="mt-5 max-w-[52ch] pb-12 t-lead text-ink-2">
           Everything here is running today. Clients aren&rsquo;t named; my own products are linked.
         </p>
         <Leaf label="For clients"><Rows items={client} /></Leaf>

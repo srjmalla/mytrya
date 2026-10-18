@@ -29,7 +29,7 @@ export default function AboutPage() {
           <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]), profile]} />
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
           <Mark className="mt-12 h-14 w-14 text-ink" />
-          <h1 className="h-display mt-6 max-w-[18ch] text-[44px] sm:text-[60px]">{PHILOSOPHY.line}</h1>
+          <h1 className="h-display mt-6 max-w-[18ch] t-page">{PHILOSOPHY.line}</h1>
         </div>
       </section>
 
@@ -38,8 +38,8 @@ export default function AboutPage() {
           <ul className="grid gap-8">
             {PHILOSOPHY.principles.map((p) => (
               <li key={p.title}>
-                <h3 className="h-section text-[22px]">{p.title}</h3>
-                <p className="mt-2 max-w-[56ch] text-[17px] leading-[1.6] text-ink-2">{p.body}</p>
+                <h3 className="h-section t-title">{p.title}</h3>
+                <p className="mt-2 max-w-[56ch] t-body text-ink-2">{p.body}</p>
               </li>
             ))}
           </ul>
@@ -90,7 +90,7 @@ export default function AboutPage() {
         </Leaf>
 
         <Leaf label="Elsewhere">
-          <ul className="space-y-2 text-[17px]">
+          <ul className="space-y-2 t-body">
             <li><a href={`mailto:${SITE.email}`} className="a">{SITE.email}</a></li>
             {SITE.linkedin ? <li><a href={SITE.linkedin} rel="me noopener" className="a">LinkedIn</a></li> : null}
           </ul>

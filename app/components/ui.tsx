@@ -53,9 +53,9 @@ export function FaqList({ items, as: Tag = "h3" }: { items: { q: string; a: stri
       {items.map((f) => (
         <div key={f.q} className="rule-t py-6">
           <dt>
-            <Tag className="h-section text-[19px] text-ink">{f.q}</Tag>
+            <Tag className="h-section t-title text-ink">{f.q}</Tag>
           </dt>
-          <dd className="mt-2.5 max-w-[64ch] text-[16.5px] leading-[1.65] text-ink-2">{f.a}</dd>
+          <dd className="mt-2.5 max-w-[64ch] t-body-sm text-ink-2">{f.a}</dd>
         </div>
       ))}
     </dl>
@@ -69,8 +69,8 @@ export function Cta({ title = "Tell me what's changing in your work." }: { title
       <div className="relative overflow-hidden rounded-[24px] border border-line bg-panel px-6 py-14 sm:px-12 sm:py-20">
         <Sun className="-bottom-[300px] left-1/2 h-[560px] w-[560px] -translate-x-1/2" />
         <div className="relative mx-auto max-w-[620px] text-center">
-          <h2 id="cta-h" className="h-display text-[34px] sm:text-[48px]">{title}</h2>
-          <p className="mx-auto mt-5 max-w-[46ch] text-[17px] leading-[1.6] text-ink-2">
+          <h2 id="cta-h" className="h-display t-section">{title}</h2>
+          <p className="mx-auto mt-5 max-w-[46ch] t-body text-ink-2">
             A free 30-minute call. You&rsquo;ll get a reply within {PRICING.replyWithin}.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

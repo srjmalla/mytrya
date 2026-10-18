@@ -21,12 +21,12 @@ export default function ContactPage() {
     <div className="wrap pb-20 pt-10">
       <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]), contactLd]} />
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <h1 className="h-display mt-8 max-w-[18ch] text-[40px] sm:text-[56px]">Tell me what you&rsquo;d like off your plate.</h1>
+      <h1 className="h-display mt-8 max-w-[18ch] t-page">Tell me what you&rsquo;d like off your plate.</h1>
 
       <div className="mt-12 grid gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1fr)_280px]">
         <ContactForm />
 
-        <aside className="self-start text-[16px] leading-[1.6] text-ink-2">
+        <aside className="self-start t-body-sm text-ink-2">
           <p className="font-semibold text-ink">What happens next</p>
           <ol className="mt-3 space-y-2">
             <li>1. I reply within {PRICING.replyWithin}.</li>

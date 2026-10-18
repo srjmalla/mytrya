@@ -37,8 +37,8 @@ export default function ContactForm() {
   if (state.status === "sent") {
     return (
       <div className="panel p-6" role="status">
-        <p className="h-section text-[22px]">Received.</p>
-        <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
+        <p className="h-section t-title">Received.</p>
+        <p className="mt-2 t-body-sm text-ink-2">
           I reply within one working day. If it&rsquo;s urgent, write to{" "}
           <a href={`mailto:${SITE.email}`} className="text-sun-ink underline">{SITE.email}</a>.
         </p>
@@ -76,14 +76,14 @@ export default function ContactForm() {
         <label htmlFor="message" className="field-label">
           What would you like taken off your team?
         </label>
-        <p className="mb-2 text-[13.5px] leading-snug text-ink-3">
+        <p className="mb-2 meta">
           What the work is, who does it now, and how often.
         </p>
         <textarea id="message" name="message" required rows={7} className="field" />
       </div>
 
       {state.status === "error" ? (
-        <p role="alert" className="text-[14px] text-sun-ink">
+        <p role="alert" className="t-small text-sun-ink">
           {state.error} You can also email{" "}
           <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
         </p>

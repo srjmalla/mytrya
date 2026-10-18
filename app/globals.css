@@ -75,6 +75,55 @@ body {
   line-height: 1.2;
   text-wrap: balance;
 }
+/* The type scale. These are the only sizes; see DESIGN.md. Weight comes from .h-display / .h-section. */
+.t-hero {
+  font-size: 48px;
+}
+.t-page {
+  font-size: 44px;
+}
+.t-section {
+  font-size: 34px;
+}
+@media (min-width: 640px) {
+  .t-hero {
+    font-size: 76px;
+  }
+  .t-page {
+    font-size: 60px;
+  }
+  .t-section {
+    font-size: 48px;
+  }
+}
+.t-title {
+  font-size: 22px;
+}
+.t-lead {
+  font-size: 18px;
+  line-height: 1.55;
+}
+@media (min-width: 640px) {
+  .t-lead {
+    font-size: 20px;
+  }
+}
+.t-body {
+  font-size: 17px;
+  line-height: 1.65;
+}
+.t-body-sm {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.t-label {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.t-small {
+  font-size: 14px;
+  line-height: 1.5;
+}
 .meta {
   font-size: 13.5px;
   line-height: 1.55;
@@ -100,8 +149,8 @@ body {
 }
 
 .prose-note {
-  font-size: 17.5px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.65;
   color: var(--ink-2);
   max-width: 64ch;
 }
@@ -198,6 +247,11 @@ body {
 .btn:active {
   transform: translateY(1px);
 }
+.btn-sm {
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: 14px;
+}
 .btn-ink {
   background: var(--ink);
   color: #fff;
@@ -231,7 +285,7 @@ body {
 .field-label {
   display: block;
   margin-bottom: 7px;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--ink);
 }

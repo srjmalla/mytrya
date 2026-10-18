@@ -21,15 +21,15 @@ export default function ProcessPage() {
       <div className="wrap pb-16 pt-10">
         <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Process", path: "/process" }]), howTo]} />
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Process", href: "/process" }]} />
-        <h1 className="h-display mt-8 text-[44px] sm:text-[60px]">How a project runs</h1>
-        <p className="mt-5 max-w-[52ch] pb-12 text-[19px] leading-[1.6] text-ink-2">
+        <h1 className="h-display mt-8 t-page">How a project runs</h1>
+        <p className="mt-5 max-w-[52ch] pb-12 t-lead text-ink-2">
           Four steps, a fixed price, and nothing goes live until you&rsquo;ve watched it work.
         </p>
         {STEPS.map((s, i) => (
           <Leaf key={s.title} label={`Step ${i + 1}`}>
-            <h2 className="h-section text-[26px]">{s.title}</h2>
+            <h2 className="h-section t-title">{s.title}</h2>
             <p className="prose-note mt-3">{s.body}</p>
-            <p className="mt-4 text-[15px] font-semibold text-sun-ink">{s.output}</p>
+            <p className="mt-4 t-label font-semibold text-sun-ink">{s.output}</p>
           </Leaf>
         ))}
       </div>
