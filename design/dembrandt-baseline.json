@@ -1,8 +1,8 @@
 {
   "url": "https://mytrya.com/",
-  "extractedAt": "2026-10-18T05:31:25.569Z",
+  "extractedAt": "2026-10-18T07:14:54.469Z",
   "meta": {
-    "snapshotId": "78eec6a7-d451-4f40-9906-51bd2d4e7f71",
+    "snapshotId": "000dbd1c-1188-44ed-959c-b2940e341240",
     "httpStatus": 200,
     "dembrandtVersion": "0.39.2",
     "schemaVersion": "1.19.0",
@@ -27,7 +27,7 @@
     },
     "fontsReady": true,
     "requestedUrl": "https://mytrya.com",
-    "contentLength": 33847,
+    "contentLength": 33255,
     "flags": {},
     "crawl": {
       "technique": "auto",
@@ -163,8 +163,8 @@
         "confidence": "high",
         "sources": [
           "btn",
-          "rule-t",
-          "h-section"
+          "h-display",
+          "rule-t"
         ],
         "tokens": [
           "--line-2",
@@ -177,18 +177,6 @@
         "onColor": "#ffffff",
         "hover": "#221d3e",
         "variantOf": "primary",
-        "contrastAgainst": [
-          {
-            "bg": "#ffffff",
-            "ratio": 17.08,
-            "aa": true
-          },
-          {
-            "bg": "#f7f6f9",
-            "ratio": 15.86,
-            "aa": true
-          }
-        ],
         "pageCount": 5,
         "scope": "site"
       },
@@ -211,18 +199,6 @@
         "onColor": "#ffffff",
         "hover": "#5f5a77",
         "variantOf": "primary",
-        "contrastAgainst": [
-          {
-            "bg": "#ffffff",
-            "ratio": 8.34,
-            "aa": true
-          },
-          {
-            "bg": "#f7f6f9",
-            "ratio": 7.74,
-            "aa": true
-          }
-        ],
         "pageCount": 5,
         "scope": "site"
       },
@@ -246,33 +222,6 @@
         "role": "surface",
         "onColor": "#000000",
         "hover": "#d9d9d9",
-        "contrastAgainst": [
-          {
-            "bg": "#1c1834",
-            "ratio": 17.08,
-            "aa": true
-          },
-          {
-            "bg": "#2d2850",
-            "ratio": 13.72,
-            "aa": true
-          },
-          {
-            "bg": "#4f4b63",
-            "ratio": 8.34,
-            "aa": true
-          },
-          {
-            "bg": "#a9541a",
-            "ratio": 5.29,
-            "aa": true
-          },
-          {
-            "bg": "#77738a",
-            "ratio": 4.56,
-            "aa": true
-          }
-        ],
         "pageCount": 5,
         "scope": "site"
       },
@@ -294,13 +243,6 @@
         "role": "accent",
         "onColor": "#000000",
         "hover": "#656275",
-        "contrastAgainst": [
-          {
-            "bg": "#ffffff",
-            "ratio": 4.56,
-            "aa": true
-          }
-        ],
         "pageCount": 5,
         "scope": "site"
       },
@@ -318,13 +260,6 @@
         "role": "accent",
         "onColor": "#ffffff",
         "hover": "#cb651f",
-        "contrastAgainst": [
-          {
-            "bg": "#ffffff",
-            "ratio": 5.29,
-            "aa": true
-          }
-        ],
         "pageCount": 4,
         "scope": "section"
       },
@@ -345,13 +280,6 @@
         "role": "accent",
         "onColor": "#000000",
         "hover": "#be6e28",
-        "contrastAgainst": [
-          {
-            "bg": "#ffffff",
-            "ratio": 2.86,
-            "aa": false
-          }
-        ],
         "pageCount": 2,
         "scope": "section"
       },
@@ -454,14 +382,14 @@
         "normalized": "#1c1834",
         "count": 73,
         "usageFrac": 0.5793650793650794,
-        "areaFrac": 0.0012877206850129685,
+        "areaFrac": 0.001283683252543138,
         "confidence": "high",
         "sources": [
           "btn",
+          "h-display",
           "rule-t",
           "h-section",
-          "a",
-          "row-link"
+          "a"
         ],
         "isToken": true
       },
@@ -485,7 +413,7 @@
         "normalized": "#ffffff",
         "count": 9,
         "usageFrac": 0.07142857142857142,
-        "areaFrac": 0.961934666845073,
+        "areaFrac": 0.9619012252630097,
         "confidence": "high",
         "sources": [
           "sticky",
@@ -498,7 +426,7 @@
         "normalized": "#77738a",
         "count": 7,
         "usageFrac": 0.05555555555555555,
-        "areaFrac": 0.000004137857187854832,
+        "areaFrac": 0.0000041248836298773905,
         "confidence": "high",
         "sources": [
           "inline-flex",
@@ -521,7 +449,7 @@
         "normalized": "#e0812f",
         "count": 3,
         "usageFrac": 0.023809523809523808,
-        "areaFrac": 0.000008275714375709664,
+        "areaFrac": 0.000008249767259754781,
         "confidence": "medium",
         "sources": [
           "dot"
@@ -533,7 +461,7 @@
         "normalized": "#f7f6f9",
         "count": 1,
         "usageFrac": 0.007936507936507936,
-        "areaFrac": 0.036765198898350414,
+        "areaFrac": 0.03680271683355749,
         "confidence": "medium",
         "sources": [
           "relative"
@@ -583,7 +511,7 @@
         "paints": "fill",
         "slot": null,
         "count": 26,
-        "area": 36995575,
+        "area": 36873355,
         "cssVar": "--bg",
         "state": null
       },
@@ -646,7 +574,7 @@
         "paints": "fill",
         "slot": null,
         "count": 4,
-        "area": 1741476,
+        "area": 1748736,
         "cssVar": "--panel",
         "state": null
       },
@@ -678,7 +606,7 @@
       },
       {
         "context": "display",
-        "count": 3,
+        "count": 4,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
         "size": "60px (3.75rem)",
@@ -686,21 +614,8 @@
         "lineHeight": "1.02",
         "spacing": "-2.1px",
         "transform": null,
-        "pageCount": 3,
+        "pageCount": 4,
         "scope": "section"
-      },
-      {
-        "context": "display",
-        "count": 1,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "56px (3.50rem)",
-        "weight": 800,
-        "lineHeight": "1.02",
-        "spacing": "-1.96px",
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
       },
       {
         "context": "heading-2",
@@ -716,21 +631,8 @@
         "scope": "section"
       },
       {
-        "context": "heading-2",
-        "count": 1,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "26px (1.63rem)",
-        "weight": 700,
-        "lineHeight": "1.20",
-        "spacing": "-0.39px",
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
-      },
-      {
-        "context": "body",
-        "count": 3,
+        "context": "heading-3",
+        "count": 5,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
         "size": "22px (1.38rem)",
@@ -738,59 +640,7 @@
         "lineHeight": "1.20",
         "spacing": "-0.33px",
         "transform": null,
-        "pageCount": 3,
-        "scope": "section"
-      },
-      {
-        "context": "body",
-        "count": 1,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "20px (1.25rem)",
-        "weight": 400,
-        "lineHeight": "1.55",
-        "spacing": null,
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
-      },
-      {
-        "context": "heading-3",
-        "count": 2,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "20px (1.25rem)",
-        "weight": 700,
-        "lineHeight": "1.20",
-        "spacing": "-0.3px",
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
-      },
-      {
-        "context": "heading-3",
-        "count": 1,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "19px (1.19rem)",
-        "weight": 700,
-        "lineHeight": "1.20",
-        "spacing": "-0.285px",
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
-      },
-      {
-        "context": "body",
-        "count": 2,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "19px (1.19rem)",
-        "weight": 400,
-        "lineHeight": "1.60",
-        "spacing": null,
-        "transform": null,
-        "pageCount": 2,
+        "pageCount": 4,
         "scope": "section"
       },
       {
@@ -798,12 +648,12 @@
         "count": 3,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
-        "size": "17.5px (1.09rem)",
+        "size": "20px (1.25rem)",
         "weight": 400,
-        "lineHeight": "1.70",
+        "lineHeight": "1.55",
         "spacing": null,
         "transform": null,
-        "pageCount": 2,
+        "pageCount": 3,
         "scope": "section"
       },
       {
@@ -826,24 +676,11 @@
         "fallbacks": "Manrope Fallback, system-ui",
         "size": "17px (1.06rem)",
         "weight": 700,
-        "lineHeight": "1.50",
+        "lineHeight": "1.65",
         "spacing": null,
         "transform": null,
         "pageCount": 5,
         "scope": "site"
-      },
-      {
-        "context": "body",
-        "count": 2,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "16.5px (1.03rem)",
-        "weight": 400,
-        "lineHeight": "1.38",
-        "spacing": null,
-        "transform": null,
-        "pageCount": 2,
-        "scope": "section"
       },
       {
         "context": "link",
@@ -865,7 +702,7 @@
         "fallbacks": "Manrope Fallback, system-ui",
         "size": "16px (1.00rem)",
         "weight": 700,
-        "lineHeight": "1.50",
+        "lineHeight": "1.60",
         "spacing": "-0.16px",
         "transform": null,
         "pageCount": 5,
@@ -911,7 +748,7 @@
         "scope": "site"
       },
       {
-        "context": "body",
+        "context": "ui",
         "count": 1,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
@@ -928,26 +765,13 @@
         "count": 5,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
-        "size": "14.5px (0.91rem)",
+        "size": "14px (0.88rem)",
         "weight": 500,
         "lineHeight": "1.50",
         "spacing": null,
         "transform": null,
         "pageCount": 5,
         "scope": "site"
-      },
-      {
-        "context": "body",
-        "count": 1,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "14.5px (0.91rem)",
-        "weight": 600,
-        "lineHeight": "1.50",
-        "spacing": null,
-        "transform": null,
-        "pageCount": 1,
-        "scope": "page"
       },
       {
         "context": "ui",
@@ -963,21 +787,8 @@
         "scope": "site"
       },
       {
-        "context": "link",
-        "count": 5,
-        "family": "Manrope",
-        "fallbacks": "Manrope Fallback, system-ui",
-        "size": "14px (0.88rem)",
-        "weight": 500,
-        "lineHeight": "1.50",
-        "spacing": null,
-        "transform": null,
-        "pageCount": 5,
-        "scope": "site"
-      },
-      {
         "context": "body",
-        "count": 4,
+        "count": 5,
         "family": "Manrope",
         "fallbacks": "Manrope Fallback, system-ui",
         "size": "14px (0.88rem)",
@@ -985,8 +796,8 @@
         "lineHeight": "1.50",
         "spacing": null,
         "transform": null,
-        "pageCount": 4,
-        "scope": "section"
+        "pageCount": 5,
+        "scope": "site"
       },
       {
         "context": "body",
@@ -1177,11 +988,11 @@
         "scope": "site"
       },
       {
-        "px": "17.5px",
-        "display": "17.5px",
-        "rem": "1.09rem",
+        "px": "17px",
+        "display": "17px",
+        "rem": "1.06rem",
         "count": 5,
-        "numericValue": 17.5,
+        "numericValue": 17,
         "pageCount": 1,
         "scope": "page"
       },
@@ -1252,6 +1063,18 @@
         "scope": "site"
       },
       {
+        "value": "20px",
+        "count": 6,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium",
+        "numericValue": 20,
+        "pageCount": 4,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
         "value": "12px",
         "count": 5,
         "elements": [
@@ -1261,30 +1084,6 @@
         "numericValue": 12,
         "pageCount": 1,
         "scope": "page"
-      },
-      {
-        "value": "24px",
-        "count": 4,
-        "elements": [
-          "div"
-        ],
-        "confidence": "medium",
-        "numericValue": 24,
-        "pageCount": 4,
-        "frequency": 0,
-        "scope": "section"
-      },
-      {
-        "value": "20px",
-        "count": 2,
-        "elements": [
-          "div"
-        ],
-        "confidence": "low",
-        "numericValue": 20,
-        "pageCount": 2,
-        "frequency": 0,
-        "scope": "section"
       }
     ]
   },
@@ -1361,7 +1160,7 @@
   "shadows": [],
   "coverage": {
     "totalPages": 5,
-    "score": 71,
+    "score": 77,
     "byFamily": {
       "color": {
         "tokens": 7,
@@ -1369,9 +1168,9 @@
         "pageLocal": 0
       },
       "typography": {
-        "tokens": 26,
-        "meanCoverage": 0.6,
-        "pageLocal": 9
+        "tokens": 17,
+        "meanCoverage": 0.788,
+        "pageLocal": 3
       },
       "spacing": {
         "tokens": 20,
@@ -1379,8 +1178,8 @@
         "pageLocal": 6
       },
       "radius": {
-        "tokens": 5,
-        "meanCoverage": 0.68,
+        "tokens": 4,
+        "meanCoverage": 0.75,
         "pageLocal": 1
       },
       "border": {
@@ -1390,13 +1189,6 @@
       }
     },
     "outliers": [
-      {
-        "family": "typography",
-        "token": "Manrope 14.5px (0.91rem)/600",
-        "pages": 1,
-        "coverage": 0.2,
-        "scope": "page"
-      },
       {
         "family": "typography",
         "token": "Manrope 15px (0.94rem)/600",
@@ -1413,14 +1205,7 @@
       },
       {
         "family": "typography",
-        "token": "Manrope 19px (1.19rem)/700",
-        "pages": 1,
-        "coverage": 0.2,
-        "scope": "page"
-      },
-      {
-        "family": "typography",
-        "token": "Manrope 20px (1.25rem)/400",
+        "token": "Manrope 76px (4.75rem)/800",
         "pages": 1,
         "coverage": 0.2,
         "scope": "page"
@@ -1441,7 +1226,7 @@
       },
       {
         "family": "spacing",
-        "token": "17.5px",
+        "token": "17px",
         "pages": 1,
         "coverage": 0.2,
         "scope": "page"
@@ -1484,14 +1269,9 @@
   "motion": {
     "durations": [
       {
-        "value": "0.12s",
-        "ms": 120,
-        "count": 28
-      },
-      {
         "value": "0.14s",
         "ms": 140,
-        "count": 77
+        "count": 105
       },
       {
         "value": "0.15s",
@@ -1501,27 +1281,50 @@
     ],
     "easings": [
       {
-        "value": "ease",
-        "type": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "type": "custom",
         "count": 105
       },
       {
         "value": "cubic-bezier(0.4, 0, 0.2, 1)",
         "type": "custom",
         "count": 29
+      },
+      {
+        "value": "ease",
+        "type": "ease",
+        "count": 26
       }
     ],
-    "animations": [],
+    "animations": [
+      {
+        "name": "section-rise",
+        "duration": "auto",
+        "easing": "cubic-bezier(0.22",
+        "count": 20,
+        "contexts": [
+          "other"
+        ]
+      },
+      {
+        "name": "sun-rise",
+        "duration": "1.6s",
+        "easing": "cubic-bezier(0.22",
+        "count": 6,
+        "contexts": [
+          "other"
+        ]
+      }
+    ],
     "contexts": {
       "link": {
         "count": 10,
         "durations": [
-          "0.12s",
-          "0.15s",
-          "0.14s"
+          "0.14s",
+          "0.15s"
         ],
-        "easing": "ease",
-        "easingType": "ease",
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "easingType": "custom",
         "props": [
           "color",
           "background-color",
@@ -1534,8 +1337,8 @@
         "durations": [
           "0.14s"
         ],
-        "easing": "ease",
-        "easingType": "ease",
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "easingType": "custom",
         "props": [
           "background-color",
           "color",
@@ -1816,255 +1619,31 @@
     {
       "name": "Tailwind CSS",
       "confidence": "high",
-      "evidence": "CSS variables --tw-*, class text-[16px] x89",
+      "evidence": "CSS variables --tw-*, class tracking-[-0.01em] x25",
       "category": "css-framework",
       "version": "4"
-    }
-  ],
-  "wcag": [
-    {
-      "fg": "#4f4b63",
-      "bg": "#ffffff",
-      "ratio": 8.34,
-      "count": 94,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "fontSize": 13.5,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#ffffff",
-      "bg": "#1c1834",
-      "ratio": 17.08,
-      "count": 46,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "fontSize": 14,
-      "fontWeight": 700
-    },
-    {
-      "fg": "#1c1834",
-      "bg": "#ffffff",
-      "ratio": 17.08,
-      "count": 33,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": true,
-      "requiredAA": 3,
-      "passAA": true,
-      "passAAA": true,
-      "fontSize": 19,
-      "fontWeight": 700
-    },
-    {
-      "fg": "#77738a",
-      "bg": "#ffffff",
-      "ratio": 4.56,
-      "count": 23,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": false,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": false,
-      "fontSize": 13.5,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#a9541a",
-      "bg": "#ffffff",
-      "ratio": 5.29,
-      "count": 18,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": false,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": false,
-      "fontSize": 14,
-      "fontWeight": 600
-    },
-    {
-      "fg": "#1c1834",
-      "bg": "#f7f6f9",
-      "ratio": 15.86,
-      "count": 4,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": true,
-      "requiredAA": 3,
-      "passAA": true,
-      "passAAA": true,
-      "fontSize": 48,
-      "fontWeight": 800
-    },
-    {
-      "fg": "#4f4b63",
-      "bg": "#f7f6f9",
-      "ratio": 7.74,
-      "count": 4,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "fontSize": 17,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#e0812f",
-      "bg": "#ffffff",
-      "ratio": 2.86,
-      "count": 1,
-      "aa": false,
-      "aaLarge": false,
-      "aaa": false,
-      "large": true,
-      "requiredAA": 3,
-      "passAA": false,
-      "passAAA": false,
-      "fontSize": 76,
-      "fontWeight": 800
-    },
-    {
-      "fg": "#ffffff",
-      "bg": "#2d2850",
-      "ratio": 13.72,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "state": "hover",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 14,
-      "fontWeight": 700
-    },
-    {
-      "fg": "#ffffff",
-      "bg": "#2d2850",
-      "ratio": 13.72,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "state": "focus",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 14,
-      "fontWeight": 700
-    },
-    {
-      "fg": "#a9541a",
-      "bg": "#ffffff",
-      "ratio": 5.29,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": false,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": false,
-      "state": "hover",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 15,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#a9541a",
-      "bg": "#ffffff",
-      "ratio": 5.29,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": false,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": false,
-      "state": "focus",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 15,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#1c1834",
-      "bg": "#ffffff",
-      "ratio": 17.08,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "state": "hover",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 13.5,
-      "fontWeight": 400
-    },
-    {
-      "fg": "#1c1834",
-      "bg": "#ffffff",
-      "ratio": 17.08,
-      "aa": true,
-      "aaLarge": true,
-      "aaa": true,
-      "large": false,
-      "requiredAA": 4.5,
-      "passAA": true,
-      "passAAA": true,
-      "state": "focus",
-      "tag": "a",
-      "source": "state",
-      "fontSize": 13.5,
-      "fontWeight": 400
     }
   ],
   "pages": [
     {
       "url": "https://mytrya.com/",
-      "extractedAt": "2026-10-18T05:31:25.569Z"
+      "extractedAt": "2026-10-18T07:14:54.469Z"
     },
     {
       "url": "https://mytrya.com/about",
-      "extractedAt": "2026-10-18T05:31:36.699Z"
+      "extractedAt": "2026-10-18T07:15:05.454Z"
     },
     {
       "url": "https://mytrya.com/contact",
-      "extractedAt": "2026-10-18T05:31:46.565Z"
+      "extractedAt": "2026-10-18T07:15:16.927Z"
     },
     {
       "url": "https://mytrya.com/work",
-      "extractedAt": "2026-10-18T05:31:57.109Z"
+      "extractedAt": "2026-10-18T07:15:30.815Z"
     },
     {
       "url": "https://mytrya.com/process",
-      "extractedAt": "2026-10-18T05:32:07.257Z"
+      "extractedAt": "2026-10-18T07:15:42.026Z"
     }
   ]
 }
