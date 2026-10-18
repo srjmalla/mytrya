@@ -1,0 +1,2070 @@
+{
+  "url": "https://mytrya.com/",
+  "extractedAt": "2026-10-18T05:31:25.569Z",
+  "meta": {
+    "snapshotId": "78eec6a7-d451-4f40-9906-51bd2d4e7f71",
+    "httpStatus": 200,
+    "dembrandtVersion": "0.39.2",
+    "schemaVersion": "1.19.0",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "context": {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "hasTouch": false,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "forcedColors": "none",
+      "locale": "en-US",
+      "timezoneId": "America/New_York",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+    },
+    "fontsReady": true,
+    "requestedUrl": "https://mytrya.com",
+    "contentLength": 33847,
+    "flags": {},
+    "crawl": {
+      "technique": "auto",
+      "pagesRequested": 5,
+      "pagesFound": 5,
+      "pages": [
+        "https://mytrya.com/",
+        "https://mytrya.com/about",
+        "https://mytrya.com/contact",
+        "https://mytrya.com/work",
+        "https://mytrya.com/process"
+      ]
+    }
+  },
+  "siteName": "Mytrya Intelligence",
+  "logo": {
+    "source": "svg",
+    "context": "header",
+    "inline": true,
+    "url": "https://mytrya.com/",
+    "color": "#1c1834",
+    "ariaLabel": null,
+    "markup": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\" class=\"h-7 w-7 text-ink\" xmlns=\"http://www.w3.org/2000/svg\" style=\"color: rgb(28, 24, 52);\"><path d=\"M32 12c7 8 7 22 0 34-7-12-7-26 0-34z\" fill=\"#e0812f\"></path><path d=\"M30 46C20 42 12 32 12 22c9 2 16 8 19 16M34 46c10-4 18-14 18-24-9 2-16 8-19 16\" fill=\"none\" stroke=\"#1c1834\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M14 52h36\" stroke=\"#1c1834\" stroke-width=\"5\" stroke-linecap=\"round\"></path></svg>",
+    "dataUri": "data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20aria-hidden%3D%22true%22%20class%3D%22h-7%20w-7%20text-ink%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20style%3D%22color%3A%20rgb(28%2C%2024%2C%2052)%3B%22%3E%3Cpath%20d%3D%22M32%2012c7%208%207%2022%200%2034-7-12-7-26%200-34z%22%20fill%3D%22%23e0812f%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M30%2046C20%2042%2012%2032%2012%2022c9%202%2016%208%2019%2016M34%2046c10-4%2018-14%2018-24-9%202-16%208-19%2016%22%20fill%3D%22none%22%20stroke%3D%22%231c1834%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M14%2052h36%22%20stroke%3D%22%231c1834%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E",
+    "svgColors": [],
+    "width": 28,
+    "height": 28,
+    "rect": {
+      "x": 432,
+      "y": 18,
+      "width": 28,
+      "height": 28
+    },
+    "natural": {
+      "width": 64,
+      "height": 64
+    },
+    "type": "logomark",
+    "reversed": false,
+    "background": "#ffffff",
+    "safeZone": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "position": {
+      "top": 18,
+      "left": 432
+    }
+  },
+  "favicons": [
+    {
+      "type": "icon",
+      "url": "https://mytrya.com/favicon.ico?favicon.2_b0clx14tfps.ico",
+      "sizes": "32x32",
+      "dataUri": "data:image/vnd.microsoft.icon;base64,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"
+    },
+    {
+      "type": "icon",
+      "url": "https://mytrya.com/icon.svg?icon.2ltz7_rn41vin.svg",
+      "sizes": "any",
+      "dataUri": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiNmZmZmZmYiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2LjQgNi40KSBzY2FsZSgwLjgpIj4KICAgIDxwYXRoIGQ9Ik0zMiAxMmM3IDggNyAyMiAwIDM0LTctMTItNy0yNiAwLTM0eiIgZmlsbD0iI2UwODEyZiIvPgogICAgPHBhdGggZD0iTTMwIDQ2QzIwIDQyIDEyIDMyIDEyIDIyYzkgMiAxNiA4IDE5IDE2TTM0IDQ2YzEwLTQgMTgtMTQgMTgtMjQtOSAyLTE2IDgtMTkgMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjMTgzNCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0xNCA1MmgzNiIgc3Ryb2tlPSIjMWMxODM0IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KPC9zdmc+Cg=="
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://mytrya.com/apple-icon.png?apple-icon.1xd9hfe3iixgl.png",
+      "sizes": "180x180",
+      "dataUri": "data:image/png;base64,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"
+    },
+    {
+      "type": "og:image",
+      "url": "https://mytrya.com/opengraph-image",
+      "sizes": null
+    },
+    {
+      "type": "twitter:image",
+      "url": "https://mytrya.com/opengraph-image",
+      "sizes": null
+    },
+    {
+      "type": "pwa",
+      "url": "https://mytrya.com/icon.svg",
+      "sizes": "any",
+      "purpose": "any",
+      "dataUri": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiNmZmZmZmYiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2LjQgNi40KSBzY2FsZSgwLjgpIj4KICAgIDxwYXRoIGQ9Ik0zMiAxMmM3IDggNyAyMiAwIDM0LTctMTItNy0yNiAwLTM0eiIgZmlsbD0iI2UwODEyZiIvPgogICAgPHBhdGggZD0iTTMwIDQ2QzIwIDQyIDEyIDMyIDEyIDIyYzkgMiAxNiA4IDE5IDE2TTM0IDQ2YzEwLTQgMTgtMTQgMTgtMjQtOSAyLTE2IDgtMTkgMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjMTgzNCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0xNCA1MmgzNiIgc3Ryb2tlPSIjMWMxODM0IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KPC9zdmc+Cg=="
+    },
+    {
+      "type": "pwa",
+      "url": "https://mytrya.com/logo.png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "colors": {
+    "semantic": {
+      "background": "rgb(255, 255, 255)",
+      "text": "rgb(28, 24, 52)",
+      "primary": "rgb(28, 24, 52)",
+      "accent": "rgb(224, 129, 47)"
+    },
+    "semanticEvidence": {
+      "primary": {
+        "decision": "elected",
+        "rule": "cta",
+        "reason": "recurring call-to-action background",
+        "tokens": [
+          "--line-2",
+          "--line",
+          "--ink"
+        ],
+        "alternates": [
+          {
+            "color": "#a9541a",
+            "count": 5,
+            "sources": []
+          },
+          {
+            "color": "#e0812f",
+            "count": 3,
+            "sources": [
+              "dot"
+            ]
+          }
+        ]
+      }
+    },
+    "palette": [
+      {
+        "color": "rgb(28, 24, 52)",
+        "normalized": "#1c1834",
+        "count": 175,
+        "confidence": "high",
+        "sources": [
+          "btn",
+          "rule-t",
+          "h-section"
+        ],
+        "tokens": [
+          "--line-2",
+          "--line",
+          "--ink"
+        ],
+        "lch": "lch(9.964% 19.985 295.428)",
+        "oklch": "oklch(22.9766% 0.05294 288.052)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#221d3e",
+        "variantOf": "primary",
+        "contrastAgainst": [
+          {
+            "bg": "#ffffff",
+            "ratio": 17.08,
+            "aa": true
+          },
+          {
+            "bg": "#f7f6f9",
+            "ratio": 15.86,
+            "aa": true
+          }
+        ],
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "color": "rgb(79, 75, 99)",
+        "normalized": "#4f4b63",
+        "count": 105,
+        "confidence": "high",
+        "sources": [
+          "rounded-full",
+          "mt-1.5",
+          "mx-auto"
+        ],
+        "tokens": [
+          "--ink-2"
+        ],
+        "lch": "lch(33.006% 14.742 293.906)",
+        "oklch": "oklch(42.6259% 0.03962 292.273)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#5f5a77",
+        "variantOf": "primary",
+        "contrastAgainst": [
+          {
+            "bg": "#ffffff",
+            "ratio": 8.34,
+            "aa": true
+          },
+          {
+            "bg": "#f7f6f9",
+            "ratio": 7.74,
+            "aa": true
+          }
+        ],
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "normalized": "#ffffff",
+        "count": 37,
+        "confidence": "high",
+        "sources": [
+          "sticky",
+          "btn",
+          "field",
+          "manifest:theme_color",
+          "manifest:background_color"
+        ],
+        "tokens": [
+          "--bg"
+        ],
+        "lch": "lch(100% 0.028 53.346)",
+        "oklch": "oklch(100% 0 0)",
+        "role": "surface",
+        "onColor": "#000000",
+        "hover": "#d9d9d9",
+        "contrastAgainst": [
+          {
+            "bg": "#1c1834",
+            "ratio": 17.08,
+            "aa": true
+          },
+          {
+            "bg": "#2d2850",
+            "ratio": 13.72,
+            "aa": true
+          },
+          {
+            "bg": "#4f4b63",
+            "ratio": 8.34,
+            "aa": true
+          },
+          {
+            "bg": "#a9541a",
+            "ratio": 5.29,
+            "aa": true
+          },
+          {
+            "bg": "#77738a",
+            "ratio": 4.56,
+            "aa": true
+          }
+        ],
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "color": "rgb(119, 115, 138)",
+        "normalized": "#77738a",
+        "count": 41,
+        "confidence": "high",
+        "sources": [
+          "hover:text-ink",
+          "inline-flex",
+          "dot"
+        ],
+        "tokens": [
+          "--ink-3"
+        ],
+        "lch": "lch(49.418% 13.151 293.683)",
+        "oklch": "oklch(56.7226% 0.03536 293.214)",
+        "role": "accent",
+        "onColor": "#000000",
+        "hover": "#656275",
+        "contrastAgainst": [
+          {
+            "bg": "#ffffff",
+            "ratio": 4.56,
+            "aa": true
+          }
+        ],
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "color": "rgb(169, 84, 26)",
+        "normalized": "#a9541a",
+        "count": 18,
+        "confidence": "high",
+        "sources": [],
+        "tokens": [
+          "--sun-ink"
+        ],
+        "lch": "lch(45.971% 57.92 55.18)",
+        "oklch": "oklch(54.1208% 0.13015 49.874)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#cb651f",
+        "contrastAgainst": [
+          {
+            "bg": "#ffffff",
+            "ratio": 5.29,
+            "aa": true
+          }
+        ],
+        "pageCount": 4,
+        "scope": "section"
+      },
+      {
+        "color": "rgb(224, 129, 47)",
+        "normalized": "#e0812f",
+        "count": 6,
+        "confidence": "medium",
+        "sources": [
+          "dot"
+        ],
+        "tokens": [
+          "--sun-dim",
+          "--sun"
+        ],
+        "lch": "lch(63.751% 66.843 60.059)",
+        "oklch": "oklch(69.3635% 0.14847 56.715)",
+        "role": "accent",
+        "onColor": "#000000",
+        "hover": "#be6e28",
+        "contrastAgainst": [
+          {
+            "bg": "#ffffff",
+            "ratio": 2.86,
+            "aa": false
+          }
+        ],
+        "pageCount": 2,
+        "scope": "section"
+      },
+      {
+        "color": "rgb(255, 226, 196)",
+        "normalized": "#ffe2c4",
+        "count": 4,
+        "confidence": "medium",
+        "sources": [
+          "gradient"
+        ],
+        "lch": "lch(91.738% 19.866 69.35)",
+        "oklch": "oklch(92.9011% 0.05086 68.087)",
+        "pageCount": 2,
+        "scope": "section"
+      }
+    ],
+    "cssVariables": {
+      "--ink-3": {
+        "value": "#77738a",
+        "hex": "#77738a",
+        "lch": "lch(49.418% 13.151 293.683)",
+        "oklch": "oklch(56.7226% 0.03536 293.214)",
+        "scope": "root"
+      },
+      "--panel-2": {
+        "value": "#efedf3",
+        "hex": "#efedf3",
+        "lch": "lch(94.033% 3.038 299.737)",
+        "oklch": "oklch(94.9358% 0.00825 301.353)",
+        "scope": "root"
+      },
+      "--sun-dim": {
+        "value": "#e0812f24",
+        "hex": "#e0812f",
+        "lch": "lch(63.751% 66.843 60.059 / 0.1411764705882353)",
+        "oklch": "oklch(69.3635% 0.14847 56.715 / 0.1411764705882353)",
+        "scope": "root"
+      },
+      "--ink-2": {
+        "value": "#4f4b63",
+        "hex": "#4f4b63",
+        "lch": "lch(33.006% 14.742 293.906)",
+        "oklch": "oklch(42.6259% 0.03962 292.273)",
+        "scope": "root"
+      },
+      "--line-2": {
+        "value": "#1c183426",
+        "hex": "#1c1834",
+        "lch": "lch(9.964% 19.985 295.428 / 0.14901960784313725)",
+        "oklch": "oklch(22.9766% 0.05294 288.052 / 0.14901960784313725)",
+        "scope": "root"
+      },
+      "--line": {
+        "value": "#1c183414",
+        "hex": "#1c1834",
+        "lch": "lch(9.964% 19.985 295.428 / 0.0784313725490196)",
+        "oklch": "oklch(22.9766% 0.05294 288.052 / 0.0784313725490196)",
+        "scope": "root"
+      },
+      "--ink": {
+        "value": "#1c1834",
+        "hex": "#1c1834",
+        "lch": "lch(9.964% 19.985 295.428)",
+        "oklch": "oklch(22.9766% 0.05294 288.052)",
+        "scope": "root"
+      },
+      "--bg": {
+        "value": "#fff",
+        "hex": "#ffffff",
+        "lch": "lch(100% 0.028 53.346)",
+        "oklch": "oklch(100% 0 0)",
+        "scope": "root"
+      },
+      "--panel": {
+        "value": "#f7f6f9",
+        "hex": "#f7f6f9",
+        "lch": "lch(97.026% 1.503 300.174)",
+        "oklch": "oklch(97.4754% 0.0041 301.425)",
+        "scope": "root"
+      },
+      "--sun-ink": {
+        "value": "#a9541a",
+        "hex": "#a9541a",
+        "lch": "lch(45.971% 57.92 55.18)",
+        "oklch": "oklch(54.1208% 0.13015 49.874)",
+        "scope": "root"
+      },
+      "--sun": {
+        "value": "#e0812f",
+        "hex": "#e0812f",
+        "lch": "lch(63.751% 66.843 60.059)",
+        "oklch": "oklch(69.3635% 0.14847 56.715)",
+        "scope": "root"
+      }
+    },
+    "detected": [
+      {
+        "color": "rgb(28, 24, 52)",
+        "normalized": "#1c1834",
+        "count": 73,
+        "usageFrac": 0.5793650793650794,
+        "areaFrac": 0.0012877206850129685,
+        "confidence": "high",
+        "sources": [
+          "btn",
+          "rule-t",
+          "h-section",
+          "a",
+          "row-link"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(79, 75, 99)",
+        "normalized": "#4f4b63",
+        "count": 28,
+        "usageFrac": 0.2222222222222222,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [
+          "rounded-full",
+          "mt-1.5",
+          "mx-auto",
+          "text-ink-2"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "normalized": "#ffffff",
+        "count": 9,
+        "usageFrac": 0.07142857142857142,
+        "areaFrac": 0.961934666845073,
+        "confidence": "high",
+        "sources": [
+          "sticky",
+          "btn"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(119, 115, 138)",
+        "normalized": "#77738a",
+        "count": 7,
+        "usageFrac": 0.05555555555555555,
+        "areaFrac": 0.000004137857187854832,
+        "confidence": "high",
+        "sources": [
+          "inline-flex",
+          "dot"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(169, 84, 26)",
+        "normalized": "#a9541a",
+        "count": 5,
+        "usageFrac": 0.03968253968253968,
+        "areaFrac": 0,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(224, 129, 47)",
+        "normalized": "#e0812f",
+        "count": 3,
+        "usageFrac": 0.023809523809523808,
+        "areaFrac": 0.000008275714375709664,
+        "confidence": "medium",
+        "sources": [
+          "dot"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(247, 246, 249)",
+        "normalized": "#f7f6f9",
+        "count": 1,
+        "usageFrac": 0.007936507936507936,
+        "areaFrac": 0.036765198898350414,
+        "confidence": "medium",
+        "sources": [
+          "relative"
+        ],
+        "isToken": true
+      }
+    ],
+    "occurrences": [
+      {
+        "hex": "#4f4b63",
+        "paints": "text",
+        "slot": null,
+        "count": 105,
+        "area": 0,
+        "cssVar": "--ink-2",
+        "state": null
+      },
+      {
+        "hex": "#1c1834",
+        "paints": "border",
+        "slot": null,
+        "count": 84,
+        "area": 0,
+        "cssVar": "--line-2",
+        "state": null
+      },
+      {
+        "hex": "#1c1834",
+        "paints": "text",
+        "slot": null,
+        "count": 75,
+        "area": 0,
+        "cssVar": "--line-2",
+        "state": null
+      },
+      {
+        "hex": "#77738a",
+        "paints": "text",
+        "slot": null,
+        "count": 27,
+        "area": 0,
+        "cssVar": "--ink-3",
+        "state": null
+      },
+      {
+        "hex": "#ffffff",
+        "paints": "fill",
+        "slot": null,
+        "count": 26,
+        "area": 36995575,
+        "cssVar": "--bg",
+        "state": null
+      },
+      {
+        "hex": "#a9541a",
+        "paints": "text",
+        "slot": null,
+        "count": 18,
+        "area": 0,
+        "cssVar": "--sun-ink",
+        "state": null
+      },
+      {
+        "hex": "#1c1834",
+        "paints": "fill",
+        "slot": null,
+        "count": 11,
+        "area": 51942,
+        "cssVar": "--line-2",
+        "state": null
+      },
+      {
+        "hex": "#ffffff",
+        "paints": "text",
+        "slot": null,
+        "count": 11,
+        "area": 0,
+        "cssVar": "--bg",
+        "state": null
+      },
+      {
+        "hex": "#77738a",
+        "paints": "border",
+        "slot": null,
+        "count": 10,
+        "area": 0,
+        "cssVar": "--ink-3",
+        "state": null
+      },
+      {
+        "hex": "#e0812f",
+        "paints": "fill",
+        "slot": null,
+        "count": 5,
+        "area": 245,
+        "cssVar": "--sun-dim",
+        "state": null
+      },
+      {
+        "hex": "#77738a",
+        "paints": "fill",
+        "slot": null,
+        "count": 4,
+        "area": 196,
+        "cssVar": "--ink-3",
+        "state": null
+      },
+      {
+        "hex": "#f7f6f9",
+        "paints": "fill",
+        "slot": null,
+        "count": 4,
+        "area": 1741476,
+        "cssVar": "--panel",
+        "state": null
+      },
+      {
+        "hex": "#e0812f",
+        "paints": "text",
+        "slot": null,
+        "count": 1,
+        "area": 0,
+        "cssVar": "--sun-dim",
+        "state": null
+      }
+    ]
+  },
+  "typography": {
+    "styles": [
+      {
+        "context": "display",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "76px (4.75rem)",
+        "weight": 800,
+        "lineHeight": "1.02",
+        "spacing": "-2.66px",
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "display",
+        "count": 3,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "60px (3.75rem)",
+        "weight": 800,
+        "lineHeight": "1.02",
+        "spacing": "-2.1px",
+        "transform": null,
+        "pageCount": 3,
+        "scope": "section"
+      },
+      {
+        "context": "display",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "56px (3.50rem)",
+        "weight": 800,
+        "lineHeight": "1.02",
+        "spacing": "-1.96px",
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "heading-2",
+        "count": 4,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "48px (3.00rem)",
+        "weight": 800,
+        "lineHeight": "1.02",
+        "spacing": "-1.68px",
+        "transform": null,
+        "pageCount": 4,
+        "scope": "section"
+      },
+      {
+        "context": "heading-2",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "26px (1.63rem)",
+        "weight": 700,
+        "lineHeight": "1.20",
+        "spacing": "-0.39px",
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "body",
+        "count": 3,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "22px (1.38rem)",
+        "weight": 700,
+        "lineHeight": "1.20",
+        "spacing": "-0.33px",
+        "transform": null,
+        "pageCount": 3,
+        "scope": "section"
+      },
+      {
+        "context": "body",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "20px (1.25rem)",
+        "weight": 400,
+        "lineHeight": "1.55",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "heading-3",
+        "count": 2,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "20px (1.25rem)",
+        "weight": 700,
+        "lineHeight": "1.20",
+        "spacing": "-0.3px",
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "heading-3",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "19px (1.19rem)",
+        "weight": 700,
+        "lineHeight": "1.20",
+        "spacing": "-0.285px",
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "body",
+        "count": 2,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "19px (1.19rem)",
+        "weight": 400,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 2,
+        "scope": "section"
+      },
+      {
+        "context": "body",
+        "count": 3,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "17.5px (1.09rem)",
+        "weight": 400,
+        "lineHeight": "1.70",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 2,
+        "scope": "section"
+      },
+      {
+        "context": "body",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "17px (1.06rem)",
+        "weight": 400,
+        "lineHeight": "1.65",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 4,
+        "scope": "section"
+      },
+      {
+        "context": "body",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "17px (1.06rem)",
+        "weight": 700,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 2,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "16.5px (1.03rem)",
+        "weight": 400,
+        "lineHeight": "1.38",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 2,
+        "scope": "section"
+      },
+      {
+        "context": "link",
+        "count": 10,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "16px (1.00rem)",
+        "weight": 400,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "16px (1.00rem)",
+        "weight": 700,
+        "lineHeight": "1.50",
+        "spacing": "-0.16px",
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "16px (1.00rem)",
+        "weight": 600,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "ui",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "15px (0.94rem)",
+        "weight": 700,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "link",
+        "count": 10,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "15px (0.94rem)",
+        "weight": 400,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "15px (0.94rem)",
+        "weight": 600,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "link",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "14.5px (0.91rem)",
+        "weight": 500,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 1,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "14.5px (0.91rem)",
+        "weight": 600,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "context": "ui",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "14px (0.88rem)",
+        "weight": 700,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "link",
+        "count": 5,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "14px (0.88rem)",
+        "weight": 500,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "context": "body",
+        "count": 4,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "14px (0.88rem)",
+        "weight": 600,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 4,
+        "scope": "section"
+      },
+      {
+        "context": "body",
+        "count": 9,
+        "family": "Manrope",
+        "fallbacks": "Manrope Fallback, system-ui",
+        "size": "13.5px (0.84rem)",
+        "weight": 400,
+        "lineHeight": "1.55",
+        "spacing": null,
+        "transform": null,
+        "pageCount": 5,
+        "scope": "site"
+      }
+    ],
+    "sources": {
+      "googleFonts": [],
+      "adobeFonts": false,
+      "variableFonts": false,
+      "customFonts": [
+        "Manrope"
+      ],
+      "fontDisplay": "swap",
+      "urls": [
+        "https://mytrya.com/_next/static/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2",
+        "https://mytrya.com/media/58c4895d0a0ef7cc-s.2vhvl9vrvk-va.woff2",
+        "https://mytrya.com/media/6ab0db14f70d8ed6-s.13hnt-xgp82zk.woff2",
+        "https://mytrya.com/media/a342834df7752944-s.3hd2l7bm32o7k.woff2",
+        "https://mytrya.com/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2",
+        "https://mytrya.com/media/bfc7db5c00d21bc5-s.173xwsdme27n8.woff2",
+        "https://mytrya.com/media/d3fe2f289711ac3f-s.1l2zhvq5eocqf.woff2"
+      ],
+      "selfHostedFonts": [
+        "a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2"
+      ]
+    }
+  },
+  "spacing": {
+    "scaleType": "4px",
+    "commonValues": [
+      {
+        "px": "6px",
+        "display": "6px",
+        "rem": "0.38rem",
+        "count": 58,
+        "numericValue": 6,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "4px",
+        "display": "4px",
+        "rem": "0.25rem",
+        "count": 41,
+        "numericValue": 4,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "24px",
+        "display": "24px",
+        "rem": "1.50rem",
+        "count": 21,
+        "numericValue": 24,
+        "pageCount": 4,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "px": "64px",
+        "display": "64px",
+        "rem": "4.00rem",
+        "count": 21,
+        "numericValue": 64,
+        "pageCount": 3,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "px": "10px",
+        "display": "10px",
+        "rem": "0.63rem",
+        "count": 19,
+        "numericValue": 10,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "22px",
+        "display": "22px",
+        "rem": "1.38rem",
+        "count": 18,
+        "numericValue": 22,
+        "pageCount": 2,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "px": "20px",
+        "display": "20px",
+        "rem": "1.25rem",
+        "count": 17,
+        "numericValue": 20,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "48px",
+        "display": "48px",
+        "rem": "3.00rem",
+        "count": 16,
+        "numericValue": 48,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "12px",
+        "display": "12px",
+        "rem": "0.75rem",
+        "count": 15,
+        "numericValue": 12,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "80px",
+        "display": "80px",
+        "rem": "5.00rem",
+        "count": 14,
+        "numericValue": 80,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "8px",
+        "display": "8px",
+        "rem": "0.50rem",
+        "count": 13,
+        "numericValue": 8,
+        "pageCount": 3,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "px": "112px",
+        "display": "112px",
+        "rem": "7.00rem",
+        "count": 11,
+        "numericValue": 112,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "px": "16px",
+        "display": "16px",
+        "rem": "1.00rem",
+        "count": 10,
+        "numericValue": 16,
+        "pageCount": 2,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "px": "32px",
+        "display": "32px",
+        "rem": "2.00rem",
+        "count": 9,
+        "numericValue": 32,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "40px",
+        "display": "40px",
+        "rem": "2.50rem",
+        "count": 5,
+        "numericValue": 40,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "px": "17.5px",
+        "display": "17.5px",
+        "rem": "1.09rem",
+        "count": 5,
+        "numericValue": 17.5,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "px": "7px",
+        "display": "7px",
+        "rem": "0.44rem",
+        "count": 5,
+        "numericValue": 7,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "px": "28px",
+        "display": "28px",
+        "rem": "1.75rem",
+        "count": 1,
+        "numericValue": 28,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "px": "36px",
+        "display": "36px",
+        "rem": "2.25rem",
+        "count": 1,
+        "numericValue": 36,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "px": "128px",
+        "display": "128px",
+        "rem": "8.00rem",
+        "count": 1,
+        "numericValue": 128,
+        "pageCount": 1,
+        "scope": "page"
+      }
+    ]
+  },
+  "borderRadius": {
+    "values": [
+      {
+        "value": "9999px",
+        "count": 40,
+        "elements": [
+          "a"
+        ],
+        "confidence": "high",
+        "numericValue": 9999,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "value": "999px",
+        "count": 32,
+        "elements": [
+          "button",
+          "div",
+          "span"
+        ],
+        "confidence": "high",
+        "numericValue": 999,
+        "pageCount": 5,
+        "frequency": 0,
+        "scope": "site"
+      },
+      {
+        "value": "12px",
+        "count": 5,
+        "elements": [
+          "input"
+        ],
+        "confidence": "medium",
+        "numericValue": 12,
+        "pageCount": 1,
+        "scope": "page"
+      },
+      {
+        "value": "24px",
+        "count": 4,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium",
+        "numericValue": 24,
+        "pageCount": 4,
+        "frequency": 0,
+        "scope": "section"
+      },
+      {
+        "value": "20px",
+        "count": 2,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 20,
+        "pageCount": 2,
+        "frequency": 0,
+        "scope": "section"
+      }
+    ]
+  },
+  "borders": {
+    "combinations": [
+      {
+        "width": "1px 0px 0px",
+        "style": "solid",
+        "color": "rgba(28, 24, 52, 0.08)",
+        "count": 43,
+        "elements": [
+          "section",
+          "li",
+          "div",
+          "a",
+          "footer"
+        ],
+        "confidence": "high",
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(28, 24, 52, 0.15)",
+        "count": 11,
+        "elements": [
+          "button",
+          "input"
+        ],
+        "confidence": "high",
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "width": "0px 0px 1px",
+        "style": "solid",
+        "color": "rgba(28, 24, 52, 0.08)",
+        "count": 5,
+        "elements": [
+          "header"
+        ],
+        "confidence": "medium",
+        "pageCount": 5,
+        "scope": "site"
+      },
+      {
+        "width": "0px 0px 1px",
+        "style": "solid",
+        "color": "rgb(28, 24, 52)",
+        "count": 4,
+        "elements": [
+          "ol",
+          "dl"
+        ],
+        "confidence": "medium",
+        "pageCount": 2,
+        "scope": "section"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(28, 24, 52, 0.08)",
+        "count": 4,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium",
+        "pageCount": 4,
+        "scope": "section"
+      }
+    ]
+  },
+  "shadows": [],
+  "coverage": {
+    "totalPages": 5,
+    "score": 71,
+    "byFamily": {
+      "color": {
+        "tokens": 7,
+        "meanCoverage": 0.8,
+        "pageLocal": 0
+      },
+      "typography": {
+        "tokens": 26,
+        "meanCoverage": 0.6,
+        "pageLocal": 9
+      },
+      "spacing": {
+        "tokens": 20,
+        "meanCoverage": 0.65,
+        "pageLocal": 6
+      },
+      "radius": {
+        "tokens": 5,
+        "meanCoverage": 0.68,
+        "pageLocal": 1
+      },
+      "border": {
+        "tokens": 5,
+        "meanCoverage": 0.84,
+        "pageLocal": 0
+      }
+    },
+    "outliers": [
+      {
+        "family": "typography",
+        "token": "Manrope 14.5px (0.91rem)/600",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "typography",
+        "token": "Manrope 15px (0.94rem)/600",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "typography",
+        "token": "Manrope 16px (1.00rem)/600",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "typography",
+        "token": "Manrope 19px (1.19rem)/700",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "typography",
+        "token": "Manrope 20px (1.25rem)/400",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "spacing",
+        "token": "112px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "spacing",
+        "token": "128px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "spacing",
+        "token": "17.5px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "spacing",
+        "token": "28px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "spacing",
+        "token": "36px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      },
+      {
+        "family": "radius",
+        "token": "12px",
+        "pages": 1,
+        "coverage": 0.2,
+        "scope": "page"
+      }
+    ]
+  },
+  "gradients": [
+    {
+      "gradient": "radial-gradient(circle, rgb(255, 226, 196) 0%, rgb(255, 241, 228) 45%, rgba(255, 241, 228, 0) 70%)",
+      "type": "radial",
+      "stopColors": [
+        "rgb(255, 226, 196)",
+        "rgb(255, 241, 228)",
+        "rgba(255, 241, 228, 0)"
+      ],
+      "count": 6
+    }
+  ],
+  "motion": {
+    "durations": [
+      {
+        "value": "0.12s",
+        "ms": 120,
+        "count": 28
+      },
+      {
+        "value": "0.14s",
+        "ms": 140,
+        "count": 77
+      },
+      {
+        "value": "0.15s",
+        "ms": 150,
+        "count": 29
+      }
+    ],
+    "easings": [
+      {
+        "value": "ease",
+        "type": "ease",
+        "count": 105
+      },
+      {
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "type": "custom",
+        "count": 29
+      }
+    ],
+    "animations": [],
+    "contexts": {
+      "link": {
+        "count": 10,
+        "durations": [
+          "0.12s",
+          "0.15s",
+          "0.14s"
+        ],
+        "easing": "ease",
+        "easingType": "ease",
+        "props": [
+          "color",
+          "background-color",
+          "text-decoration-color",
+          "border-color"
+        ]
+      },
+      "button": {
+        "count": 6,
+        "durations": [
+          "0.14s"
+        ],
+        "easing": "ease",
+        "easingType": "ease",
+        "props": [
+          "background-color",
+          "color",
+          "border-color",
+          "transform"
+        ]
+      }
+    },
+    "interactiveDeltas": [
+      {
+        "tag": "a",
+        "text": "Work",
+        "pattern": "color-shift",
+        "delta": {
+          "color": {
+            "from": "rgb(79, 75, 99)",
+            "to": "rgb(28, 24, 52)"
+          }
+        }
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "pattern": "color-shift",
+        "delta": {
+          "color": {
+            "from": "rgb(79, 75, 99)",
+            "to": "rgb(28, 24, 52)"
+          }
+        }
+      },
+      {
+        "tag": "a",
+        "text": "Process",
+        "pattern": "color-shift",
+        "delta": {
+          "color": {
+            "from": "rgb(79, 75, 99)",
+            "to": "rgb(28, 24, 52)"
+          }
+        }
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "pattern": "color-shift",
+        "delta": {
+          "color": {
+            "from": "rgb(79, 75, 99)",
+            "to": "rgb(28, 24, 52)"
+          }
+        }
+      },
+      {
+        "tag": "a",
+        "text": "Book a call",
+        "pattern": "color-shift",
+        "delta": {
+          "background": {
+            "from": "rgb(28, 24, 52)",
+            "to": "rgb(45, 40, 80)"
+          }
+        }
+      },
+      {
+        "tag": "a",
+        "text": "Book a call",
+        "pattern": "color-shift",
+        "delta": {
+          "background": {
+            "from": "rgb(28, 24, 52)",
+            "to": "rgb(45, 40, 80)"
+          }
+        }
+      }
+    ]
+  },
+  "components": {
+    "buttons": [
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(28, 24, 52)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 16px",
+            "borderRadius": "999px",
+            "border": "1px solid rgba(0, 0, 0, 0)",
+            "fontSize": "14px",
+            "fontWeight": "700"
+          }
+        },
+        "fontWeight": "700",
+        "fontSize": "14px",
+        "text": "Book a call",
+        "confidence": "high",
+        "count": 4
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(28, 24, 52)",
+            "padding": "0px 22px",
+            "borderRadius": "999px",
+            "border": "1px solid rgba(28, 24, 52, 0.15)",
+            "fontSize": "15px",
+            "fontWeight": "700"
+          }
+        },
+        "fontWeight": "700",
+        "fontSize": "15px",
+        "text": "See the work",
+        "confidence": "medium",
+        "count": 4
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(28, 24, 52)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 22px",
+            "borderRadius": "999px",
+            "border": "1px solid rgba(0, 0, 0, 0)",
+            "fontSize": "15px",
+            "fontWeight": "700"
+          }
+        },
+        "fontWeight": "700",
+        "fontSize": "15px",
+        "text": "Send",
+        "confidence": "high",
+        "count": 1
+      }
+    ],
+    "inputs": {
+      "text": [
+        {
+          "specificType": "text",
+          "states": {
+            "default": {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(28, 24, 52)",
+              "border": "1px solid rgba(28, 24, 52, 0.15)",
+              "borderRadius": "12px",
+              "padding": "10px 13px",
+              "boxShadow": "none",
+              "outline": "rgb(28, 24, 52) none 3px"
+            },
+            "focus": {
+              "borderColor": "var(--sun)",
+              "boxShadow": "0 0 0 3px var(--sun-dim)",
+              "outline": "none"
+            }
+          },
+          "count": 1
+        }
+      ],
+      "checkbox": [],
+      "radio": [],
+      "select": [
+        {
+          "specificType": "select-one",
+          "states": {
+            "default": {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(28, 24, 52)",
+              "border": "1px solid rgba(28, 24, 52, 0.15)",
+              "borderRadius": "12px",
+              "padding": "10px 13px",
+              "boxShadow": "none",
+              "outline": "rgb(28, 24, 52) none 3px"
+            },
+            "focus": {
+              "borderColor": "var(--sun)",
+              "boxShadow": "0 0 0 3px var(--sun-dim)",
+              "outline": "none"
+            }
+          },
+          "count": 1
+        }
+      ]
+    },
+    "links": [
+      {
+        "color": "rgb(28, 24, 52)",
+        "textDecoration": "none",
+        "fontWeight": "400",
+        "states": {
+          "default": {
+            "color": "rgb(28, 24, 52)",
+            "textDecoration": "underline 1px rgba(28, 24, 52, 0.15)"
+          },
+          "hover": {
+            "color": "var(--sun-ink)"
+          }
+        },
+        "count": 5
+      },
+      {
+        "color": "rgb(79, 75, 99)",
+        "textDecoration": "none",
+        "fontWeight": "500",
+        "states": {
+          "default": {
+            "color": "rgb(79, 75, 99)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "color": "var(--sun-ink)"
+          }
+        },
+        "count": 5
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "textDecoration": "none",
+        "fontWeight": "700",
+        "states": {
+          "default": {
+            "color": "rgb(255, 255, 255)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "color": "var(--sun-ink)"
+          }
+        },
+        "count": 5
+      },
+      {
+        "color": "rgb(119, 115, 138)",
+        "textDecoration": "none",
+        "fontWeight": "400",
+        "states": {
+          "default": {
+            "color": "rgb(119, 115, 138)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "color": "var(--sun-ink)"
+          }
+        },
+        "count": 4
+      }
+    ],
+    "badges": {
+      "all": [],
+      "byVariant": {
+        "error": [],
+        "warning": [],
+        "success": [],
+        "info": [],
+        "neutral": []
+      }
+    }
+  },
+  "breakpoints": [
+    {
+      "px": "640px"
+    }
+  ],
+  "iconSystem": [],
+  "frameworks": [
+    {
+      "name": "React",
+      "confidence": "high",
+      "evidence": "DOM property __reactFiber$, window.renderer:react-dom",
+      "category": "js-framework",
+      "version": "19.3.0-canary",
+      "coverage": 1
+    },
+    {
+      "name": "Next.js",
+      "confidence": "high",
+      "evidence": "window.next 16.2.9, window.__next_f",
+      "category": "meta-framework",
+      "version": "16.2.9"
+    },
+    {
+      "name": "Tailwind CSS",
+      "confidence": "high",
+      "evidence": "CSS variables --tw-*, class text-[16px] x89",
+      "category": "css-framework",
+      "version": "4"
+    }
+  ],
+  "wcag": [
+    {
+      "fg": "#4f4b63",
+      "bg": "#ffffff",
+      "ratio": 8.34,
+      "count": 94,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "fontSize": 13.5,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#ffffff",
+      "bg": "#1c1834",
+      "ratio": 17.08,
+      "count": 46,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "fontSize": 14,
+      "fontWeight": 700
+    },
+    {
+      "fg": "#1c1834",
+      "bg": "#ffffff",
+      "ratio": 17.08,
+      "count": 33,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": true,
+      "requiredAA": 3,
+      "passAA": true,
+      "passAAA": true,
+      "fontSize": 19,
+      "fontWeight": 700
+    },
+    {
+      "fg": "#77738a",
+      "bg": "#ffffff",
+      "ratio": 4.56,
+      "count": 23,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": false,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": false,
+      "fontSize": 13.5,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#a9541a",
+      "bg": "#ffffff",
+      "ratio": 5.29,
+      "count": 18,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": false,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": false,
+      "fontSize": 14,
+      "fontWeight": 600
+    },
+    {
+      "fg": "#1c1834",
+      "bg": "#f7f6f9",
+      "ratio": 15.86,
+      "count": 4,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": true,
+      "requiredAA": 3,
+      "passAA": true,
+      "passAAA": true,
+      "fontSize": 48,
+      "fontWeight": 800
+    },
+    {
+      "fg": "#4f4b63",
+      "bg": "#f7f6f9",
+      "ratio": 7.74,
+      "count": 4,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "fontSize": 17,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#e0812f",
+      "bg": "#ffffff",
+      "ratio": 2.86,
+      "count": 1,
+      "aa": false,
+      "aaLarge": false,
+      "aaa": false,
+      "large": true,
+      "requiredAA": 3,
+      "passAA": false,
+      "passAAA": false,
+      "fontSize": 76,
+      "fontWeight": 800
+    },
+    {
+      "fg": "#ffffff",
+      "bg": "#2d2850",
+      "ratio": 13.72,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "state": "hover",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 14,
+      "fontWeight": 700
+    },
+    {
+      "fg": "#ffffff",
+      "bg": "#2d2850",
+      "ratio": 13.72,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "state": "focus",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 14,
+      "fontWeight": 700
+    },
+    {
+      "fg": "#a9541a",
+      "bg": "#ffffff",
+      "ratio": 5.29,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": false,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": false,
+      "state": "hover",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 15,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#a9541a",
+      "bg": "#ffffff",
+      "ratio": 5.29,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": false,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": false,
+      "state": "focus",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 15,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#1c1834",
+      "bg": "#ffffff",
+      "ratio": 17.08,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "state": "hover",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 13.5,
+      "fontWeight": 400
+    },
+    {
+      "fg": "#1c1834",
+      "bg": "#ffffff",
+      "ratio": 17.08,
+      "aa": true,
+      "aaLarge": true,
+      "aaa": true,
+      "large": false,
+      "requiredAA": 4.5,
+      "passAA": true,
+      "passAAA": true,
+      "state": "focus",
+      "tag": "a",
+      "source": "state",
+      "fontSize": 13.5,
+      "fontWeight": 400
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://mytrya.com/",
+      "extractedAt": "2026-10-18T05:31:25.569Z"
+    },
+    {
+      "url": "https://mytrya.com/about",
+      "extractedAt": "2026-10-18T05:31:36.699Z"
+    },
+    {
+      "url": "https://mytrya.com/contact",
+      "extractedAt": "2026-10-18T05:31:46.565Z"
+    },
+    {
+      "url": "https://mytrya.com/work",
+      "extractedAt": "2026-10-18T05:31:57.109Z"
+    },
+    {
+      "url": "https://mytrya.com/process",
+      "extractedAt": "2026-10-18T05:32:07.257Z"
+    }
+  ]
+}
