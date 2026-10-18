@@ -81,11 +81,13 @@ spacing:
   breakpoint: "640px"
 rounded:
   field: "12px"
-  panel: "18px"
+  card: "20px"
   pill: "999px"
 motion:
-  duration: "120ms–140ms"
-  easing: "ease"
+  duration: "140ms"
+  easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+  sun-rise: "1.6s, once on load"
+  section-rise: "24px lift and fade while entering the viewport"
 components:
   button-primary:
     backgroundColor: "{colors.ink}"
@@ -110,7 +112,7 @@ components:
   panel:
     backgroundColor: "{colors.panel}"
     border: "1px solid {colors.line}"
-    rounded: "{rounded.panel}"
+    rounded: "{rounded.card}"
 ---
 
 # Mytrya design
@@ -169,21 +171,32 @@ Headings use `text-wrap: balance`. Keep body text to about 50–64 characters pe
 ## Layout
 
 Content sits in a 1120px column with a 16px side gutter on phones and 32px from 640px up. There is
-one breakpoint. Sections are separated by generous vertical space and a 1px rule, not by background
+one breakpoint. The header is solid white with a 1px rule: no frosted glass. Sections are separated by generous vertical space and a 1px rule, not by background
 colour changes. No horizontal scroll at phone width.
 
 ## Components
 
 - **Buttons** are pills, 46px tall. Primary is indigo with white text; secondary is white with a
   `line-2` border. Pressing nudges the button down 1px.
+- **Corners** come in three sizes only: 12px for inputs, 20px for cards, panels, photos and the
+  CTA block, and full pills for buttons and dots.
 - **Inputs** are 46px tall with a 12px radius; focus turns the border saffron with a `sun-dim` halo.
 - **Row links** (lists of work) are full-width rows with a top rule; the title turns `sun-ink` on hover.
 - **Links** in text are underlined with a faint `line-2` underline that turns saffron on hover.
 
 ## Motion
 
-Transitions are short (120–140ms, `ease`) and only on colour, border and a 1px press. Smooth scroll
-only when the user hasn't asked for reduced motion.
+Everything rises, and only once. One easing for all of it, `--ease-rise`
+(`cubic-bezier(0.22, 1, 0.36, 1)`): a quick start and a long, soft settle.
+
+- **The sun** climbs 90px into place and fades in over 1.6s when a page loads, then stays still.
+- **Sections** lift 24px and fade in as they enter the viewport (scroll-driven, CSS only). They are
+  fully visible before they reach the middle of the screen, so nothing is ever hidden to read.
+- **Controls** change colour and border in 140ms; buttons press down 1px.
+- Nothing loops, nothing follows the cursor, no parallax. Under `prefers-reduced-motion: reduce`
+  all of it is off, smooth scroll included.
+
+Reference: the rise and its easing come from Fox Valuations (Awwwards), measured live.
 
 ## Checking for drift
 

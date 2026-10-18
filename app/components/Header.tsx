@@ -5,7 +5,7 @@ import { SITE } from "../lib/site";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-line bg-white">
       <div className="wrap flex h-16 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5" aria-label={`${SITE.name}, home`}>
           <Mark className="h-7 w-7 text-ink" />

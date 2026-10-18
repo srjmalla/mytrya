@@ -66,7 +66,7 @@ export function FaqList({ items, as: Tag = "h3" }: { items: { q: string; a: stri
 export function Cta({ title = "Tell me what's changing in your work." }: { title?: string }) {
   return (
     <section className="wrap pb-20 pt-6" aria-labelledby="cta-h">
-      <div className="relative overflow-hidden rounded-[24px] border border-line bg-panel px-6 py-14 sm:px-12 sm:py-20">
+      <div className="relative overflow-hidden rounded-[20px] border border-line bg-panel px-6 py-14 sm:px-12 sm:py-20">
         <Sun className="-bottom-[300px] left-1/2 h-[560px] w-[560px] -translate-x-1/2" />
         <div className="relative mx-auto max-w-[620px] text-center">
           <h2 id="cta-h" className="h-display t-section">{title}</h2>

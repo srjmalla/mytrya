@@ -141,7 +141,7 @@ body {
   text-decoration-color: var(--line-2);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: color 120ms ease, text-decoration-color 120ms ease;
+  transition: color 140ms var(--ease-rise), text-decoration-color 140ms var(--ease-rise);
 }
 .a:hover {
   color: var(--sun-ink);
@@ -175,7 +175,7 @@ body {
   top: 0.68em;
   width: 7px;
   height: 7px;
-  border-radius: 99px;
+  border-radius: 999px;
   background: var(--sun);
 }
 
@@ -203,7 +203,7 @@ body {
   display: grid;
   border-top: 1px solid var(--line);
   padding-block: 22px;
-  transition: background-color 140ms ease;
+  transition: background-color 140ms var(--ease-rise);
 }
 .row-link:hover .row-title {
   color: var(--sun-ink);
@@ -212,7 +212,7 @@ body {
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 /* The rising sun: a soft warm disc and one faint ring, cut off by the bottom of its section. */
@@ -242,7 +242,7 @@ body {
   font-weight: 700;
   font-size: 15px;
   border: 1px solid transparent;
-  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease, transform 140ms ease;
+  transition: background-color 140ms var(--ease-rise), color 140ms var(--ease-rise), border-color 140ms var(--ease-rise), transform 140ms var(--ease-rise);
 }
 .btn:active {
   transform: translateY(1px);
@@ -312,8 +312,39 @@ select.field {
   appearance: none;
 }
 
+/*
+  Motion: everything rises. The sun climbs into place once on load, and each section lifts a few
+  pixels as it scrolls into view. One easing (a long, soft settle) for both. Off under reduced motion.
+*/
+:root {
+  --ease-rise: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes sun-rise {
+  from {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+}
+@keyframes section-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+  .sun {
+    animation: sun-rise 1.6s var(--ease-rise) 0.15s both;
+  }
+  @supports (animation-timeline: view()) {
+    main section {
+      animation: section-rise var(--ease-rise) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
   }
 }
