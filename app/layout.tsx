@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,9 +7,11 @@ import JsonLd from "./components/JsonLd";
 import { PERSON, SITE } from "./lib/site";
 import { PERSON_LD } from "./lib/schema";
 
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
+const sans = Geist({ variable: "--font-manrope", subsets: ["latin"] });
+const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
+const hand = Caveat({ variable: "--font-hand", subsets: ["latin"] });
 
-export const viewport: Viewport = { themeColor: "#ffffff", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#f7f5f0", colorScheme: "light" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -64,7 +66,7 @@ const WEBSITE = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable} ${hand.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <JsonLd data={[ORG, WEBSITE, PERSON_LD]} />
         <Header />

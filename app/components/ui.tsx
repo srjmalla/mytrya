@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { PRICING, SITE } from "../lib/site";
-
-/** The rising sun behind a section. The parent needs `relative overflow-hidden`. */
-export function Sun({ className = "-right-16 -bottom-[260px] h-[520px] w-[520px]" }: { className?: string }) {
-  return <div aria-hidden className={`sun ${className}`} />;
-}
+import Field from "./Field";
 
 /** A section with a small label on the left and the content beside it. */
 export function Leaf({ label, children }: { label: string; children: React.ReactNode }) {
@@ -62,21 +58,19 @@ export function FaqList({ items, as: Tag = "h3" }: { items: { q: string; a: stri
   );
 }
 
-/** The closing block on every page. */
-export function Cta({ title = "Tell me what's changing in your work." }: { title?: string }) {
+/** The closing block on every page: the contour map, dark, with the two ways to get in touch. */
+export function Cta({ title = "Tell me what\u2019s changing in your work." }: { title?: string }) {
   return (
-    <section className="wrap pb-20 pt-6" aria-labelledby="cta-h">
-      <div className="relative overflow-hidden rounded-[20px] border border-line bg-panel px-6 py-14 sm:px-12 sm:py-20">
-        <Sun className="-bottom-[300px] left-1/2 h-[560px] w-[560px] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-[620px] text-center">
-          <h2 id="cta-h" className="h-display t-section">{title}</h2>
-          <p className="mx-auto mt-5 max-w-[46ch] t-body text-ink-2">
-            A free 30-minute call. You&rsquo;ll get a reply within {PRICING.replyWithin}.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="btn btn-ink">Book a call</Link>
-            <a href={`mailto:${SITE.email}`} className="btn btn-line">{SITE.email}</a>
-          </div>
+    <section className="close on-dark" aria-labelledby="cta-h">
+      <Field focus={[0.5, 0.62]} seed={7.3} />
+      <div className="wrap close-copy">
+        <h2 id="cta-h" className="h-display mx-auto max-w-[14ch] t-page">{title}</h2>
+        <p className="mx-auto mt-6 max-w-[40ch] t-lead text-ink-2">
+          A free 30-minute call. You&rsquo;ll get a reply within {PRICING.replyWithin}.
+        </p>
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <Link href="/contact" className="btn btn-ink">Book a call</Link>
+          <a href={`mailto:${SITE.email}`} className="btn btn-line">{SITE.email}</a>
         </div>
       </div>
     </section>

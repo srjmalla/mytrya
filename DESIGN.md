@@ -1,210 +1,92 @@
 ---
 name: "Mytrya"
-description: "First light: a white page, deep indigo type, and one saffron accent that belongs to the lotus and the rising sun."
+description: "Field: a forward deployed engineer's office. A sunlit photo of the desk opens the site; the page is warm off-white with near-black type, dark screens and one signal-lime accent."
 colors:
-  background: "#FFFFFF"
-  panel: "#F7F6F9"
-  panel-2: "#EFEDF3"
-  ink: "#1C1834"
-  ink-2: "#4F4B63"
-  ink-3: "#77738A"
-  line: "rgba(28, 24, 52, 0.08)"
-  line-2: "rgba(28, 24, 52, 0.15)"
-  sun: "#E0812F"
-  sun-ink: "#A9541A"
-  sun-dim: "rgba(224, 129, 47, 0.14)"
-  sun-glow: "#FFE2C4"
+  background: "#F7F5F0"
+  panel: "#FFFFFF"
+  panel-2: "#EEEBE3"
+  ink: "#14171C"
+  ink-2: "#4A505B"
+  ink-3: "#6A707C"
+  line: "rgba(20, 23, 28, 0.10)"
+  line-2: "rgba(20, 23, 28, 0.20)"
+  accent: "#C8F03C"
+  accent-ink: "#4A6A08"
+  accent-dim: "rgba(160, 200, 30, 0.22)"
+  dark: "#0B0E14"
+  dark-ink: "#EEF0F4"
+  dark-ink-2: "#AAB1C0"
 typography:
-  display-hero:
-    fontFamily: "Manrope"
-    fontSize: "76px"
-    fontSizeMobile: "48px"
-    fontWeight: 800
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
-  display-page:
-    fontFamily: "Manrope"
-    fontSize: "60px"
-    fontSizeMobile: "44px"
-    fontWeight: 800
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
-  display-section:
-    fontFamily: "Manrope"
-    fontSize: "48px"
-    fontSizeMobile: "34px"
-    fontWeight: 800
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
-  title:
-    fontFamily: "Manrope"
-    fontSize: "22px"
-    fontWeight: 700
-    lineHeight: 1.2
-    letterSpacing: "-0.015em"
-  lead:
-    fontFamily: "Manrope"
-    fontSize: "20px"
-    fontSizeMobile: "18px"
-    fontWeight: 400
-    lineHeight: 1.55
-  body:
-    fontFamily: "Manrope"
-    fontSize: "17px"
-    fontWeight: 400
-    lineHeight: 1.65
-  body-sm:
-    fontFamily: "Manrope"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "Manrope"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: 1.5
-  small:
-    fontFamily: "Manrope"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1.5
-  meta:
-    fontFamily: "Manrope"
-    fontSize: "13.5px"
-    fontWeight: 400
-    lineHeight: 1.55
-spacing:
-  base: "4px"
-  gutter-mobile: "16px"
-  gutter: "32px"
-  max-width: "1120px"
-  breakpoint: "640px"
+  display: { fontFamily: "Geist", fontWeight: 600, lineHeight: 1, letterSpacing: "-0.04em" }
+  body: { fontFamily: "Geist", fontSize: "17px", lineHeight: 1.65 }
+  mono: { fontFamily: "Geist Mono", fontSize: "13.5px" }
+  hand: { fontFamily: "Caveat" }
 rounded:
-  field: "12px"
-  card: "20px"
-  pill: "999px"
+  control: "10px"
+  card: "12px"
+  photo: "4px"
 motion:
-  duration: "140ms"
   easing: "cubic-bezier(0.22, 1, 0.36, 1)"
-  sun-rise: "1.6s, once on load"
-  section-rise: "24px lift and fade while entering the viewport"
-components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    hoverBackgroundColor: "#2D2850"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.pill}"
-    minHeight: "46px"
-    padding: "0 22px"
-  button-secondary:
-    backgroundColor: "#FFFFFF"
-    textColor: "{colors.ink}"
-    border: "1px solid {colors.line-2}"
-    rounded: "{rounded.pill}"
-  input:
-    backgroundColor: "#FFFFFF"
-    textColor: "{colors.ink}"
-    border: "1px solid {colors.line-2}"
-    focusBorder: "{colors.sun}"
-    rounded: "{rounded.field}"
-    minHeight: "46px"
-    padding: "10px 13px"
-  panel:
-    backgroundColor: "{colors.panel}"
-    border: "1px solid {colors.line}"
-    rounded: "{rounded.card}"
 ---
 
 # Mytrya design
 
 The source of truth is `app/globals.css`; this file describes the system so an agent can follow it.
-Values were checked against a Dembrandt scan of the live site (`design/dembrandt-baseline.json`).
+The CSS variables `--sun`, `--sun-ink` and `--font-manrope` keep their old names but now hold the
+lime accent, its text colour and Geist.
 
 ## Feeling
 
-First light. The page is white and quiet, the type is deep indigo, and there is exactly one warm
-accent. The story is change and resilience: a sun coming up, a lotus rising out of the water.
-Less text, more air. Nothing should look like a dark console, beige paper, a serif, or monospace.
+A real engineer's office in morning light. Practical, direct, technical. The site should read as the
+workplace of someone who builds and runs systems, not as a wellness or lifestyle brand: no sunrise,
+no lotus, no pastel gradients, no serif.
 
 ## Imagery
 
-- **The rising sun.** A soft warm disc (`sun-glow` fading to transparent) with one faint ring, sitting
-  low behind a section and cut off by the section's bottom edge, so it reads as rising. Use the `Sun`
-  component in a `relative overflow-hidden` parent. It appears behind the home hero, the About hero and
-  the closing call to action. Never more than one per screen, never centred on text, never animated
-  in a way that pulls the eye.
-- **The lotus mark.** Three petals over a waterline (`app/components/Mark.tsx`, same geometry as
-  `app/icon.svg`; keep them in sync). Only the centre petal is saffron; the outer petals and the
-  waterline take the text colour.
-- **Saffron punctuation.** The accent also shows up as the full stop on the hero headline, list
-  bullets, live-status dots and the focus ring. Small touches, not fills.
-- No stock photos, no illustrations of robots or circuits, no gradients beyond the sun.
+- **The office** (`public/office.jpg`, sources in `design/office/`). A generated, photorealistic desk
+  with two monitors, a whiteboard, a phone and a notebook. It is the home hero (`components/Office.tsx`).
+  On wide screens it is pinned: it opens close on the monitors, with the headline on the left screen,
+  and pulls back as the page scrolls until the whole room is in view.
+- **Things in the room are the navigation.** Object positions are fractions of the photo and live in
+  `globals.css` (`.screen`, `.board`, `.pin-*`). If the photo is regenerated, keep every object in the
+  same place or update those numbers.
+  - Left monitor: the headline, then a morning summary (links to the Support Intelligence case).
+  - Right monitor: one support case ticking through (`components/ScreenCase.tsx`).
+  - Whiteboard: the four project steps in handwriting (links to Process).
+  - Phone and notebook: labels for Book a call and the FAQ.
+- **Screens emit light.** Monitor content uses `mix-blend-mode: screen` so the photo's glass, dust and
+  reflections show through; whiteboard writing uses `multiply`.
+- **The contour map** (`components/Field.tsx`). Slow contour lines on near-black, lit in lime around a
+  focus point. It sits behind the closing block on every page.
+- **Invented examples are labelled.** Any sample case or summary on a screen says "Invented example".
 
 ## Colour
 
-- `ink` for headings and primary buttons, `ink-2` for body, `ink-3` for meta text.
-- `sun` (#E0812F) is for **fills only**. It is 2.86:1 on white and fails contrast for text of any size.
-- `sun-ink` (#A9541A, 5.29:1) is the accent for text: kickers, hovered links, step outputs.
-- Panels use `panel` with a `line` border. Rules are 1px `line`.
+- The page is `background`; text is `ink`, `ink-2` for body, `ink-3` for meta.
+- `accent` (lime) is for fills only, with dark text on it. It fails contrast as text on the light page.
+- `accent-ink` is the accent for text on the light page: section labels, hovered links, status text.
+- Dark surfaces (monitors, the closing block, labels on the photo) use `dark` with `dark-ink`; there,
+  lime may be used as text. Add the `on-dark` class to a dark section to switch the tokens.
+- Primary buttons are `ink` with light text on the page, and lime with dark text on dark surfaces.
 
 ## Type
 
-Manrope only. Use the ten styles in the front matter and nothing between them. Each one is a class
-in `app/globals.css`; never write a pixel size in a page. Headings pair a size class with
-`.h-display` (800, tight tracking) or `.h-section` (700).
-
-| Style | Class | Desktop / mobile | Used for |
-|---|---|---|---|
-| display-hero | `t-hero` | 76 / 48, 800 | Home headline |
-| display-page | `t-page` | 60 / 44, 800 | Page titles |
-| display-section | `t-section` | 48 / 34, 800 | Section headings, CTA |
-| title | `t-title` | 22, 700 | Card, row, step, FAQ and principle titles |
-| lead | `t-lead` | 20 / 18 | The paragraph under a page title |
-| body | `t-body` | 17, line-height 1.65 | Running text |
-| body-sm | `t-body-sm` | 16, line-height 1.6 | Text inside cards, rows and grids |
-| label | `t-label` | 15 | Buttons, inline links, footer |
-| small | `t-small` | 14 | Nav, form errors; `.kicker` is this at 600 in `sun-ink` |
-| meta | `meta` | 13.5, `ink-3` | Dates, captions, fine print |
-
-Headings use `text-wrap: balance`. Keep body text to about 50–64 characters per line.
+Geist for everything, weight 600 for display with tight tracking. Geist Mono only for status lines,
+logs, labels on the photo and meta text. Caveat only for writing on the whiteboard. Sizes are classes
+in `globals.css` (`t-hero`, `t-page`, `t-section`, `t-statement`, `t-offer`, `t-title`, `t-lead`,
+`t-body`, `t-body-sm`, `t-label`, `t-small`, `meta`); never write a pixel size in a page.
 
 ## Layout
 
-Content sits in a 1120px column with a 16px side gutter on phones and 32px from 640px up. There is
-one breakpoint. The header is solid white with a 1px rule: no frosted glass. Sections are separated by generous vertical space and a 1px rule, not by background
-colour changes. No horizontal scroll at phone width.
-
-## Components
-
-- **Buttons** are pills, 46px tall. Primary is indigo with white text; secondary is white with a
-  `line-2` border. Pressing nudges the button down 1px.
-- **Corners** come in three sizes only: 12px for inputs, 20px for cards, panels, photos and the
-  CTA block, and full pills for buttons and dots.
-- **Inputs** are 46px tall with a 12px radius; focus turns the border saffron with a `sun-dim` halo.
-- **Row links** (lists of work) are full-width rows with a top rule; the title turns `sun-ink` on hover.
-- **Links** in text are underlined with a faint `line-2` underline that turns saffron on hover.
+Content sits in a 1120px column with a 16px gutter on phones and 32px from 640px up. Sections are
+`band`s with generous vertical space. The header is a translucent off-white bar with a 1px rule.
+Below 900px, and under reduced motion, the office is a still, cropped photo under the headline with
+no pinning and no labels.
 
 ## Motion
 
-Everything rises, and only once. One easing for all of it, `--ease-rise`
-(`cubic-bezier(0.22, 1, 0.36, 1)`): a quick start and a long, soft settle.
-
-- **The sun** climbs 90px into place and fades in over 1.6s when a page loads, then stays still.
-- **Sections** lift 24px and fade in as they enter the viewport (scroll-driven, CSS only). They are
-  fully visible before they reach the middle of the screen, so nothing is ever hidden to read.
-- **Controls** change colour and border in 140ms; buttons press down 1px.
-- Nothing loops, nothing follows the cursor, no parallax. Under `prefers-reduced-motion: reduce`
-  all of it is off, smooth scroll included.
-
-Reference: the rise and its easing come from Fox Valuations (Awwwards), measured live.
-
-## Checking for drift
-
-After a design change, rescan the live site and compare against the baseline:
-
-```sh
-npx dembrandt@0.39.2 https://mytrya.com --crawl 5 --compare design/dembrandt-baseline.json
-```
-
-It exits 1 if anything drifted. If the change was intended, add `--approve` to make the new scan
-the baseline, and update this file to match.
+- The office zoom is driven by scroll and is the one large moment on the site.
+- The headline words come into focus once on load.
+- The "Why" statement lights up word by word as it scrolls through the viewport.
+- The case demo plays once when it enters view; the monitor case loops while visible.
+- Everything is off, or reduced to a still frame, under `prefers-reduced-motion: reduce`.
