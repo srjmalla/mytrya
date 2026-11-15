@@ -71,7 +71,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ slug: s
         </header>
 
         {w.image ? (
-          <figure className="mb-12 overflow-hidden rounded-[20px] border border-line">
+          <figure className="mb-12 overflow-hidden rounded-[12px] border border-line">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={w.image.src} alt={w.image.alt} width={w.image.width} height={w.image.height} loading="lazy" className="block h-auto w-full" />
           </figure>

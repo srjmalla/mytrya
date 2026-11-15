@@ -5,7 +5,7 @@ import { SITE } from "../lib/site";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white">
+    <header className="site-header sticky top-0 z-40">
       <div className="wrap flex h-16 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5" aria-label={`${SITE.name}, home`}>
           <Mark className="h-7 w-7 text-ink" />
@@ -17,7 +17,7 @@ export default function Header() {
         <Link href="/contact" className="btn btn-ink btn-sm">Book a call</Link>
       </div>
       <nav aria-label="Primary mobile" className="wrap flex gap-1 overflow-x-auto pb-2.5 md:hidden">
-        <NavLinks className="whitespace-nowrap rounded-full px-3 py-1 t-small font-medium text-ink-2 aria-[current=page]:bg-panel-2 aria-[current=page]:text-ink" />
+        <NavLinks className="whitespace-nowrap rounded-full px-3 py-1 t-small font-medium text-ink-2 aria-[current=page]:bg-line aria-[current=page]:text-ink" />
       </nav>
     </header>
   );

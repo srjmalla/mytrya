@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Breadcrumbs, Cta, Leaf, Sun } from "../components/ui";
+import { Breadcrumbs, Cta, Leaf } from "../components/ui";
 import Mark from "../components/Mark";
 import JsonLd from "../components/JsonLd";
 import { PERSON, PHILOSOPHY, SITE } from "../lib/site";
@@ -24,7 +24,6 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <Sun />
         <div className="wrap relative pb-20 pt-10">
           <JsonLd data={[breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]), profile]} />
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
@@ -82,7 +81,7 @@ export default function AboutPage() {
                 handoff. That costs capacity, so I take a small number of projects at a time.
               </p>
             </div>
-            <figure className="self-start overflow-hidden rounded-[20px]">
+            <figure className="self-start overflow-hidden rounded-[4px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={PERSON.image} alt={PERSON.name} width={PERSON.imageWidth} height={PERSON.imageHeight} className="block aspect-square w-full object-cover" />
             </figure>
